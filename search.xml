@@ -4,11 +4,49 @@
   
     
     <entry>
-      <title>link_技術大匯總</title>
-      <link href="2021/02/11/%5Blink%5D-%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/"/>
-      <url>2021/02/11/%5Blink%5D-%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/</url>
+      <title>[link] Hexo</title>
+      <link href="2021/02/11/%5Blink%5D_Hexo/"/>
+      <url>2021/02/11/%5Blink%5D_Hexo/</url>
       
-        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="前端貢獻者"><a href="#前端貢獻者" class="headerlink" title="前端貢獻者"></a>前端貢獻者</h4><ul><li><a href="https://cythilya.github.io/">Summer。桑莫。夏天</a> - 持續更新</li></ul>]]></content>
+        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h4><ul><li><a href="https://hexo.io/zh-tw/docs/">[Hexo官方] - 中文文件</a></li><li><a href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/">用Hexo + Github Pages搭建個人部落格 - 小蛇蛇的筆記</a></li></ul><h4 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h4><ul><li><a href="https://hexo.io/themes/">[Hexo官方] - 樣式庫</a></li><li><a href="https://github.com/Molunerfinn/hexo-theme-melody">[melody] - github</a></li><li><a href="https://molunerfinn.com/">[melody] - demo</a></li><li><a href="https://github.com/theme-next/hexo-theme-next">[next] - github</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link] Nuxt.js</title>
+      <link href="2021/02/11/%5Blink%5D_Nuxt.js/"/>
+      <url>2021/02/11/%5Blink%5D_Nuxt.js/</url>
+      
+        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1961">[it 邦] Nuxt - 使用 Vue.js 做 SSR 的第一哩路 - Ralph</a> - 2018</li></ul><h4 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h4><ul><li><a href="https://www.youtube.com/watch?v=szrRDJBFmvQ&feature=youtu.be">Vue Nuxt 介紹與實作範例 - 六角學院</a> - 2018</li><li><a href="https://www.youtube.com/watch?v=wgW1o4Nswqs&feature=youtu.be">👨‍💻 Nuxt 怎麼一回事｜#1 起源、環境安裝與第一次的開發 - Alex 宅開發</a> - 2019</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Nuxt.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link] 技術大匯總</title>
+      <link href="2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/"/>
+      <url>2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/</url>
+      
+        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="前端貢獻者"><a href="#前端貢獻者" class="headerlink" title="前端貢獻者"></a>前端貢獻者</h4><ul><li><a href="https://cythilya.github.io/">Summer。桑莫。夏天</a></li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/1914">[it 邦] 前端菜焦阿日記 - mangoSu</a> - 2018</li></ul>]]></content>
       
       
       
@@ -23,17 +61,17 @@
     
     
     <entry>
-      <title>[link] Vue</title>
-      <link href="2021/02/11/%5Blink%5D_Vue/"/>
-      <url>2021/02/11/%5Blink%5D_Vue/</url>
+      <title>[link] Vue.js</title>
+      <link href="2021/02/11/%5Blink%5D_Vue.js/"/>
+      <url>2021/02/11/%5Blink%5D_Vue.js/</url>
       
-        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul>]]></content>
+        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1049">[it 邦] Vue.js 30天 - Ralph</a> - 2016</li><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[it 邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/2614">[it 邦] 技術在走，Vue.js 要有 - mangoSu</a> - 2019</li></ul><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> Vue </tag>
+            <tag> Vue.js </tag>
             
         </tags>
       
@@ -42,19 +80,15 @@
     
     
     <entry>
-      <title>[link] 入門</title>
-      <link href="2021/02/11/%5Blink%5D_%E5%85%A5%E9%96%80/"/>
-      <url>2021/02/11/%5Blink%5D_%E5%85%A5%E9%96%80/</url>
+      <title>[link] 前端</title>
+      <link href="2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/"/>
+      <url>2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/</url>
       
-        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">[it 邦] 前端新手村 - Chris</a> - 2017</li><li><a href="https://ithelp.ithome.com.tw/users/20120740/ironman/2632">[it 邦] 前端新手進化史 - yachen</a> - 2019</li></ul><h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[it 邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li></ul>]]></content>
+        <content type="html"><![CDATA[<!-- 連結列表 --><a id="more"></a><h4 id="新手"><a href="#新手" class="headerlink" title="新手"></a>新手</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">[it 邦] 前端新手村 - Chris</a> - 2017</li><li><a href="https://ithelp.ithome.com.tw/users/20120740/ironman/2632">[it 邦] 前端新手進化史 - yachen</a> - 2019</li></ul>]]></content>
       
       
       
         <tags>
-            
-            <tag> Vue </tag>
-            
-            <tag> 入門 </tag>
             
             <tag> 前端 </tag>
             
