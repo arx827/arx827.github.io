@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="前端寶庫">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-02-10T20:03:49.000Z">
-<meta property="article:modified_time" content="2021-02-10T20:27:27.645Z">
+<meta property="article:modified_time" content="2021-02-10T20:44:50.155Z">
 <meta property="article:author" content="Eason">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-02-11 04:03:49 / 修改時間：04:27:27" itemprop="dateCreated datePublished" datetime="2021-02-11T04:03:49+08:00">2021-02-11</time>
+              <time title="創建時間：2021-02-11 04:03:49 / 修改時間：04:44:50" itemprop="dateCreated datePublished" datetime="2021-02-11T04:03:49+08:00">2021-02-11</time>
             </span>
 
           
@@ -212,6 +212,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_Hexo/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_Hexo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -227,6 +241,7 @@
 <h4 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">[Hexo官方] - 中文文件</a></li>
 <li><a target="_blank" rel="noopener" href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/">用Hexo + Github Pages搭建個人部落格 - 小蛇蛇的筆記</a></li>
+<li><a target="_blank" rel="noopener" href="https://ed521.github.io/2019/08/hexo-admin/">使用 hexo-admin 後台管理工具 - 瑪利歐的部落格</a> - 2019</li>
 </ul>
 <h4 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/themes/">[Hexo官方] - 樣式庫</a></li>
@@ -268,6 +283,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -407,9 +423,14 @@
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -436,7 +457,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI","app_key":"Xpn9aJHCzU5RbgI00g8LRb1I","server_url":null,"security":true};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI","app_key":"Xpn9aJHCzU5RbgI00g8LRb1I","server_url":null,"security":false,"betterPerformance":true};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -518,6 +539,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI',
+      appKey     : 'Xpn9aJHCzU5RbgI00g8LRb1I',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>

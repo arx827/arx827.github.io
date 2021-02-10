@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-02-11 04:03:49 / 修改時間：04:27:27" itemprop="dateCreated datePublished" datetime="2021-02-11T04:03:49+08:00">2021-02-11</time>
+              <time title="創建時間：2021-02-11 04:03:49 / 修改時間：04:44:50" itemprop="dateCreated datePublished" datetime="2021-02-11T04:03:49+08:00">2021-02-11</time>
             </span>
 
           
@@ -209,6 +209,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_Hexo/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_Hexo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -282,6 +296,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_Nuxt.js/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_Nuxt.js/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -355,6 +383,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -428,6 +470,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_Vue.js/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_Vue.js/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -501,6 +557,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -679,9 +749,14 @@
                 console.error('Failed to save visitor count', error);
               });
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -708,7 +783,7 @@
         });
     }
 
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI","app_key":"Xpn9aJHCzU5RbgI00g8LRb1I","server_url":null,"security":true};
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI","app_key":"Xpn9aJHCzU5RbgI00g8LRb1I","server_url":null,"security":false,"betterPerformance":true};
     function fetchData(api_server) {
       var Counter = (method, url, data) => {
         return fetch(`${api_server}/1.1${url}`, {
@@ -790,6 +865,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'aXz4H8JWzUENnqal3z8vSN9A-MdYXbMMI',
+      appKey     : 'Xpn9aJHCzU5RbgI00g8LRb1I',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
