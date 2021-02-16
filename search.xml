@@ -4,17 +4,93 @@
   
     
     <entry>
+      <title>[link]_web-browser</title>
+      <link href="2021/02/16/link-web-browser/"/>
+      <url>2021/02/16/link-web-browser/</url>
+      
+        <content type="html"><![CDATA[<h4 id="瀏覽器渲染"><a href="#瀏覽器渲染" class="headerlink" title="瀏覽器渲染"></a>瀏覽器渲染</h4><ul><li><a href="https://shubo.io/browser-rendering/">瀏覽器轉譯/渲染(Browser Rendering)原理 - Shubo</a> - 2016</li><li><a href="https://blog.techbridge.cc/2016/04/02/Browser-Rendering-Optimization/">Browser Rendering Optimization - TechBridge 技術共筆部落格</a> - 2016</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web-browser </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link]-SASS/SCSS</title>
+      <link href="2021/02/16/link-SASS/"/>
+      <url>2021/02/16/link-SASS/</url>
+      
+        <content type="html"><![CDATA[<h4 id="map-get"><a href="#map-get" class="headerlink" title="map get"></a>map get</h4><ul><li><a href="https://wcc723.github.io/sass/2015/02/11/sass-map-get/">Sass map get - 卡斯伯</a> - 2015</li></ul><h4 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h4><ul><li><a href="https://happyjayxin.medium.com/%E5%88%A9%E7%94%A8-scss-%E6%9B%B4%E7%B0%A1%E6%BD%94%E7%9A%84%E4%BD%BF%E7%94%A8-css-animation-f0717a958a69">利用 SCSS 更方便的使用 CSS Animation - Jay</a> - 2019</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SASS/SCSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link]_React</title>
+      <link href="2021/02/16/link-React/"/>
+      <url>2021/02/16/link-React/</url>
+      
+        <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://zh-hant.reactjs.org/">[官網] - ReactJS</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 框架 </tag>
+            
+            <tag> React </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link]_VR</title>
+      <link href="2021/02/16/link-VR/"/>
+      <url>2021/02/16/link-VR/</url>
+      
+        <content type="html"><![CDATA[<h4 id="3D產品展示"><a href="#3D產品展示" class="headerlink" title="3D產品展示"></a>3D產品展示</h4><ul><li><a href="https://www.trplus.com.tw/p/016051276">Demo</a></li><li><a href="https://luxion.atlassian.net/wiki/spaces/K6M/pages/5767183/KeyShotVR+Variables">運用技術 - VR產品圖片產生器</a></li></ul><a id="more"></a>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VR </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[link]_TypeScript</title>
-      <link href="2021/02/14/%5Blink%5D_TypeScript/"/>
-      <url>2021/02/14/%5Blink%5D_TypeScript/</url>
+      <link href="2021/02/14/link-TypeScript/"/>
+      <url>2021/02/14/link-TypeScript/</url>
       
         <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20120614/ironman/2685">[iT邦] - 讓 TypeScript 成為你全端開發的 ACE！ - Maxwell Alexius</a></li></ul>]]></content>
       
       
       
         <tags>
-            
-            <tag> JavaScript </tag>
             
             <tag> TypeScript </tag>
             
@@ -26,18 +102,16 @@
     
     <entry>
       <title>[link]_Bootstrap</title>
-      <link href="2021/02/14/%5Blink%5D_Bootstrap/"/>
-      <url>2021/02/14/%5Blink%5D_Bootstrap/</url>
+      <link href="2021/02/14/link-Bootstrap/"/>
+      <url>2021/02/14/link-Bootstrap/</url>
       
-        <content type="html"><![CDATA[<h4 id="BS4"><a href="#BS4" class="headerlink" title="BS4"></a>BS4</h4><ul><li><a href="https://www.slideshare.net/chihchengwang3/bootstrap-keynote">Bootstrap 4與3的差異 - 卡斯柏</a> - 2017</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="BS4"><a href="#BS4" class="headerlink" title="BS4"></a>BS4</h4><ul><li><a href="https://www.slideshare.net/chihchengwang3/bootstrap-keynote">Bootstrap 4與3的差異 - 卡斯伯</a> - 2017</li></ul><h4 id="BS5"><a href="#BS5" class="headerlink" title="BS5"></a>BS5</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/3796">[iT邦] 金魚都能懂的Bootstrap5網頁框架開發 - CSScoke</a> - 2020</li><li><a href="https://www.youtube.com/playlist?list=PLqivELodHt3jq3oWBZfdhMu0GE7774HBW">[Youtube] 金魚都能懂的Bootstrap5網頁框架開發 - CSScoke</a> - 2020</li></ul>]]></content>
       
       
       
         <tags>
             
             <tag> Bootstrap </tag>
-            
-            <tag> CSS </tag>
             
         </tags>
       
@@ -47,8 +121,8 @@
     
     <entry>
       <title>[link]_Bit</title>
-      <link href="2021/02/14/%5Blink%5D_Bit/"/>
-      <url>2021/02/14/%5Blink%5D_Bit/</url>
+      <link href="2021/02/14/link-Bit/"/>
+      <url>2021/02/14/link-Bit/</url>
       
         <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://www.twblogs.net/a/5d7110fbbd9eee541c3401f1">Bit系列 - 組件管理工具Bit</a></li></ul>]]></content>
       
@@ -56,9 +130,9 @@
       
         <tags>
             
-            <tag> 管理工具 </tag>
-            
             <tag> Bit </tag>
+            
+            <tag> 管理工具 </tag>
             
         </tags>
       
@@ -68,8 +142,8 @@
     
     <entry>
       <title>[link]_Angular</title>
-      <link href="2021/02/14/%5Blink%5D-Angular/"/>
-      <url>2021/02/14/%5Blink%5D-Angular/</url>
+      <link href="2021/02/14/link-Angular/"/>
+      <url>2021/02/14/link-Angular/</url>
       
         <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20090728/ironman/1600">[iT邦] Angular 深入淺出三十天 - Leo</a> - 2018</li></ul>]]></content>
       
@@ -79,6 +153,8 @@
             
             <tag> Angular </tag>
             
+            <tag> 框架 </tag>
+            
         </tags>
       
     </entry>
@@ -87,8 +163,8 @@
     
     <entry>
       <title>[link]_NPM</title>
-      <link href="2021/02/14/%5Blink%5D-NPM/"/>
-      <url>2021/02/14/%5Blink%5D-NPM/</url>
+      <link href="2021/02/14/link-NPM/"/>
+      <url>2021/02/14/link-NPM/</url>
       
         <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page.html">NPM系列 - 從手動到自動 - PJCHENder</a> </li></ul>]]></content>
       
@@ -96,9 +172,9 @@
       
         <tags>
             
-            <tag> NPM </tag>
-            
             <tag> 管理工具 </tag>
+            
+            <tag> NPM </tag>
             
         </tags>
       
@@ -108,8 +184,8 @@
     
     <entry>
       <title>[link]_jQuery</title>
-      <link href="2021/02/14/%5Blink%5D_jQuery/"/>
-      <url>2021/02/14/%5Blink%5D_jQuery/</url>
+      <link href="2021/02/14/link-jQuery/"/>
+      <url>2021/02/14/link-jQuery/</url>
       
         <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page_18.html">jQuery系列 - PJCHENder</a></li></ul><a id="more"></a><h4 id="套件"><a href="#套件" class="headerlink" title="套件"></a>套件</h4><ul><li><a href="https://www.ucamc.com/e-learning/javascript/298-fullpage-js%E5%96%AE%E9%A0%81%E5%BC%8F%E9%81%B8%E5%96%AE%E6%BB%91%E5%8B%95%E5%8D%80%E5%A1%8A%E7%9A%84%E5%85%A8%E5%B1%8F%E6%BB%BE%E5%8B%95%E7%B6%B2%E7%AB%99">jQuery - fullPage.js - 使用fullPage.js設計單頁式選單滑動區塊的全屏滾動網站 - ucamc</a> - 2018</li><li><a href="https://www.itread01.com/content/1520158803.html">jQuery - fullPage.js - 學習 | jQuery全屏滾動插件FullPage.js - ITREAD01</a></li></ul>]]></content>
       
@@ -127,8 +203,8 @@
     
     <entry>
       <title>[link] HTML5</title>
-      <link href="2021/02/14/%5Blink%5D_HTML5/"/>
-      <url>2021/02/14/%5Blink%5D_HTML5/</url>
+      <link href="2021/02/14/link-HTML5/"/>
+      <url>2021/02/14/link-HTML5/</url>
       
         <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/HTML">HTML5系列 - PJCHENder</a></li></ul>]]></content>
       
@@ -146,10 +222,10 @@
     
     <entry>
       <title>[link] JavaScript</title>
-      <link href="2021/02/14/%5Blink%5D_JavaScript/"/>
-      <url>2021/02/14/%5Blink%5D_JavaScript/</url>
+      <link href="2021/02/14/link-JavaScript/"/>
+      <url>2021/02/14/link-JavaScript/</url>
       
-        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page_72.html">JavaScript系列 - PJCHENder</a></li><li><a href="https://pjchender.blogspot.com/2017/06/javascript-understanding-weird-part.html">你所不知道的JavaScript - PJCHENder</a> - 2017</li><li><a href="https://pjchender.blogspot.com/2017/06/js30.html">JS30 - PJCHENder</a> - 2017</li><li><a href="https://openhome.cc/Gossip/ECMAScript/index.html">ECMASCRIPT - openhome</a></li><li><a href="https://wangdoc.com/javascript/index.html">JavaScript 教程 - WangDoc</a></li></ul><a id="more"></a><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="console"><a href="#console" class="headerlink" title="console"></a>console</h5><ul><li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/218950/">除Console.log()外更多的Javascript除錯命令 - 程式前沿</a></li></ul></li><li><h5 id="閉包"><a href="#閉包" class="headerlink" title="閉包"></a>閉包</h5><ul><li><a href="https://openhome.cc/Gossip/JavaScript/Closure.html">閉包 - openhome</a></li><li><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html">深入淺出瞭解 JavaScript 閉包（closure） - PJCHENder</a> - 2017</li><li><a href="https://cythilya.github.io/2018/10/22/closure/">你懂 JavaScript 嗎？#15 閉包（Closure） - Summer。桑莫。夏天</a> - 2018</li><li><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/">所有的函式都是閉包：談 JS 中的作用域與 Closure - TechBridge 技術共筆部落格</a> - 2018</li><li><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">閉包 - WangDoc</a></li></ul></li></ul><h4 id="第三方套件"><a href="#第三方套件" class="headerlink" title="第三方套件"></a>第三方套件</h4><ul><li><a href="https://chriscavs.github.io/rallax-demo/">Rallax.js - 滾動視差效果</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page_72.html">JavaScript系列 - PJCHENder</a></li><li><a href="https://pjchender.blogspot.com/2017/06/javascript-understanding-weird-part.html">你所不知道的JavaScript - PJCHENder</a> - 2017</li><li><a href="https://pjchender.blogspot.com/2017/06/js30.html">JS30 - PJCHENder</a> - 2017</li><li><a href="https://openhome.cc/Gossip/ECMAScript/index.html">ECMASCRIPT - openhome</a></li><li><a href="https://wangdoc.com/javascript/index.html">JavaScript 教程 - WangDoc</a></li></ul><a id="more"></a><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="console"><a href="#console" class="headerlink" title="console"></a>console</h5><ul><li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/218950/">除Console.log()外更多的Javascript除錯命令 - 程式前沿</a></li></ul></li><li><h5 id="閉包"><a href="#閉包" class="headerlink" title="閉包"></a>閉包</h5><ul><li><a href="https://openhome.cc/Gossip/JavaScript/Closure.html">閉包 - openhome</a></li><li><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html">深入淺出瞭解 JavaScript 閉包（closure） - PJCHENder</a> - 2017</li><li><a href="https://cythilya.github.io/2018/10/22/closure/">你懂 JavaScript 嗎？#15 閉包（Closure） - Summer。桑莫。夏天</a> - 2018</li><li><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/">所有的函式都是閉包：談 JS 中的作用域與 Closure - TechBridge 技術共筆部落格</a> - 2018</li><li><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">閉包 - WangDoc</a></li></ul></li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><h5 id="JSDoc-文檔註解"><a href="#JSDoc-文檔註解" class="headerlink" title="JSDoc 文檔註解"></a>JSDoc 文檔註解</h5><ul><li><a href="https://www.ucamc.com/e-learning/javascript/250-javascript-use-jsdoc">Javascript文檔註解規則使用方式 @use JSDoc - ucamc</a> - 2018</li></ul></li></ul><h4 id="第三方套件"><a href="#第三方套件" class="headerlink" title="第三方套件"></a>第三方套件</h4><ul><li><a href="https://chriscavs.github.io/rallax-demo/">Rallax.js - 滾動視差效果</a></li></ul>]]></content>
       
       
       
@@ -165,10 +241,10 @@
     
     <entry>
       <title>[link] CSS</title>
-      <link href="2021/02/14/%5Blink%5D_CSS/"/>
-      <url>2021/02/14/%5Blink%5D_CSS/</url>
+      <link href="2021/02/14/link-CSS/"/>
+      <url>2021/02/14/link-CSS/</url>
       
-        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/CSS">CSS系列 - PJCHENder</a></li><li><a href="http://csscoke.com/">CSS系列 - CSScoke</a></li></ul><a id="more"></a><h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ul><li><a href="https://code.ciaoca.com/style/css-cheat-sheet/">CSS速查表</a></li></ul><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="CSS權重"><a href="#CSS權重" class="headerlink" title="CSS權重"></a>CSS權重</h5><ul><li><a href="https://ithelp.ithome.com.tw/articles/10196454">小事之 CSS 權重 (css specificity) - 小艾iris</a> - 2018</li></ul></li><li><h5 id="垂直置中"><a href="#垂直置中" class="headerlink" title="垂直置中"></a>垂直置中</h5><ul><li><a href="http://csscoke.com/2018/08/21/css-vertical-align/">CSS垂直置中技巧 - CSScoke</a></li></ul></li><li><h5 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h5><ul><li><a href="https://www.youtube.com/watch?v=fYcz3FUqv7M&feature=youtu.be">[Youtube] CSS GRID / CSS格線好好玩【完整版】 | CSS教學 | CSS格線 - CSScoke</a></li><li><a href="https://cssgridgarden.com/#zh-tw">[互動] - Grid - 蘿蔔</a></li></ul></li><li><h5 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h5><ul><li><a href="https://www.youtube.com/watch?v=_nCBQ6AIzDU&feature=youtu.be">[Youtube] 玩轉 CSS FLEX | CSS教學 | 網頁教學 | 網頁設計 - CSScoke</a></li><li><a href="https://flexboxfroggy.com/#zh-tw">[互動] - Flex - 青蛙</a></li></ul></li></ul><h4 id="神人膜拜區"><a href="#神人膜拜區" class="headerlink" title="神人膜拜區"></a>神人膜拜區</h4><ul><li><a href="https://codepen.io/miocene/pen/mjLPVp">CSS - Julia Miocene</a>、<a href="https://codepen.io/miocene">作者 - Julia Miocene</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><p><a href="https://pjchender.blogspot.com/search/label/CSS">CSS系列 - PJCHENder</a></p></li><li><h5 id="金魚系列"><a href="#金魚系列" class="headerlink" title="金魚系列"></a>金魚系列</h5><ul><li><a href="http://csscoke.com/">CSS系列 - CSScoke</a></li><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/3803">[iT邦] 金魚都能懂的CSS必學屬性 - CSScoke</a> - 2020</li></ul></li></ul><a id="more"></a><h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ul><li><a href="https://code.ciaoca.com/style/css-cheat-sheet/">CSS速查表</a></li></ul><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="CSS選取器"><a href="#CSS選取器" class="headerlink" title="CSS選取器"></a>CSS選取器</h5><ul><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/2799">[iT邦] 金魚都能懂的 CSS 選取器 - CSScoke</a> - 2019</li></ul></li><li><h5 id="CSS模組化-設計模式"><a href="#CSS模組化-設計模式" class="headerlink" title="CSS模組化(設計模式)"></a>CSS模組化(設計模式)</h5><ul><li><a href="https://cythilya.github.io/2018/06/05/css-methodologies/">OOCSS、SMACSS、BEM、CSS Modules、CSS in JS - Summer。桑莫。夏天</a> - 2018</li></ul></li><li><h5 id="CSS變數"><a href="#CSS變數" class="headerlink" title="CSS變數"></a>CSS變數</h5><ul><li><a href="https://w3c.hexschool.com/blog/21985acb">原生 CSS 變數運用技巧 - W3HexSchool</a> - 2019</li></ul></li><li><h5 id="CSS權重"><a href="#CSS權重" class="headerlink" title="CSS權重"></a>CSS權重</h5><ul><li><a href="https://ithelp.ithome.com.tw/articles/10196454">小事之 CSS 權重 (css specificity) - 小艾iris</a> - 2018</li></ul></li><li><h5 id="垂直置中"><a href="#垂直置中" class="headerlink" title="垂直置中"></a>垂直置中</h5><ul><li><a href="http://csscoke.com/2018/08/21/css-vertical-align/">CSS垂直置中技巧 - CSScoke</a></li><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/2092">[iT邦] 連續30天的超實務網頁設計的垂直置中教學</a></li></ul></li><li><h5 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h5><ul><li><a href="https://www.youtube.com/watch?v=fYcz3FUqv7M&feature=youtu.be">[Youtube] CSS GRID / CSS格線好好玩【完整版】 | CSS教學 | CSS格線 - CSScoke</a></li><li><a href="https://cssgridgarden.com/#zh-tw">[互動] - Grid - 蘿蔔</a></li></ul></li><li><h5 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h5><ul><li><a href="https://www.youtube.com/watch?v=_nCBQ6AIzDU&feature=youtu.be">[Youtube] 玩轉 CSS FLEX | CSS教學 | 網頁教學 | 網頁設計 - CSScoke</a></li><li><a href="https://flexboxfroggy.com/#zh-tw">[互動] - Flex - 青蛙</a></li></ul></li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><h5 id="滿版"><a href="#滿版" class="headerlink" title="滿版"></a>滿版</h5><ul><li><a href="https://css-tricks.com/almanac/properties/o/object-fit/">object-fit - CSS-TRICKS</a></li></ul></li></ul><h4 id="神人膜拜區"><a href="#神人膜拜區" class="headerlink" title="神人膜拜區"></a>神人膜拜區</h4><ul><li><a href="https://codepen.io/miocene/pen/mjLPVp">Moustached Nanny - Julia Miocene</a>、<a href="https://codepen.io/miocene">作者 - Julia Miocene</a></li><li><a href="https://codepen.io/charisseysabel/pen/adXGMe">A love for Cats - Charisse</a></li></ul>]]></content>
       
       
       
@@ -184,8 +260,8 @@
     
     <entry>
       <title>[link] Hexo</title>
-      <link href="2021/02/11/%5Blink%5D_Hexo/"/>
-      <url>2021/02/11/%5Blink%5D_Hexo/</url>
+      <link href="2021/02/11/link-Hexo/"/>
+      <url>2021/02/11/link-Hexo/</url>
       
         <content type="html"><![CDATA[<h4 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h4><ul><li><a href="https://hexo.io/zh-tw/docs/">[Hexo官方] - 中文文件</a></li><li><a href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/">用Hexo + Github Pages搭建個人部落格 - 小蛇蛇的筆記</a></li><li><a href="https://ed521.github.io/2019/08/hexo-admin/">使用 hexo-admin 後台管理工具 - 瑪利歐的部落格</a> - 2019</li></ul><a id="more"></a><h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ul><li><a href="https://hexo.io/zh-tw/docs/configuration.html">[Hexo官方] - _config.yml配置</a></li></ul><h4 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h4><ul><li><a href="https://hexo.io/themes/">[Hexo官方] - 樣式庫</a></li><li><a href="https://github.com/Molunerfinn/hexo-theme-melody">[melody] - github</a></li><li><a href="https://molunerfinn.com/">[melody] - demo</a></li><li><a href="https://github.com/theme-next/hexo-theme-next">[next] - github</a></li></ul>]]></content>
       
@@ -203,8 +279,8 @@
     
     <entry>
       <title>[link] Nuxt.js</title>
-      <link href="2021/02/11/%5Blink%5D_Nuxt.js/"/>
-      <url>2021/02/11/%5Blink%5D_Nuxt.js/</url>
+      <link href="2021/02/11/link-Nuxt.js/"/>
+      <url>2021/02/11/link-Nuxt.js/</url>
       
         <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1961">[iT邦] Nuxt - 使用 Vue.js 做 SSR 的第一哩路 - Ralph</a> - 2018</li><li><a href="https://www.youtube.com/watch?v=szrRDJBFmvQ&feature=youtu.be">[YouTube] Vue Nuxt 介紹與實作範例 - 六角學院</a> - 2018</li><li><a href="https://www.youtube.com/watch?v=wgW1o4Nswqs&feature=youtu.be">[YouTube] 👨‍💻 Nuxt 怎麼一回事｜#1 起源、環境安裝與第一次的開發 - Alex 宅開發</a> - 2019</li></ul>]]></content>
       
@@ -223,19 +299,17 @@
     
     
     <entry>
-      <title>[link] 技術大匯總</title>
-      <link href="2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/"/>
-      <url>2021/02/11/%5Blink%5D_%E6%8A%80%E8%A1%93%E5%A4%A7%E5%8C%AF%E7%B8%BD/</url>
+      <title>[link] 前端技術彙整</title>
+      <link href="2021/02/11/link-%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E5%BD%99%E6%95%B4/"/>
+      <url>2021/02/11/link-%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E5%BD%99%E6%95%B4/</url>
       
-        <content type="html"><![CDATA[<h4 id="從零開始"><a href="#從零開始" class="headerlink" title="從零開始"></a>從零開始</h4><ul><li><a href="https://cythilya.github.io/">Summer。桑莫。夏天</a></li><li><a href="https://blog.techbridge.cc/">TechBridge 技術共筆部落格</a></li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/1914">[iT邦] 前端菜焦阿日記 - mangoSu</a> - 2018</li></ul><a id="more"></a><h4 id="關注未來"><a href="#關注未來" class="headerlink" title="關注未來"></a>關注未來</h4><ul><li><a href="https://twgreatdaily.com/Ab5UHHABgx9BqZZIPEa_.html">2020年讓人難以置信的50款前端新工具：JavaScript插件篇（一） - 前端達人</a> - 2020</li><li><a href="https://blog.csdn.net/Ed7zgeE9X/article/details/104306013">2020年讓人難以置信的50款前端新工具：CSS &amp; HTML 工具篇（二） - 前端達人</a> - 2020</li><li><a href="https://tw.alphacamp.co/blog/javascript-full-stack-developer-journey-and-skilltree?utm_source=facebook&utm_medium=paidsocial&utm_campaign=Rem-SiteVisitors&utm_term=Rem&utm_content=blog-skilltree-v2">2020年 全端技能樹 - alphacamp</a> - 2020</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="從零開始"><a href="#從零開始" class="headerlink" title="從零開始"></a>從零開始</h4><ul><li><a href="https://cythilya.github.io/">Summer。桑莫。夏天</a></li><li><a href="https://blog.techbridge.cc/">TechBridge 技術共筆部落格</a></li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/1914">[iT邦] 前端菜焦阿日記 - mangoSu</a> - 2018</li><li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">[iT邦] 前端新手村 - Chris</a> - 2017</li><li><a href="https://ithelp.ithome.com.tw/users/20120740/ironman/2632">[iT邦] 前端新手進化史 - yachen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/2072">[iT邦] 金魚都能懂的網頁設計入門 - CSScoke</a> - 2018</li><li><a href="https://www.youtube.com/playlist?list=PLqivELodHt3iL9PgGHg0_EF86FwdiqCre">[Youtube] 金魚都能懂的網頁設計入門 - CSScoke</a> - 2018</li></ul><h4 id="切版"><a href="#切版" class="headerlink" title="切版"></a>切版</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20112550/ironman/2623">[iT邦] 金魚都能懂的網頁切版 - CSScoke</a> - 2019</li><li><a href="https://www.youtube.com/playlist?list=PLqivELodHt3hxeuLX8PYaI8u1GcDaBoJo">[Youtube] 金魚都能懂的網頁切版 - CSScoke</a> - 2019</li></ul><h4 id="團隊合作"><a href="#團隊合作" class="headerlink" title="團隊合作"></a>團隊合作</h4><ul><li><a href="https://lq782655835.github.io/blogs/team-standard/0.standard-ai-summary.html">團隊規範 - springleo</a></li></ul><a id="more"></a><h4 id="題庫"><a href="#題庫" class="headerlink" title="題庫"></a>題庫</h4><ul><li><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/607762/">前端面試題彙總 筆試題 - 程式前沿</a></li></ul><h4 id="關注未來"><a href="#關注未來" class="headerlink" title="關注未來"></a>關注未來</h4><ul><li><a href="https://twgreatdaily.com/Ab5UHHABgx9BqZZIPEa_.html">2020年讓人難以置信的50款前端新工具：JavaScript插件篇（一） - 前端達人</a> - 2020</li><li><a href="https://blog.csdn.net/Ed7zgeE9X/article/details/104306013">2020年讓人難以置信的50款前端新工具：CSS &amp; HTML 工具篇（二） - 前端達人</a> - 2020</li><li><a href="https://tw.alphacamp.co/blog/javascript-full-stack-developer-journey-and-skilltree?utm_source=facebook&utm_medium=paidsocial&utm_campaign=Rem-SiteVisitors&utm_term=Rem&utm_content=blog-skilltree-v2">2020年 全端技能樹 - alphacamp</a> - 2020</li></ul><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li><a href="https://vocus.cc/@raychang/5d4d8d31fd89780001faf03c">搞懂網頁技術名詞：MVC、SPA、SSR、AMP 及 PWA - Ray C</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/articles/10202427">MPA 與 SPA - Leo</a> - 2018</li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
-            <tag> 匯總 </tag>
+            <tag> 前端技術彙整 </tag>
             
         </tags>
       
@@ -244,36 +318,19 @@
     
     
     <entry>
-      <title>[link] Vue.js</title>
-      <link href="2021/02/11/%5Blink%5D_Vue.js/"/>
-      <url>2021/02/11/%5Blink%5D_Vue.js/</url>
+      <title>[link]_Vue.js</title>
+      <link href="2021/02/11/link-Vue.js/"/>
+      <url>2021/02/11/link-Vue.js/</url>
       
-        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/Vue">Vue系列 - PJCHENder</a></li></ul><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1049">[iT邦] Vue.js 30天 - Ralph</a> - 2016</li><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[iT邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/2614">[iT邦] 技術在走，Vue.js 要有 - mangoSu</a> - 2019</li></ul><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul><h4 id="Cli3"><a href="#Cli3" class="headerlink" title="Cli3"></a>Cli3</h4><ul><li><a href="https://juejin.cn/post/6844903919911436296">[掘金] Vue Cli3 MPA 多页面配置 - Ni</a> - 2019</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/Vue">Vue系列 - PJCHENder</a></li><li><a href="https://kuro.tw/">Vue系列 - Kuro</a></li></ul><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1049">[iT邦] Vue.js 30天 - Ralph</a> - 2016</li><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[iT邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/2614">[iT邦] 技術在走，Vue.js 要有 - mangoSu</a> - 2019</li></ul><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul><h4 id="Cli3"><a href="#Cli3" class="headerlink" title="Cli3"></a>Cli3</h4><ul><li><a href="https://juejin.cn/post/6844903919911436296">[掘金] Vue Cli3 MPA 多页面配置 - Ni</a> - 2019</li></ul>]]></content>
       
       
       
         <tags>
+            
+            <tag> 框架 </tag>
             
             <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>[link] 前端</title>
-      <link href="2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/"/>
-      <url>2021/02/11/%5Blink%5D_%E5%89%8D%E7%AB%AF/</url>
-      
-        <content type="html"><![CDATA[<h4 id="新手"><a href="#新手" class="headerlink" title="新手"></a>新手</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">[iT邦] 前端新手村 - Chris</a> - 2017</li><li><a href="https://ithelp.ithome.com.tw/users/20120740/ironman/2632">[iT邦] 前端新手進化史 - yachen</a> - 2019</li></ul><a id="more"></a><h4 id="題庫"><a href="#題庫" class="headerlink" title="題庫"></a>題庫</h4><ul><li><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/607762/">前端面試題彙總 筆試題 - 程式前沿</a></li></ul><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li><a href="https://vocus.cc/@raychang/5d4d8d31fd89780001faf03c">搞懂網頁技術名詞：MVC、SPA、SSR、AMP 及 PWA - Ray C</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/articles/10202427">MPA 與 SPA - Leo</a> - 2018</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
             
         </tags>
       
