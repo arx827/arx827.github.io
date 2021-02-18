@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>[link]-Git</title>
+      <link href="2021/02/19/link-Git/"/>
+      <url>2021/02/19/link-Git/</url>
+      
+        <content type="html"><![CDATA[<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li><a href="https://medium.com/@alex_cheng_9527/git-%E8%87%AA%E7%B0%BD%E6%86%91%E8%AD%89%E5%95%8F%E9%A1%8C-self-signed-certificate-1ebba5eaf61c">[Git SSL自簽憑證問題] - Medium</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[link]_Markdown</title>
+      <link href="2021/02/19/link-Markdown/"/>
+      <url>2021/02/19/link-Markdown/</url>
+      
+        <content type="html"><![CDATA[<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li><a href="https://www.twblogs.net/a/5c0612dcbd9eee0cf7a20d63">原來組織架構圖可以醬紫畫 - 台部落</a> - 2018</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[link]_web-browser</title>
       <link href="2021/02/16/link-web-browser/"/>
       <url>2021/02/16/link-web-browser/</url>
@@ -225,7 +263,7 @@
       <link href="2021/02/14/link-JavaScript/"/>
       <url>2021/02/14/link-JavaScript/</url>
       
-        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page_72.html">JavaScript系列 - PJCHENder</a></li><li><a href="https://pjchender.blogspot.com/2017/06/javascript-understanding-weird-part.html">你所不知道的JavaScript - PJCHENder</a> - 2017</li><li><a href="https://pjchender.blogspot.com/2017/06/js30.html">JS30 - PJCHENder</a> - 2017</li><li><a href="https://openhome.cc/Gossip/ECMAScript/index.html">ECMASCRIPT - openhome</a></li><li><a href="https://wangdoc.com/javascript/index.html">JavaScript 教程 - WangDoc</a></li></ul><a id="more"></a><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="console"><a href="#console" class="headerlink" title="console"></a>console</h5><ul><li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/218950/">除Console.log()外更多的Javascript除錯命令 - 程式前沿</a></li></ul></li><li><h5 id="閉包"><a href="#閉包" class="headerlink" title="閉包"></a>閉包</h5><ul><li><a href="https://openhome.cc/Gossip/JavaScript/Closure.html">閉包 - openhome</a></li><li><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html">深入淺出瞭解 JavaScript 閉包（closure） - PJCHENder</a> - 2017</li><li><a href="https://cythilya.github.io/2018/10/22/closure/">你懂 JavaScript 嗎？#15 閉包（Closure） - Summer。桑莫。夏天</a> - 2018</li><li><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/">所有的函式都是閉包：談 JS 中的作用域與 Closure - TechBridge 技術共筆部落格</a> - 2018</li><li><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">閉包 - WangDoc</a></li></ul></li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><h5 id="JSDoc-文檔註解"><a href="#JSDoc-文檔註解" class="headerlink" title="JSDoc 文檔註解"></a>JSDoc 文檔註解</h5><ul><li><a href="https://www.ucamc.com/e-learning/javascript/250-javascript-use-jsdoc">Javascript文檔註解規則使用方式 @use JSDoc - ucamc</a> - 2018</li></ul></li></ul><h4 id="第三方套件"><a href="#第三方套件" class="headerlink" title="第三方套件"></a>第三方套件</h4><ul><li><a href="https://chriscavs.github.io/rallax-demo/">Rallax.js - 滾動視差效果</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/p/blog-page_72.html">JavaScript系列 - PJCHENder</a></li><li><a href="https://pjchender.blogspot.com/2017/06/javascript-understanding-weird-part.html">你所不知道的JavaScript - PJCHENder</a> - 2017</li><li><a href="https://pjchender.blogspot.com/2017/06/js30.html">JS30 - PJCHENder</a> - 2017</li><li><a href="https://openhome.cc/Gossip/ECMAScript/index.html">ECMASCRIPT - openhome</a></li><li><a href="https://wangdoc.com/javascript/index.html">JavaScript 教程 - WangDoc</a></li><li><h5 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h5><ul><li><a href="https://es6.ruanyifeng.com/">ECMAScript 6 入門 - 阮一峰</a></li></ul></li></ul><a id="more"></a><h4 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h4><ul><li><h5 id="編程風格"><a href="#編程風格" class="headerlink" title="編程風格"></a>編程風格</h5><ul><li><a href="https://es6.ruanyifeng.com/#docs/style">編程風格 - 阮一峰</a></li></ul></li><li><h5 id="console"><a href="#console" class="headerlink" title="console"></a>console</h5><ul><li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/218950/">除Console.log()外更多的Javascript除錯命令 - 程式前沿</a></li></ul></li><li><h5 id="閉包"><a href="#閉包" class="headerlink" title="閉包"></a>閉包</h5><ul><li><a href="https://openhome.cc/Gossip/JavaScript/Closure.html">閉包 - openhome</a></li><li><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html">深入淺出瞭解 JavaScript 閉包（closure） - PJCHENder</a> - 2017</li><li><a href="https://cythilya.github.io/2018/10/22/closure/">你懂 JavaScript 嗎？#15 閉包（Closure） - Summer。桑莫。夏天</a> - 2018</li><li><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/">所有的函式都是閉包：談 JS 中的作用域與 Closure - TechBridge 技術共筆部落格</a> - 2018</li><li><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85">閉包 - WangDoc</a></li></ul></li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><h5 id="JSDoc-文檔註解"><a href="#JSDoc-文檔註解" class="headerlink" title="JSDoc 文檔註解"></a>JSDoc 文檔註解</h5><ul><li><a href="https://www.ucamc.com/e-learning/javascript/250-javascript-use-jsdoc">Javascript文檔註解規則使用方式 @use JSDoc - ucamc</a> - 2018</li></ul></li></ul><h4 id="第三方套件"><a href="#第三方套件" class="headerlink" title="第三方套件"></a>第三方套件</h4><ul><li><a href="https://chriscavs.github.io/rallax-demo/">Rallax.js - 滾動視差效果</a></li></ul>]]></content>
       
       
       
@@ -260,8 +298,8 @@
     
     <entry>
       <title>[link] Hexo</title>
-      <link href="2021/02/11/link-Hexo/"/>
-      <url>2021/02/11/link-Hexo/</url>
+      <link href="2021/02/11/%5Blink%5D_Hexo/"/>
+      <url>2021/02/11/%5Blink%5D_Hexo/</url>
       
         <content type="html"><![CDATA[<h4 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h4><ul><li><a href="https://hexo.io/zh-tw/docs/">[Hexo官方] - 中文文件</a></li><li><a href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/">用Hexo + Github Pages搭建個人部落格 - 小蛇蛇的筆記</a></li><li><a href="https://ed521.github.io/2019/08/hexo-admin/">使用 hexo-admin 後台管理工具 - 瑪利歐的部落格</a> - 2019</li></ul><a id="more"></a><h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ul><li><a href="https://hexo.io/zh-tw/docs/configuration.html">[Hexo官方] - _config.yml配置</a></li></ul><h4 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h4><ul><li><a href="https://hexo.io/themes/">[Hexo官方] - 樣式庫</a></li><li><a href="https://github.com/Molunerfinn/hexo-theme-melody">[melody] - github</a></li><li><a href="https://molunerfinn.com/">[melody] - demo</a></li><li><a href="https://github.com/theme-next/hexo-theme-next">[next] - github</a></li></ul>]]></content>
       
@@ -322,7 +360,7 @@
       <link href="2021/02/11/link-Vue.js/"/>
       <url>2021/02/11/link-Vue.js/</url>
       
-        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/Vue">Vue系列 - PJCHENder</a></li><li><a href="https://kuro.tw/">Vue系列 - Kuro</a></li></ul><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1049">[iT邦] Vue.js 30天 - Ralph</a> - 2016</li><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[iT邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/2614">[iT邦] 技術在走，Vue.js 要有 - mangoSu</a> - 2019</li></ul><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul><h4 id="Cli3"><a href="#Cli3" class="headerlink" title="Cli3"></a>Cli3</h4><ul><li><a href="https://juejin.cn/post/6844903919911436296">[掘金] Vue Cli3 MPA 多页面配置 - Ni</a> - 2019</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul><li><a href="https://pjchender.blogspot.com/search/label/Vue">Vue系列 - PJCHENder</a></li><li><a href="https://kuro.tw/">Vue系列 - Kuro</a></li></ul><a id="more"></a><h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://ithelp.ithome.com.tw/users/20103424/ironman/1049">[iT邦] Vue.js 30天 - Ralph</a> - 2016</li><li><a href="https://ithelp.ithome.com.tw/users/20114645/ironman/2811">[iT邦] 前端新手筆記-Vue.js - chunwen</a> - 2019</li><li><a href="https://ithelp.ithome.com.tw/users/20112158/ironman/2614">[iT邦] 技術在走，Vue.js 要有 - mangoSu</a> - 2019</li></ul><h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><ul><li><h5 id="父子關係"><a href="#父子關係" class="headerlink" title="父子關係"></a>父子關係</h5><ul><li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/204272/">父元件呼叫子元件方法及事件 - 程式前沿</a> - 2018</li></ul></li><li><h5 id="部署Github"><a href="#部署Github" class="headerlink" title="部署Github"></a>部署Github</h5><ul><li><a href="https://dean34520.medium.com/vue%E7%B3%BB%E5%88%97%E6%96%87-%E5%B0%87vue%E6%AA%94%E6%A1%88%E9%83%A8%E7%BD%B2%E8%87%B3github-334951cadede">將Vue專案部署至Github Pages - Medium</a> - 2019</li></ul></li></ul><h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><ul><li><a href="https://yiyingloveart.blogspot.com/2016/06/vuejs-change-custom-delimiters.html?m=1">vue.js 改變分隔符的符號</a> - 2016</li></ul><h4 id="Cli3"><a href="#Cli3" class="headerlink" title="Cli3"></a>Cli3</h4><ul><li><a href="https://juejin.cn/post/6844903919911436296">Vue Cli3 MPA 多页面配置 - 掘金</a> - 2019</li></ul><h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><ul><li><a href="https://medium.com/itsems-frontend/vue-vuex1-state-mutations-364163b3acac">Vuex 是什麼? 怎麼用? - Medium</a> - 2020</li></ul>]]></content>
       
       
       
