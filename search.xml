@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>link-Web資訊安全</title>
+      <link href="2021/02/26/link-Web%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/"/>
+      <url>2021/02/26/link-Web%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</url>
+      
+        <content type="html"><![CDATA[<h4 id="網站安全"><a href="#網站安全" class="headerlink" title="網站安全"></a>網站安全</h4><ul><li><a href="https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/same-origin-policy-%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96-%E4%B8%80%E5%88%87%E5%AE%89%E5%85%A8%E7%9A%84%E5%9F%BA%E7%A4%8E-36432565a226">Same Origin Policy 同源政策 ! 一切安全的基礎 - Medium</a> - 2018</li><li><a href="https://medium.com/%E7%A8%8B%E5%BC%8F%E7%8C%BF%E5%90%83%E9%A6%99%E8%95%89/%E7%9B%AE%E9%8C%84%E9%81%8D%E6%AD%B7-path-traversal-%E6%94%BB%E6%93%8A%E6%89%8B%E6%B3%95-238218d5115d">目錄遍歷 Path Traversal 攻擊手法 - Medium</a> - 2018</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Web資訊安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[速查表]_Emmet</title>
       <link href="2021/02/23/emmet/"/>
       <url>2021/02/23/emmet/</url>
@@ -164,7 +183,7 @@
       <link href="2021/02/16/link-SASS/"/>
       <url>2021/02/16/link-SASS/</url>
       
-        <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://hackmd.io/@FortesHuang/SyKirdx78">學習Sass，你需要更有效率的切版方式(上) - Fortes Huang</a> - 2020</li><li><a href="https://hackmd.io/@FortesHuang/HJPE3sCXU">學習Sass，你需要更有效率的切版方式(下) - Fortes Huang</a> - 2020</li></ul><a id="more"></a><h4 id="map-get"><a href="#map-get" class="headerlink" title="map get"></a>map get</h4><ul><li><a href="https://wcc723.github.io/sass/2015/02/11/sass-map-get/">Sass map get - 卡斯伯</a> - 2015</li></ul><h4 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h4><ul><li><a href="https://happyjayxin.medium.com/%E5%88%A9%E7%94%A8-scss-%E6%9B%B4%E7%B0%A1%E6%BD%94%E7%9A%84%E4%BD%BF%E7%94%A8-css-animation-f0717a958a69">利用 SCSS 更方便的使用 CSS Animation - Jay</a> - 2019</li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><a href="https://wcc723.github.io/sass/2013/08/26/sass-hsl-funtion/">HSL function - 卡斯伯</a> - 2013</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul><li><a href="https://hackmd.io/@FortesHuang/SyKirdx78">學習Sass，你需要更有效率的切版方式(上) - Fortes Huang</a> - 2020</li><li><a href="https://hackmd.io/@FortesHuang/HJPE3sCXU">學習Sass，你需要更有效率的切版方式(下) - Fortes Huang</a> - 2020</li></ul><a id="more"></a><h4 id="map-get"><a href="#map-get" class="headerlink" title="map get"></a>map get</h4><ul><li><a href="https://wcc723.github.io/sass/2015/02/11/sass-map-get/">Sass map get - 卡斯伯</a> - 2015</li></ul><h4 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h4><ul><li><a href="https://happyjayxin.medium.com/%E5%88%A9%E7%94%A8-scss-%E6%9B%B4%E7%B0%A1%E6%BD%94%E7%9A%84%E4%BD%BF%E7%94%A8-css-animation-f0717a958a69">利用 SCSS 更方便的使用 CSS Animation - Jay</a> - 2019</li></ul><h4 id="其他議題"><a href="#其他議題" class="headerlink" title="其他議題"></a>其他議題</h4><ul><li><a href="https://wcc723.github.io/sass/2013/08/26/sass-hsl-funtion/">HSL function - 卡斯伯</a> - 2013</li><li><a href="https://medium.com/d-d-mag/%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84-sass-%E6%8A%80%E5%B7%A7-c97d4d5e0fc4">你可能不知道的 Sass 技巧 - 愷開</a> - 2017</li></ul>]]></content>
       
       
       
