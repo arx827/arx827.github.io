@@ -35,9 +35,9 @@
       
         <tags>
             
-            <tag> link </tag>
-            
             <tag> API </tag>
+            
+            <tag> link </tag>
             
         </tags>
       
@@ -156,9 +156,9 @@
       
         <tags>
             
-            <tag> 管理工具 </tag>
-            
             <tag> link </tag>
+            
+            <tag> 管理工具 </tag>
             
             <tag> Webpack </tag>
             
@@ -498,11 +498,11 @@
       
         <tags>
             
+            <tag> link </tag>
+            
             <tag> Bit </tag>
             
             <tag> 管理工具 </tag>
-            
-            <tag> link </tag>
             
         </tags>
       
@@ -544,9 +544,9 @@
       
         <tags>
             
-            <tag> 管理工具 </tag>
-            
             <tag> link </tag>
+            
+            <tag> 管理工具 </tag>
             
             <tag> Node </tag>
             
