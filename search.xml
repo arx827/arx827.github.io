@@ -4,27 +4,6 @@
   
     
     <entry>
-      <title>[筆記]_Web開發入門</title>
-      <link href="2021/04/25/%E7%AD%86%E8%A8%98-Web%E9%96%8B%E7%99%BC%E5%85%A5%E9%96%80/"/>
-      <url>2021/04/25/%E7%AD%86%E8%A8%98-Web%E9%96%8B%E7%99%BC%E5%85%A5%E9%96%80/</url>
-      
-        <content type="html"><![CDATA[<!-- ### <font color=#FF6600>基本階層語法</font> ###  - #### ``nav>ul>li`` ####    ```html      <nav>        <ul>          <li></li>        </ul>      </nav>    ``` -->]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 筆記 </tag>
-            
-            <tag> Web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>[link]_uiux</title>
       <link href="2021/04/24/link-uiux/"/>
       <url>2021/04/24/link-uiux/</url>
