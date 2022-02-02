@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前端技術分享平台">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端寶庫">
+<meta property="og:url" content="https://arx827.github.io/page/5/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="前端技術分享平台">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-HTML5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/14/link-HTML5/" class="post-title-link" itemprop="url">[link]_HTML5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-14 02:25:29" itemprop="dateCreated datePublished" datetime="2021-02-14T02:25:29+08:00">2021-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-18 21:07:23" itemprop="dateModified" datetime="2021-04-18T21:07:23+08:00">2021-04-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/search/label/HTML">HTML5系列 - PJCHENder</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20071512/ironman/387">[iT邦] 只是路過 HTML5 - iamya</a> - 2012</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/14/link-HTML5/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/14/link-JavaScript/" class="post-title-link" itemprop="url">[link]_JavaScript</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-14 02:06:53" itemprop="dateCreated datePublished" datetime="2021-02-14T02:06:53+08:00">2021-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-24 20:56:50" itemprop="dateModified" datetime="2021-04-24T20:56:50+08:00">2021-04-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/p/blog-page_72.html">JavaScript系列 - PJCHENder</a></li>
+<li><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/2017/06/javascript-understanding-weird-part.html">你所不知道的JavaScript - PJCHENder</a> - 2017</li>
+<li><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/2017/06/js30.html">JS30 - PJCHENder</a> - 2017</li>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/ECMAScript/index.html">ECMASCRIPT - openhome</a></li>
+<li><a target="_blank" rel="noopener" href="https://wangdoc.com/javascript/index.html">JavaScript 教程 - WangDoc</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259">[iT邦] 重新認識 JavaScript - Kuro</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20112656/ironman/2782">[iT邦] 好 Js 不學嗎 !? JavaScript 入門中的入門 - Vita Ora</a> - 2019</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEfh-m_KG4dYbxVoYDyT_fmXZHnuKg2Fq">[Youtube] 深入淺出 Javascript30 快速導覽 - Alex 宅幹嘛</a> - 2020</li>
+<li><h5 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">ECMAScript 6 入門 - 阮一峰</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes">Classes - Mozilla</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes/constructor">建構子 - Mozilla</a></li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/14/link-JavaScript/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/14/link-CSS/" class="post-title-link" itemprop="url">[link]_CSS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-14 01:53:00" itemprop="dateCreated datePublished" datetime="2021-02-14T01:53:00+08:00">2021-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-24 20:52:24" itemprop="dateModified" datetime="2021-04-24T20:52:24+08:00">2021-04-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/search/label/CSS">CSS系列 - PJCHENder</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20117586/ironman/2617">[iT邦] 重新認識 CSS - Titangene</a> - 2019</p>
+</li>
+<li><h5 id="金魚系列"><a href="#金魚系列" class="headerlink" title="金魚系列"></a>金魚系列</h5><ul>
+<li><a target="_blank" rel="noopener" href="http://csscoke.com/">CSS系列 - CSScoke</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20112550/ironman/3803">[iT邦] 金魚都能懂的CSS必學屬性 - CSScoke</a> - 2020</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/14/link-CSS/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/11/link-Hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/11/link-Hexo/" class="post-title-link" itemprop="url">[link]_Hexo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-11 04:03:00" itemprop="dateCreated datePublished" datetime="2021-02-11T04:03:00+08:00">2021-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-02 20:21:45" itemprop="dateModified" datetime="2021-04-02T20:21:45+08:00">2021-04-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="教學"><a href="#教學" class="headerlink" title="教學"></a>教學</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">[Hexo官方] - 中文文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://yogapan.github.io/2017/08/11/%E7%94%A8Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC/">用Hexo + Github Pages搭建個人部落格 - 小蛇蛇的筆記</a></li>
+<li><a target="_blank" rel="noopener" href="https://ed521.github.io/2019/08/hexo-admin/">使用 hexo-admin 後台管理工具 - 瑪利歐的部落格</a> - 2019</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/11/link-Hexo/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/11/link-%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E5%BD%99%E6%95%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/11/link-%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E5%BD%99%E6%95%B4/" class="post-title-link" itemprop="url">[link]_前端技術彙整</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-11 03:00:56" itemprop="dateCreated datePublished" datetime="2021-02-11T03:00:56+08:00">2021-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-24 20:54:03" itemprop="dateModified" datetime="2021-04-24T20:54:03+08:00">2021-04-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="從零開始"><a href="#從零開始" class="headerlink" title="從零開始"></a>從零開始</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20060646/ironman/477">新手前端日記 - chibc</a> - 2012</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20071512/ironman/494">[iT邦] 視覺設計師邁向程式設計師養成計畫 - iamya</a> - 2012</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20107637/ironman/1457">[iT邦] 前端新手村 - Chris</a> - 2017</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20102825/ironman/1314">[iT邦] 重新學習網頁設計 - Cian</a> - 2017</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20112550/ironman/2072">[iT邦] 金魚都能懂的網頁設計入門 - CSScoke</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20112158/ironman/1914">[iT邦] 前端菜焦阿日記 - mangoSu</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/i-am-mike/%E5%9C%A8%E9%96%8B%E5%A7%8B%E5%AF%ABcode%E5%89%8D%E7%9A%84%E9%81%B8%E6%93%87-662b3a2debe8">在開始寫Code之前？ - Medium</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLqivELodHt3iL9PgGHg0_EF86FwdiqCre">[Youtube] 金魚都能懂的網頁設計入門 - CSScoke</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20120740/ironman/2632">[iT邦] 前端新手進化史 - yachen</a> - 2019</li>
+<li><a target="_blank" rel="noopener" href="https://hulitw.medium.com/front-end-learning-path-55201571ecfe">紮實的網頁前端學習路線與資源推薦 - Medium</a> - 2019</li>
+<li><a target="_blank" rel="noopener" href="https://www.cakeresume.com/resources/career-change-frontend-engineers.amp?locale=zh-TW">【轉職前端工程師】無經驗沒關係！給初學者的前端基本介紹 - CakeResume</a> - 2020</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/11/link-%E5%89%8D%E7%AB%AF%E6%8A%80%E8%A1%93%E5%BD%99%E6%95%B4/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/11/link-Vue2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/11/link-Vue2/" class="post-title-link" itemprop="url">[link]_Vue2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-11 01:25:59" itemprop="dateCreated datePublished" datetime="2021-02-11T01:25:59+08:00">2021-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-24 21:06:30" itemprop="dateModified" datetime="2021-04-24T21:06:30+08:00">2021-04-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/search/label/Vue">Vue系列 - PJCHENder</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://kuro.tw/">Vue系列 - Kuro</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hackmd.io/@FortesHuang">Vue系列 - Fortes Huang</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/wasichris/Series?qq=Vue">搞搞就懂 - CHRIS CHEN</a></p>
+</li>
+<li><h5 id="Youtube-Vue系列-Alex-宅幹嘛"><a href="#Youtube-Vue系列-Alex-宅幹嘛" class="headerlink" title="[Youtube] Vue系列 - Alex 宅幹嘛"></a>[Youtube] Vue系列 - Alex 宅幹嘛</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEfh-m_KG4dYor8h4Hi2lqKJ0xqNTFh16">Vue.js 手牽手，一起嗑光全家桶</a> - 2018</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEfh-m_KG4dapPjoPvWX0c8JCK6-mIvGr">Re Vue 重頭說起 第一季</a> - 2020</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEfh-m_KG4daEhioHKZqrkGXAedXIQ2Cn">Re Vue 重頭說起 第二季</a> - 2020</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEfh-m_KG4dbIlLGrUsF-cQW-mNPNwf1O">Re Vue 重頭說起 第三季</a> - 2020</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/11/link-Vue2/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/11/link-Vue3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/11/link-Vue3/" class="post-title-link" itemprop="url">[link]_Vue3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-11 01:25:59" itemprop="dateCreated datePublished" datetime="2021-02-11T01:25:59+08:00">2021-02-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-24 20:20:25" itemprop="dateModified" datetime="2021-04-24T20:20:25+08:00">2021-04-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://book.vue.tw/">重新認識 Vue.js - Kuro Hsu</a> - 2020<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/kurotanshi/source-book-vue.js">重新認識 Vue.js(範例檔) - Kuro Hsu</a> - 2020</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://campus-xoops.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&tbsn=33">Vue.js 3.0 筆記 - XOOPS輕鬆架</a> - 2017</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14k4y117LL?from=search&seid=16839590488178074731">「李南江」Vue3.0正式版教程 - bilibili</a> - 2020</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/vue3/vue3-News">vue3-News- Github</a></li>
+<li><a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/">[官方] Vue3中文文檔</a></li>
+<li><a target="_blank" rel="noopener" href="https://tw511.com/a/01/13583.html">VUE 3.0初體驗 - TW511教學網</a></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/11/link-Vue3/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

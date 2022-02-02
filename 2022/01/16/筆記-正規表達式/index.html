@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="正規表達式 (Regulay Expression) Regular Expression 是一套規則模式(pattern)，可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，簡稱 Regex, Regexp 或 RE。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[筆記]_正規表達式">
+<meta property="og:url" content="https://arx827.github.io/2022/01/16/%E7%AD%86%E8%A8%98-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="正規表達式 (Regulay Expression) Regular Expression 是一套規則模式(pattern)，可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，簡稱 Regex, Regexp 或 RE。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-01-15T19:04:19.000Z">
+<meta property="article:modified_time" content="2022-02-02T21:39:46.883Z">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="筆記">
+<meta property="article:tag" content="正規表達式">
+<meta property="article:tag" content="RegExp">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/2022/01/16/%E7%AD%86%E8%A8%98-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[筆記]_正規表達式 | 前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2022/01/16/%E7%AD%86%E8%A8%98-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [筆記]_正規表達式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-01-16 03:04:19" itemprop="dateCreated datePublished" datetime="2022-01-16T03:04:19+08:00">2022-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-02-03 05:39:46" itemprop="dateModified" datetime="2022-02-03T05:39:46+08:00">2022-02-03</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="正規表達式-Regulay-Expression"><a href="#正規表達式-Regulay-Expression" class="headerlink" title="正規表達式 (Regulay Expression)"></a>正規表達式 (Regulay Expression)</h2><ul>
+<li><code>Regular Expression</code> 是一套規則模式(pattern)，<br>可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，<br>簡稱 <code>Regex</code>, <code>Regexp</code> 或 <code>RE</code>。</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><p><code>Regular Expression</code> 是在 UNIX 世界中發展出來的字串比對技巧，<br>基本概念是用一套簡單 (但功能強大) 的符號來比對字串，<br>並可對符合比對條件的字串進行修改或其他運算。</p>
+</li>
+<li><p><code>Regex</code> 可以實用的情境大致有幾種：</p>
+<ol>
+<li>尋找匹配的字串</li>
+<li>取代匹配的字串</li>
+<li>驗證使用者輸入資料的欄位</li>
+<li>擷取某段想要的資訊</li>
+</ol>
+</li>
+</ul>
+<h2 id="撰寫正規表達式"><a href="#撰寫正規表達式" class="headerlink" title="撰寫正規表達式"></a>撰寫正規表達式</h2><ul>
+<li><code>pattern</code> 代表正規表達式的字串，區分大小寫。</li>
+<li><code>flag</code> 則是比對的方式。</li>
+<li>可透過下列兩種方式創建正規表達式：<ul>
+<li>使用 <code>RegExp 物件的建構子函式</code>，<br>新增一個 <code>RegExp</code> 物件：<br>當模式會異動、事先未知匹配模式、或者從其他地方取得時，使用 <code>建構子函數</code> 較為合適。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rules = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;pattern&#x27;</span>, <span class="string">&#x27;flag&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>使用 <code>正規表達式實字</code>，<br>用兩個 <code>//</code> 包住條件：<br>當正規表達式為定值時，使用此方法可獲得較佳效能。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> rules = <span class="regexp">/pattern/</span>flag;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修飾符-flag"><a href="#修飾符-flag" class="headerlink" title="修飾符 (flag)"></a>修飾符 (flag)</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>i</code></td>
+<td>不區分大小寫。</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>使用多行模式，<br>使 <code>^</code> 和 <code>$</code> 會比對每一行的開頭與結尾，而不是輸入字串的開頭和結尾。</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>使用單行模式，<br>使 <code>句點.</code> 會比對每個字元，而不是換行符號 <code>\n</code> 以外的每個字元。</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>使用全域比對模式，<br>g flag 會保留lastIndex的狀態，讓下一次再匹配時，可以從lastIndex的位置開始找起。</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>將模式中的空白忽略。</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>強制以目標字符串開頭匹配。</td>
+</tr>
+<tr>
+<td><code>U</code></td>
+<td>禁止貪婪匹配，只匹配最近的一個字符串。 (不重複匹配)</td>
+</tr>
+<tr>
+<td><code>gi</code></td>
+<td>全域比對並忽略大小寫。</td>
+</tr>
+</tbody></table>
+<h2 id="RegExp-物件方法"><a href="#RegExp-物件方法" class="headerlink" title="RegExp 物件方法"></a>RegExp 物件方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>說明</th>
+<th>語法格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>exec</code></td>
+<td>搜尋比對，符合傳回Array；不符合傳回 null。</td>
+<td><code>regexObj.exec(str)</code></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>搜尋比對，符合傳回true；不符合傳回false。</td>
+<td><code>regexObj.test(str)</code></td>
+</tr>
+</tbody></table>
+<h2 id="字串物件方法"><a href="#字串物件方法" class="headerlink" title="字串物件方法"></a>字串物件方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>說明</th>
+<th>語法格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>match</code></td>
+<td>搜尋比對，如果符合的狀況正規表達式<br>包含g符號，則傳回所有相符的字串；<br>不包含g則傳回Array，<br>無符合傳回null。</td>
+<td><code>str.match(regexp)</code></td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>搜尋比對，<br>符合傳回第一個相符的索引 (index)，<br>不符合傳回 -1。</td>
+<td><code>str.search(regexp)</code></td>
+</tr>
+<tr>
+<td><code>replace</code></td>
+<td>取代字串，<br>如果符合傳回一個新字串，不影響原字串。</td>
+<td><code>str.replace(regexp, newstr)</code></td>
+</tr>
+<tr>
+<td><code>split</code></td>
+<td>分割字串，<br>如果符合傳回分割後的Array，不影響原字串。</td>
+<td><code>str.split(regexp)</code></td>
+</tr>
+</tbody></table>
+<h2 id="特殊字元"><a href="#特殊字元" class="headerlink" title="特殊字元"></a>特殊字元</h2><table>
+<thead>
+<tr>
+<th>符號</th>
+<th>匹配說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\</code></td>
+<td>反斜線，跳脫特殊字元。</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>任意字元。</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>字元結尾。</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>字元開頭</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>同程式常見的 OR 邏輯</td>
+</tr>
+</tbody></table>
+<h2 id="常用字元"><a href="#常用字元" class="headerlink" title="常用字元"></a>常用字元</h2><table>
+<thead>
+<tr>
+<th>字元</th>
+<th>匹配說明</th>
+<th>等效正規表達式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\d</code></td>
+<td>數字。</td>
+<td><code>[0-9]</code></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>數字、字母、底線。</td>
+<td><code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>空白字元、tab、換頁、換行。</td>
+<td><code>[\r\t\n\f]</code></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>英文單詞邊界。</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>反義字元</th>
+<th>匹配說明</th>
+<th>等效正規表達式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\D</code></td>
+<td>非 數字。</td>
+<td><code>[^0-9]</code>、<code>[^\d]</code></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>非 數字、字母、底線。</td>
+<td><code>[^a-zA-Z0-9_]</code>、<code>[^\w]</code></td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>非 空白字元、tab、換頁、換行。</td>
+<td><code>[^\r\t\n\f]</code>、<code>[^\s]</code></td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>非 英文單詞邊界。</td>
+<td><code>[^\b]</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>其他字元</th>
+<th>匹配說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\0</code></td>
+<td>查找 NULL 字符。</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>查找換行符。</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>查找換頁符。</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>查找回車符。</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>查找製表符(tab鍵)。</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>查找垂直製表符。</td>
+</tr>
+<tr>
+<td><code>\xxx</code></td>
+<td>查找以八進制數 xxx 規定的字符。</td>
+</tr>
+<tr>
+<td><code>\xdd</code></td>
+<td>查找以十六進制數 dd 規定的字符。</td>
+</tr>
+<tr>
+<td><code>\uxxxx</code></td>
+<td>查找以十六進制數 xxxx 規定的Unicode字符。</td>
+</tr>
+</tbody></table>
+<h2 id="量詞"><a href="#量詞" class="headerlink" title="量詞"></a>量詞</h2><table>
+<thead>
+<tr>
+<th>符號</th>
+<th>匹配說明</th>
+<th>等效正規表達式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n<code>*</code></td>
+<td>0次以上。</td>
+<td>n<code>&#123;0,&#125;</code></td>
+</tr>
+<tr>
+<td>n<code>+</code></td>
+<td>至少1次以上。</td>
+<td>n<code>&#123;1,&#125;</code></td>
+</tr>
+<tr>
+<td>n<code>?</code></td>
+<td>0次或1次。</td>
+<td>n<code>&#123;0,1&#125;</code></td>
+</tr>
+<tr>
+<td>n<code>&#123;x&#125;</code></td>
+<td>x次 的 n。</td>
+<td></td>
+</tr>
+<tr>
+<td>n<code>&#123;x,&#125;</code></td>
+<td>至少x次以上 的 n。</td>
+<td></td>
+</tr>
+<tr>
+<td>n<code>&#123;,y&#125;</code></td>
+<td>最多y次 的 n。</td>
+<td></td>
+</tr>
+<tr>
+<td>n<code>&#123;x,y&#125;</code></td>
+<td>至少x次以上，最多y次 的 n。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>  對於量詞，Regex的匹配預設採取貪婪模式(盡可能多匹配)。<br>  <code>?</code>接在量詞後方，表示盡可能匹配短結果。<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> match = <span class="regexp">/&lt;.+?&gt;/</span>.exec(<span class="string">&#x27;&lt;em&gt;Hello World&lt;/em&gt;&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(match[<span class="number">0</span>]);        <span class="comment">// &lt;em&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="方括號"><a href="#方括號" class="headerlink" title="方括號 []"></a>方括號 []</h2><p>  比對方括號裡面的任一字元，可以用範圍匹配</p>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>匹配說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[]</code></td>
+<td>方括號，比對方括號裡面的任一字元，可以用範圍匹配： [A-Z]、[a-z]、[0-9]</td>
+</tr>
+<tr>
+<td><code>[^]</code>、<code>[!]</code></td>
+<td>^代表「反」，比對方括號裡面<code>以外</code>的任一字元</td>
+</tr>
+</tbody></table>
+<h2 id="群組"><a href="#群組" class="headerlink" title="群組 ()"></a>群組 ()</h2><table>
+<thead>
+<tr>
+<th>符號</th>
+<th>匹配說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(x)</code></td>
+<td>比對x，並將符合的部分存入一個變數(自動命名的變數)</td>
+</tr>
+<tr>
+<td><code>(?&lt;name&gt;x)</code></td>
+<td>比對x，並將符合的部分存入name變數</td>
+</tr>
+<tr>
+<td><code>(?:x)</code></td>
+<td>比對x，但不存入結果陣列</td>
+</tr>
+<tr>
+<td><code>x(?=y)</code></td>
+<td>x之後必須接y</td>
+</tr>
+<tr>
+<td><code>x(?!y)</code></td>
+<td>x之後不能接y</td>
+</tr>
+<tr>
+<td><code>(?&lt;=y)x</code></td>
+<td>x前面必須接y</td>
+</tr>
+<tr>
+<td><code>(?&lt;!y)x</code></td>
+<td>x前面不能接y</td>
+</tr>
+</tbody></table>
+<h2 id="回溯-Backreference"><a href="#回溯-Backreference" class="headerlink" title="回溯 (Backreference)"></a>回溯 (Backreference)</h2><p>  用來引用群組的內容。<br>  使用反斜線加上數字。e.g.: <code>\1</code> (代表第一個群組)<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/(\d+)a\1b/</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a1b&#x27;</span>) <span class="comment">// true</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a2b&#x27;</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="替換"><a href="#替換" class="headerlink" title="替換"></a>替換</h2><p>  與群組<code>()</code>一起使用。</p>
+<table>
+<thead>
+<tr>
+<th>符號</th>
+<th>匹配說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$number</code>、<code>$&#123;number&#125;</code></td>
+<td>number 表示匹配的群組 (capturing group)，群組編號從 1 開始 $1。<br>$ 後面接著的所有數字都會被解讀為屬於 number 群組，<br>可以用 <code>$&#123;number&#125;</code> 語法，例如用 <code>$&#123;1&#125;</code>1 就不會被解讀為第 11 個群組，而是第 1 個。</td>
+</tr>
+<tr>
+<td><code>$&#123;name&#125;</code></td>
+<td>用來引用 Named Capturing Group 的值。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>用來跳脫 (escape) $ 的特殊意義，表示 $ 字元。</td>
+</tr>
+<tr>
+<td>$&amp;</td>
+<td>用來引用整個匹配的字串。</td>
+</tr>
+<tr>
+<td>$`</td>
+<td>用來引用匹配字串的前面的所有字 (before match)。</td>
+</tr>
+<tr>
+<td>$’</td>
+<td>用來引用匹配字串的後面的所有字 (after match)。</td>
+</tr>
+<tr>
+<td>$+</td>
+<td>用來引用匹配的最後一個群組。</td>
+</tr>
+<tr>
+<td>$_</td>
+<td>用來引用整個輸入的字串。</td>
+</tr>
+</tbody></table>
+<h2 id="常用實例"><a href="#常用實例" class="headerlink" title="常用實例"></a>常用實例</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>表達式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Email</td>
+<td><code>^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)$</code></td>
+</tr>
+<tr>
+<td>URL網址</td>
+<td><code>^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)([\/\w \.-]*)*\/?$</code></td>
+</tr>
+<tr>
+<td>IP位址</td>
+<td><code>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</code></td>
+</tr>
+<tr>
+<td>手機號碼</td>
+<td><code>^09\d&#123;8&#125;$</code></td>
+</tr>
+<tr>
+<td>身份證字號</td>
+<td><code>^[A-Z]&#123;1&#125;[1-2]&#123;1&#125;[0-9]&#123;8&#125;$</code></td>
+</tr>
+<tr>
+<td>HTML Tag</td>
+<td><code>^&lt;([a-z]+)([^&lt;]+)*(?:&gt;(.*)&lt;\/\1&gt;|\s+\/&gt;)$</code></td>
+</tr>
+<tr>
+<td>副檔名</td>
+<td><code>(\w+)\.(jpg|gif)$</code></td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AD%86%E8%A8%98/" rel="tag"># 筆記</a>
+              <a href="/tags/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/" rel="tag"># 正規表達式</a>
+              <a href="/tags/RegExp/" rel="tag"># RegExp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/29/%E9%80%9F%E6%9F%A5%E8%A1%A8-Array/" rel="prev" title="[速查表]_Array">
+      <i class="fa fa-chevron-left"></i> [速查表]_Array
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/28/%E7%AD%86%E8%A8%98-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E9%82%81%E5%90%91%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90SQL%E8%B3%87%E6%96%99%E5%BA%AB%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80/" rel="next" title="[筆記]_從零開始 邁向數據分析 SQL資料庫語法入門">
+      [筆記]_從零開始 邁向數據分析 SQL資料庫語法入門 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-Regulay-Expression"><span class="nav-number">1.</span> <span class="nav-text">正規表達式 (Regulay Expression)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">撰寫正規表達式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A3%BE%E7%AC%A6-flag"><span class="nav-number">3.</span> <span class="nav-text">修飾符 (flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp-%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">RegExp 物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%B8%B2%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">字串物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E5%85%83"><span class="nav-number">6.</span> <span class="nav-text">特殊字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AD%97%E5%85%83"><span class="nav-number">7.</span> <span class="nav-text">常用字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E8%A9%9E"><span class="nav-number">8.</span> <span class="nav-text">量詞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%8B%AC%E8%99%9F"><span class="nav-number">9.</span> <span class="nav-text">方括號 []</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%B5%84"><span class="nav-number">10.</span> <span class="nav-text">群組 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF-Backreference"><span class="nav-number">11.</span> <span class="nav-text">回溯 (Backreference)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8F%9B"><span class="nav-number">12.</span> <span class="nav-text">替換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AF%A6%E4%BE%8B"><span class="nav-number">13.</span> <span class="nav-text">常用實例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

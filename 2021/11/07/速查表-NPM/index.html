@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="NPM 常用指令 速查表 簡寫   簡寫語法 說明    npm -v npm --version。   -g --global，縮寫為 -g，表示安裝包時，視作 全域 的包。安裝之後的包將位於系統預設的目錄之下。   -S --save，縮寫為 -S，表示安裝的包將寫入 package.json 裡面的 dependencies。   -D --save-dev，縮寫為 -D，表示安裝的包將寫入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[速查表]_NPM">
+<meta property="og:url" content="https://arx827.github.io/2021/11/07/%E9%80%9F%E6%9F%A5%E8%A1%A8-NPM/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="NPM 常用指令 速查表 簡寫   簡寫語法 說明    npm -v npm --version。   -g --global，縮寫為 -g，表示安裝包時，視作 全域 的包。安裝之後的包將位於系統預設的目錄之下。   -S --save，縮寫為 -S，表示安裝的包將寫入 package.json 裡面的 dependencies。   -D --save-dev，縮寫為 -D，表示安裝的包將寫入">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-11-06T18:20:21.000Z">
+<meta property="article:modified_time" content="2022-02-02T20:45:43.885Z">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="管理工具">
+<meta property="article:tag" content="NPM">
+<meta property="article:tag" content="速查表">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/2021/11/07/%E9%80%9F%E6%9F%A5%E8%A1%A8-NPM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[速查表]_NPM | 前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/11/07/%E9%80%9F%E6%9F%A5%E8%A1%A8-NPM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [速查表]_NPM
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-11-07 02:20:21" itemprop="dateCreated datePublished" datetime="2021-11-07T02:20:21+08:00">2021-11-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-02-03 04:45:43" itemprop="dateModified" datetime="2022-02-03T04:45:43+08:00">2022-02-03</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>NPM 常用指令 速查表</p>
+<h2 id="簡寫"><a href="#簡寫" class="headerlink" title="簡寫"></a>簡寫</h2><table>
+<thead>
+<tr>
+<th>簡寫語法</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm -v</code></td>
+<td><code>npm --version</code>。</td>
+</tr>
+<tr>
+<td><code>-g</code></td>
+<td><code>--global</code>，縮寫為 <code>-g</code>，<br>表示安裝包時，視作 <code>全域</code> 的包。安裝之後的包將位於系統預設的目錄之下。</td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td><code>--save</code>，縮寫為 <code>-S</code>，<br>表示安裝的包將寫入 <code>package.json</code> 裡面的 <code>dependencies</code>。</td>
+</tr>
+<tr>
+<td><code>-D</code></td>
+<td><code>--save-dev</code>，縮寫為 <code>-D</code>，<br>表示安裝的包將寫入 <code>package.json</code> 裡面的 <code>devDependencies</code>。</td>
+</tr>
+<tr>
+<td><code>-O</code></td>
+<td><code>--save-optional</code>，縮寫為 <code>-O</code>，<br>表示安裝的包將寫入 <code>package.json</code> 裡面的 <code>optionalDependencies</code>。</td>
+</tr>
+<tr>
+<td><code>-E</code></td>
+<td><code>--save-exact</code>，縮寫為 <code>-E</code>，<br>表示安裝的包的版本是精確指定的。</td>
+</tr>
+<tr>
+<td><code>-B</code></td>
+<td><code>--save-bundle</code>，縮寫為 <code>-B</code>，<br>表示安裝的包將寫入 <code>package.json</code> 裡面的 <code>bundleDependencies</code>。</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td><code>--force</code>，縮寫為 <code>-f</code>，<br>表示不管是否安裝過，都要強制重新安裝。</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+
+<ul>
+<li><h2 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h2><p><small>初始化生成package.json</small></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm init</code></td>
+<td></td>
+<td>初始化生成一個新的<code>package.json</code></td>
+</tr>
+<tr>
+<td><code>npm init --yes</code></td>
+<td><code>npm init -y</code></td>
+<td>跳過提問階段，直接初始化生成一個新的<code>package.json</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-set"><a href="#npm-set" class="headerlink" title="npm set"></a>npm set</h2><p><small>初始化時，預設的設置，這些信息會存放在用戶主目錄的 ~/.npmrc 文件</small></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm set init-author-name &#39;Your name&#39;</code></td>
+<td>預設作者名稱</td>
+</tr>
+<tr>
+<td><code>npm set init-author-email &#39;Your email&#39;</code></td>
+<td>預設信箱</td>
+</tr>
+<tr>
+<td><code>npm set init-author-url &#39;https://arx827.github.io/&#39;</code></td>
+<td>預設主頁</td>
+</tr>
+<tr>
+<td><code>npm set init-lincense &#39;MIT&#39;</code></td>
+<td>預設許可證字段</td>
+</tr>
+</tbody></table>
+<p><small>設置 package.json 儲存確切版本號</small></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm set save-exact true</code></td>
+<td><code>package.json</code>將紀錄套件的確切版本，<br>而不是一個可選版本的範圍</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-config"><a href="#npm-config" class="headerlink" title="npm config"></a>npm config</h2><p><small>設置 .npmrc 相關設定</small><br>npmrc 有 四個相關文件</p>
+<table>
+<thead>
+<tr>
+<th>路徑</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/path/to/my/project/.npmrc</code></td>
+<td>每個項目的配置文件</td>
+</tr>
+<tr>
+<td><code>$HOME/.npmrc</code></td>
+<td>每個用戶的配置文件，<br>可通過 CLI 選項–userconfig或環境變量配置<br>$NPM_CONFIG_USERCONFIG</td>
+</tr>
+<tr>
+<td><code>$PREFIX/etc/npmrc</code></td>
+<td>全域配置文件，<br>可通過 CLI 選項–globalconfig或環境變量配置<br>$NPM_CONFIG_GLOBALCONFIG</td>
+</tr>
+<tr>
+<td><code>/path/to/npm/npmrc</code></td>
+<td>npm 的內置配置文件</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm config set &lt;key&gt; &lt;value&gt; [-g|--global]</code></td>
+<td>將 <code>&lt;key&gt;</code> 設置為 <code>&lt;value&gt;</code>，<br>省略 <code>&lt;value&gt;</code> 時，則將其設置為 <code>true</code>。</td>
+</tr>
+<tr>
+<td><code>npm config get &lt;key&gt;</code></td>
+<td>顯示配置值</td>
+</tr>
+<tr>
+<td><code>npm config delete &lt;key&gt;</code></td>
+<td>刪除配置項</td>
+</tr>
+<tr>
+<td><code>npm config list [-l] [--json]</code></td>
+<td>顯示所有配置項</td>
+</tr>
+<tr>
+<td><code>npm config edit</code></td>
+<td>在編輯器中打開配置文件</td>
+</tr>
+<tr>
+<td><code>npm set &lt;key&gt; &lt;value&gt; [-g|--global]</code></td>
+<td>將 <code>&lt;key&gt;</code> 設置為 <code>&lt;value&gt;</code></td>
+</tr>
+<tr>
+<td><code>npm get &lt;key&gt;</code></td>
+<td>顯示配置值</td>
+</tr>
+<tr>
+<td><code>npm config list -l</code></td>
+<td>查看 npm 的配置。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-info"><a href="#npm-info" class="headerlink" title="npm info"></a>npm info</h2><p><small>可查看每個套件的具體資訊</small></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm info &lt;packageName&gt;</code></td>
+<td>查看套件資訊</td>
+</tr>
+<tr>
+<td><code>npm info &lt;packageName&gt; &lt;key&gt;</code></td>
+<td>查看套件單一項資訊</td>
+</tr>
+</tbody></table>
+<p>下面命令的效果一樣</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm info react</span><br><span class="line">$ npm view react</span><br><span class="line">$ npm view &lt;別名&gt;</span><br><span class="line">$ npm show react</span><br><span class="line">$ npm v react</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="npm-search"><a href="#npm-search" class="headerlink" title="npm search"></a>npm search</h2><p><code>npm search</code> 命令用於搜索npm倉庫，它後面可以跟字符串，也可以跟正規表達式。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm search &lt;關鍵字&gt;</span><br></pre></td></tr></table></figure>
+<p>下面是一個例子</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm search node-gyp</span><br><span class="line">// NAME                  DESCRIPTION</span><br><span class="line">// autogypi              Autogypi handles dependencies <span class="keyword">for</span> node-gyp projects.</span><br><span class="line">// grunt-node-gyp        Run node-gyp commands from Grunt.</span><br><span class="line">// gyp-io                Temporary solution to <span class="built_in">let</span> node-gyp run `rebuild` under…</span><br><span class="line">// ...</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="npm-list"><a href="#npm-list" class="headerlink" title="npm list"></a>npm list</h2><p><code>npm list</code> 命令以樹形結構列出當前項目安裝的所有套件，以及它們依賴的套件。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm list</code></td>
+<td><code>npm ls</code></td>
+<td>列出當前項目安裝的所有套件</td>
+</tr>
+<tr>
+<td><code>npm list -global</code></td>
+<td><code>npm ls -g</code></td>
+<td>列出全域安裝的所有套件</td>
+</tr>
+<tr>
+<td><code>npm list &lt;packageName&gt;</code></td>
+<td><code>npm ls &lt;packageName&gt;</code></td>
+<td>列出單個套件依賴關係</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h2><ul>
+<li><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>安裝之前，<code>npm install</code> 會先檢查，<code>node_modules</code> 目錄之中是否已經存在指定套件。如果存在，就不再重新安裝。即使遠程倉庫已經有一個新版本，也是如此。<br>每個套件可以『全域安裝』、『本地安裝』。</p>
+<ul>
+<li>『全域安裝』適用於工具模塊，e.g.: <code>eslint</code> 和 <code>gulp</code>。</li>
+<li>『本地安裝』指將一個套件下載到當前項目的 <code>node_modules</code>子目錄，只有在項目目錄中，才能調用這個套件。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm install &lt;packageName&gt;</code></td>
+<td><code>npm i &lt;packageName&gt;</code></td>
+<td>本地安裝 <code>&lt;packageName&gt;</code> 套件</td>
+</tr>
+<tr>
+<td><code>npm install -global &lt;packageName&gt;</code></td>
+<td><code>npm i -g &lt;packageName&gt;</code></td>
+<td>全域安裝<code>&lt;packageName&gt;</code>套件</td>
+</tr>
+<tr>
+<td><code>npm install &lt;packageName&gt; --force</code></td>
+<td><code>npm i &lt;packageName&gt; -f</code></td>
+<td>強制重新安裝<code>&lt;packageName&gt;</code>套件</td>
+</tr>
+</tbody></table>
+</li>
+<li><h3 id="安裝不同版本"><a href="#安裝不同版本" class="headerlink" title="安裝不同版本"></a>安裝不同版本</h3><p>install命令總是安裝套件的最新版本，如果要安裝套件的特定版本，可以在套件名後面加上@和版本號。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm install &lt;packageName&gt;@latest</code></td>
+<td><code>npm i &lt;packageName&gt;@latest</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>npm install &lt;packageName&gt;@0.1.1</code></td>
+<td><code>npm i &lt;packageName&gt;@0.1.1</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>npm install &lt;packageName&gt;@&quot;&gt;=0.1.0 &lt;0.2.0&quot;</code></td>
+<td><code>npm i &lt;packageName&gt;@&quot;&gt;=0.1.0 &lt;0.2.0&quot;</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>如果使用 <code>--save-exact</code> 參數，會在package.json文件指定安裝套件的確切版本</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install readable-stream --save --save-exact</span><br></pre></td></tr></table></figure>
+<p>install命令可以使用不同參數，指定所安裝的套件屬於哪一種性質的依賴關係，即出現在package.json文件的哪一項中</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm install &lt;packageName&gt; --save</code></td>
+<td><code>npm i &lt;packageName&gt; -S</code></td>
+<td>套件將被添加到 dependencies</td>
+</tr>
+<tr>
+<td><code>npm install &lt;packageName&gt; --save-dev</code></td>
+<td><code>npm i &lt;packageName&gt; -D</code></td>
+<td>套件將被添加到 devDependencies</td>
+</tr>
+</tbody></table>
+<p>如果要安裝beta版本的套件，需要使用下面的命令</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm install &lt;packageName&gt;@beat (latest beta)</code></td>
+<td><code>npm i &lt;packageName&gt;@beat (latest beta)</code></td>
+<td>安裝最新的beta版</td>
+</tr>
+<tr>
+<td><code>npm install &lt;packageName&gt;@1.3.1-beat.3</code></td>
+<td><code>npm i &lt;packageName&gt;@1.3.1-beat.3</code></td>
+<td>安裝指定的beta版</td>
+</tr>
+</tbody></table>
+<p><code>npm install</code> 默認會安裝 <code>dependencies</code> 字段和 <code>devDependencies</code> 字段中的所有套件，<br>如果使用 <code>-production</code> 參數，可以只安裝 <code>dependencies</code> 字段的套件。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install --production</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ NODE_ENV=production npm install</span><br></pre></td></tr></table></figure>
+<p>一旦安裝了某個套件，就可以在代碼中用 <code>require</code> 命令加載這個套件。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> backbone = <span class="built_in">require</span>(<span class="string">&#x27;backbone&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(backbone.VERSION)</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="避免系統權限"><a href="#避免系統權限" class="headerlink" title="避免系統權限"></a>避免系統權限</h3><p>默認情況下，NPM全域套件都安裝在系統目錄 (如：<code>/usr/local/lib/</code>)，普通用戶沒有寫入權限，需要用到 <code>sudo</code> 命令。<br>這不是很方便，可以在沒有root權限的情況下，安裝全域套件。<br>首先，在主目錄下新建配置文件 <code>.npmrc</code>，然後在該文件中將 <code>prefix</code> 變數定義到主目錄下面。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">prefix = /home/yourUsername/npm</span><br></pre></td></tr></table></figure>
+<p>然後在主目錄下新建 <code>npm</code> 子目錄。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/npm</span><br></pre></td></tr></table></figure>
+<p>此後，全域安裝的套件都會安裝在這個子目錄中，npm也會到 <code>~/npm/bin</code> 目錄去尋找命令。<br>最後，將這個路徑在 <code>.bash_profile</code> 文件 (或 <code>.bashrc</code> 文件) 中加入 PASH 變數。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=~/npm/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h2 id="npm-update"><a href="#npm-update" class="headerlink" title="npm update"></a>npm update</h2><p><small>更新已安裝套件</small><br>會先到遠程倉庫查詢最新版本，然後查詢本地版本。<br>如果本地版本不存在，或者遠程版本較新，就會安裝。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm update &lt;packageName&gt;</code></td>
+<td></td>
+<td>更新 <code>&lt;packageName&gt;</code> 套件</td>
+</tr>
+</tbody></table>
+<p>注意，從npm v2.6.1 開始， <code>npm update</code> 只更新頂層套件，而不更新依賴的依賴，以前版本是遞迴更新的。<br>如果想取到舊版本的效果，要使用下面的命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm --depth 9999 update</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="npm-uninstall"><a href="#npm-uninstall" class="headerlink" title="npm uninstall"></a>npm uninstall</h2><p><small>卸載已安裝套件</small></p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm uninstall &lt;packageName&gt;</code></td>
+<td><code>npm un &lt;packageName&gt;</code></td>
+<td>卸載 <code>&lt;packageName&gt;</code> 套件</td>
+</tr>
+<tr>
+<td><code>npm uninstall &lt;packageName&gt; -global</code></td>
+<td><code>npm un &lt;packageName&gt; -g</code></td>
+<td>卸載全域 <code>&lt;packageName&gt;</code> 套件</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-run"><a href="#npm-run" class="headerlink" title="npm run"></a>npm run</h2><p><code>package.json</code> 文件有一個 <code>scripts</code> 字段，可以用於執行腳本命令，供 <code>npm</code> 直接調用。<br><code>npm run</code> 命令會自動在環境變數 <code>$PATH</code> 添加 <code>node_modules/.bin</code> 目錄，所以 <code>scripts</code> 字段裡面調用命令時不用加上路徑。<br><code>npm run</code> 會創建一個 Shell，執行指定的命令，並臨時將 <code>node_modules/.bin</code> 加入PATH變數，意味著本地套件可以直接運行。<br>bash腳本，可直接存成 <code>.sh</code> 檔案，就可以在 <code>scripts</code> 屬性中引用該文件。 e.g.: <code>&quot;build-js&quot;: &quot;bin/build.sh&quot;</code>。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>簡寫</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm run-script</code></td>
+<td><code>npm run</code></td>
+<td>列出 <code>package.json</code> 裡所有可執行的腳本命令</td>
+</tr>
+<tr>
+<td><code>npm run-script &lt;scriptName&gt;</code></td>
+<td><code>npm run &lt;scriptName&gt;</code></td>
+<td>執行 <code>scripts</code> 中 <code>&lt;scriptName&gt;</code> 的腳本命令</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="參數"><a href="#參數" class="headerlink" title="參數"></a>參數</h3><p><code>npm run</code> 命令還可以添加參數。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;test&quot;</span>: <span class="string">&quot;mocha test/&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代碼指定 <code>npm test</code>，實際運行 <code>mocha test</code>。<br>如果要通過 <code>npm test</code>，將參數傳入mocha，則參數前面要加上兩個連字號『 <code>--</code> 』。<br>下面命令表示，mocha要運行所有 <code>test</code> 子目錄的測試腳本，以及另外一個測試腳本<code>anothertest.js</code>。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run <span class="built_in">test</span> -- anothertest.js</span><br><span class="line"><span class="comment"># 等同於</span></span><br><span class="line">$ mocha <span class="built_in">test</span>/ anothertest.js</span><br></pre></td></tr></table></figure>
+<p>若參數後面不指定任何值將設置為 <code>true</code>。</p>
+<p><code>npm run</code> 本身有一個參數 <code>-s</code>，表示關閉npm本身的輸出，只輸出腳本產生的結果。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 輸出npm命令頭</span></span><br><span class="line">$ npm run <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 不輸出npm命令頭</span></span><br><span class="line">$ npm run -s <span class="built_in">test</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="scripts腳本命令最佳實踐"><a href="#scripts腳本命令最佳實踐" class="headerlink" title="scripts腳本命令最佳實踐"></a>scripts腳本命令最佳實踐</h3><p><code>scripts</code> 字段的腳本命令，有一些最佳實踐，可以方便開發。<br>首先，安裝 <code>npm-run-all</code> 套件。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm i -D npm-run-all</span><br></pre></td></tr></table></figure>
+<p>這個套件用於運行多個 <code>scripts</code> 腳本命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#繼發執行</span></span><br><span class="line">$ npm-run-all build:html build:js</span><br><span class="line"><span class="comment"># 等同於</span></span><br><span class="line">$ npm run build:html &amp;&amp; npm run build:js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 併發執行</span></span><br><span class="line">$ npm-run-all --parallel watch:html watch:js</span><br><span class="line"><span class="comment"># 等同於</span></span><br><span class="line">$ npm run watch:html &amp; npm run watch:js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 混合執行</span></span><br><span class="line">$ npm-run-all clean lint --parallel watch:html watch:js</span><br><span class="line"><span class="comment"># 等同於</span></span><br><span class="line">$ npm-run-all clean lint</span><br><span class="line">$ npm-run-all --parallel watch:html watch:js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通配符</span></span><br><span class="line">$ npm-run-all --parallel watch:*</span><br></pre></td></tr></table></figure>
+<ol>
+<li><h4 id="start-腳本命令"><a href="#start-腳本命令" class="headerlink" title="start 腳本命令"></a>start 腳本命令</h4><p><code>start</code> 腳本命令，用於啟動應用程序。<br>下面命令併行執行 <code>dev</code> 腳本命令和 <code>serve</code> 腳本命令</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;start&quot;: &quot;npm-run-all --parallel dev serve&quot;</span><br></pre></td></tr></table></figure>
+<p>等同於下面形式。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run dev &amp; npm run serve</span><br></pre></td></tr></table></figure>
+<p>如果start腳本沒有配置，<code>npm start</code> 命令默認執行 <code>node server.js</code>，<br>前提是套件的根目錄存在一個server.js文件。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ node server.js</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="dev-腳本命令"><a href="#dev-腳本命令" class="headerlink" title="dev 腳本命令"></a>dev 腳本命令</h4><p><code>dev</code> 腳本命令，規定開發階段所要做的處理。<br>下面的命令用於繼發執行所有 <code>dev</code> 的子命令。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;npm-run-all dev:*&quot;</span><br></pre></td></tr></table></figure>
+<p>下面命令將sass文件編譯為css文件，並生成source map文件。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;predev:sass&quot;: &quot;node-sass --source-map src/css/hoodie.css.map --output-style nested src/sass/base.scss src/css/hoodie.css&quot;</span><br></pre></td></tr></table></figure>
+<p>下面命令會監視sass文件的變動，只要有變動，就自動將其編譯為css文件。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;dev:sass&quot;: &quot;node-sass --source-map src/css/hoodie.css.map --watch --output-style nested src/sass/base.scss src/css/hoodie.css&quot;</span><br></pre></td></tr></table></figure>
+<p>下面命令為css文件加上瀏覽器前綴，限制條件是只考慮市場使用率大於5％的瀏覽器。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;dev:autoprefix&quot;: &quot;postcss --use autoprefixer --autoprefixer.browsers \&quot;&gt; 5%\&quot; --output src/css/hoodie.css src/css/hoodie.css&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="serve-腳本命令"><a href="#serve-腳本命令" class="headerlink" title="serve 腳本命令"></a>serve 腳本命令</h4><p><code>serve</code> 腳本命令用於啟動服務。<br>下面命令啟動服務，用的是 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/live-server">live-server</a> 套件，將服務啟動在9090端口，展示 <code>dist</code> 子目錄。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;serve&quot;: &quot;live-server dist/ --port=9090&quot;</span><br></pre></td></tr></table></figure>
+<p><code>live-server</code> 套件有三個功能。</p>
+<blockquote>
+<ul>
+<li>啟動一個HTTP服務器，展示指定目錄的 <code>index.html</code> 文件，通過該文件加載各種網路資源，這是 <code>file://</code> 協議做不到的。</li>
+<li>添加自動刷新功能。只要指定目錄之中，文件有任何變化，它就會刷新頁面。</li>
+<li><code>npm run serve</code> 命令執行以後，自動打開瀏覽器。</li>
+</ul>
+</blockquote>
+<p>以前，上面三個功能需要三個套件來完成： <code>http-server</code>、<code>live-reload</code> 和 <code>opener</code>，現在只要 <code>live-server</code> 一個套件就夠了。</p>
+</li>
+<li><h4 id="test-腳本命令"><a href="#test-腳本命令" class="headerlink" title="test 腳本命令"></a>test 腳本命令</h4><p><code>test</code> 腳本命令用於執行測試。<br>下面命令規定，執行測試時，運行 <code>lint</code> 腳本，檢查腳本之中的語法錯誤。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;test&quot;: &quot;npm-run-all test:*&quot;,</span><br><span class="line">&quot;test:lint&quot;: &quot;sass-lint --verbose --config .sass-lint.yml src/sass/*&quot;</span><br></pre></td></tr></table></figure></li>
+<li><h4 id="prod-腳本命令"><a href="#prod-腳本命令" class="headerlink" title="prod 腳本命令"></a>prod 腳本命令</h4><p><code>prod</code> 腳本命令，規定進入生產環境時需要做的處理。<br>下面命令將sass文件轉為css文件，並加上瀏覽器前綴。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;prod&quot;: &quot;npm-run-all prod:*&quot;,</span><br><span class="line">&quot;prod:sass&quot;: &quot;node-sass --output-style compressed src/sass/base.scss src/css/prod/hoodie.min.css&quot;,</span><br><span class="line">&quot;prod:autoprefix&quot;: &quot;postcss --use autoprefixer --autoprefixer.browsers &quot;&gt; 5%&quot; --output src/css/prod/hoodie.min.css src/css/prod/hoodie.min.css&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="help-腳本命令"><a href="#help-腳本命令" class="headerlink" title="help 腳本命令"></a>help 腳本命令</h4><p>下面命令之中，<code>markdown-chalk</code> 套件用於將指定的markdown文件，轉為彩色文本顯示在終端之中。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;help&quot;: &quot;markdown-chalk --input DEVELOPMENT.md&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="docs-腳本命令"><a href="#docs-腳本命令" class="headerlink" title="docs 腳本命令"></a>docs 腳本命令</h4><p><code>docs</code> 腳本命令用於生成文檔。<br>下面命令使用 <code>kss-node</code> 套件，提供源碼的註釋生成markdown格式的文檔。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&quot;docs&quot;: &quot;kss-node --source src/sass --homepage ../../styleguide.md&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><h3 id="pre-和-post-腳本"><a href="#pre-和-post-腳本" class="headerlink" title="pre- 和 post- 腳本"></a>pre- 和 post- 腳本</h3><p><code>npm run</code> 為每條命令提供了 <code>pre-</code> 和 <code>post-</code> 兩個鉤子(hook)。<br>以 <code>npm run lint</code> 為例，執行這條命令之前，npm會先查看有沒有定義prelint和postlint兩個鉤子，<br>如果有的話，就會先執行 <code>npm run prelint</code>，然後執行 <code>npm run lint</code>，最後執行 <code>npm run postlint</code>。<br>下面代碼是一個 <code>package.json</code> 文件的例子。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;myproject&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;eslint&quot;</span>: <span class="string">&quot;latest&quot;</span></span><br><span class="line">    <span class="string">&quot;karma&quot;</span>: <span class="string">&quot;latest&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;lint&quot;</span>: <span class="string">&quot;eslint --cache --ext .js --ext .jsx src&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;karma start --log-leve=error karma.config.js --single-run=true&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;pretest&quot;</span>: <span class="string">&quot;npm run lint&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;posttest&quot;</span>: <span class="string">&quot;echo &#x27;Finished running tests&#x27;&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果執行過程出錯，就不會執行排在後面的腳本，即如果prelint腳本執行錯誤，就不會接著執行lint和postlint腳本。</p>
+<p>如果執行 <code>npm test</code>，會按下面的順序執行相應的命令。</p>
+<ol>
+<li>pretest</li>
+<li>test</li>
+<li>posttest</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;karma start&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;test:lint&quot;</span>: <span class="string">&quot;eslint . --ext .js --ext .jsx&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;pretest&quot;</span>: <span class="string">&quot;npm run test:lint&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是一些常見的 <code>pre-</code> 和 <code>post-</code> 腳本。</p>
+<table>
+<thead>
+<tr>
+<th>腳本</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>prepublish</code></td>
+<td>發佈一個套件前執行。</td>
+</tr>
+<tr>
+<td><code>postpublish</code></td>
+<td>發佈一個套件後執行。</td>
+</tr>
+<tr>
+<td><code>preinstall</code></td>
+<td>執行 <code>npm install</code> 命令前執行。</td>
+</tr>
+<tr>
+<td><code>postinstall</code></td>
+<td>執行 <code>npm install</code> 命令後執行。</td>
+</tr>
+<tr>
+<td><code>preuninstall</code></td>
+<td>卸載一個套件前執行。</td>
+</tr>
+<tr>
+<td><code>postuninstall</code></td>
+<td>卸載一個套件後執行。</td>
+</tr>
+<tr>
+<td><code>preversion</code></td>
+<td>更改套件版本前執行。</td>
+</tr>
+<tr>
+<td><code>postversion</code></td>
+<td>更改套件版本後執行。</td>
+</tr>
+<tr>
+<td><code>pretest</code></td>
+<td>運行 <code>npm run test</code> 命令前執行。</td>
+</tr>
+<tr>
+<td><code>posttest</code></td>
+<td>運行 <code>npm run test</code> 命令後執行。</td>
+</tr>
+<tr>
+<td><code>prestop</code></td>
+<td>運行 <code>npm run stop</code> 命令前執行。</td>
+</tr>
+<tr>
+<td><code>poststop</code></td>
+<td>運行 <code>npm run stop</code> 命令後執行。</td>
+</tr>
+<tr>
+<td><code>prestart</code></td>
+<td>運行 <code>npm run start</code> 命令前執行。</td>
+</tr>
+<tr>
+<td><code>poststart</code></td>
+<td>運行 <code>npm run start</code> 命令後執行。</td>
+</tr>
+<tr>
+<td><code>prerestart</code></td>
+<td>運行 <code>npm run restart</code> 命令前執行。</td>
+</tr>
+<tr>
+<td><code>postrestart</code></td>
+<td>運行 <code>npm run restart</code> 命令後執行。</td>
+</tr>
+</tbody></table>
+<p>對於 <code>npm run restart</code>命令，如果沒有設置 <code>restart</code> 腳本，<code>prerestart</code> 和 <code>postrestart</code> 會依次執行stop和start腳本。</p>
+<p>也支持Git相關的鉤子。下面以 <a target="_blank" rel="noopener" href="https://github.com/typicode/husky">husky</a> 套件為例。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm i husky -D</span><br></pre></td></tr></table></figure>
+<p>安裝以後，就能在 <code>package.json</code> 添加 <code>precommit</code>、<code>prepush</code> 等鉤子。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;lint&quot;</span>: <span class="string">&quot;eslint yourJsFiles.js&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;precommit&quot;</span>: <span class="string">&quot;npm run test &amp;&amp; npm run lint&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;prepush&quot;</span>: <span class="string">&quot;npm run test &amp;&amp; npm run lint&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;...&quot;</span>: <span class="string">&quot;...&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>類似作用的套件還有 <code>pre-commit</code>、<code>precommit-hook</code> 等。</p>
+</li>
+<li><h3 id="內部變數"><a href="#內部變數" class="headerlink" title="內部變數"></a>內部變數</h3><p>scripts字段可以使用一些內部變數，主要是package.json的各種字段。<br>不區分大小寫，Node會優先選擇小寫版本。<br>在npm-scripts內部，npm將設置自己的環境變數。<br>例如：package.json的內容是 <code>&#123;&quot;name&quot;:&quot;foo&quot;, &quot;version&quot;:&quot;1.2.5&quot;&#125;</code>，<br>那麼變數 <code>npm_package_name</code> 的值是foo，變數 <code>npm_package_version</code> 的值是1.2.5。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>:&#123;</span><br><span class="line">    <span class="attr">&quot;bundle&quot;</span>: <span class="string">&quot;mkdir -p build/$npm_package_version/&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>運行 <code>npm run bundle</code> 以後，將會生成 <code>build/1.2.5/</code> 子目錄。</p>
+<p><code>config</code> 字段也可以用於設置內部字段。<br>下面代碼中，變數 <code>npm_package_config_reporter</code> 對應的就是reporter。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;fooproject&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;config&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;reporter&quot;</span>: <span class="string">&quot;xunit&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;mocha test/ --reporter $npm_package_config_reporter&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>npm的通配符的規則如下：</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>匹配0個或多個字符。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配1個字符。</td>
+</tr>
+<tr>
+<td><code>[...]</code></td>
+<td>匹配某個範圍的字符。如果該範圍的第一個字符是 <code>!</code> 或 <code>^</code>，則匹配不在該範圍的字符。</td>
+</tr>
+<tr>
+<td><code>!(pattern|pattern|pattern)</code></td>
+<td>匹配任何不符合給定的模式。</td>
+</tr>
+<tr>
+<td><code>?(pattern|pattern|pattern)</code></td>
+<td>匹配0個或1個給定的模式。</td>
+</tr>
+<tr>
+<td><code>+(pattern|pattern|pattern)</code></td>
+<td>匹配1個或多個給定的模式。</td>
+</tr>
+<tr>
+<td><code>*(a|b|c)</code></td>
+<td>匹配0個或多個給定的模式。</td>
+</tr>
+<tr>
+<td><code>@(pattern|pat*|pat?erN)</code></td>
+<td>只匹配給定模式之一。</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>如果出現在路徑部分，表示0個或多個子目錄。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h2 id="npm-link"><a href="#npm-link" class="headerlink" title="npm link"></a>npm link</h2><p>開發NPM套件的時候，有時會希望，邊開發邊試用，比如本地調適的時候， <code>require(&#39;packageName&#39;)</code> 會自動加載本地開發中的套件。<br>Node規定，使用一個套件時，需要將其安裝到全域的或項目的 <code>node_modules</code> 目錄之中。<br>對於開發中的套件，解決方法就是在全域的 <code>node_modules</code> 目錄之中，生成一個符號連結，指向套件的本地目錄。<br><code>npm link</code> 能自動建立這個符號連結。<br>假設，開發一個套件 <code>myModule</code>，目錄為 <code>src/myModule</code>，<br>開發項目為 <code>myProject</code> 要用到這個套件，項目目錄為 <code>src/myProject</code>。</p>
+<p>思路：</p>
+<ul>
+<li>先在全域套件目錄中，新增一個文件指向開發中的套件。<br><code>/path/to/global/node_modules/myModule -&gt; src/myModule</code></li>
+<li>將開發項目要用到的套件，指向全域套件目錄<br><code>src/myProject/node_modules/myModule -&gt; /path/to/global/node_modules/myModule</code></li>
+<li>就可在開發項目中，加載該套件了<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> myModule = <span class="built_in">require</span>(<span class="string">&#x27;myModule&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>這樣一來，<code>myModule</code>的任何變化，都可以直接反映在 <code>myProject</code> 項目之中，但是相對的在 <code>myProject</code> 目錄中對 <code>myModule</code> 的修改，也會反映到套件的源碼中。</li>
+<li>若不再需要該套件時，可以在項目目錄中執行 <code>npm unlink</code>，刪除符號連結。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm link</code></td>
+<td>在套件目錄 <code>src/myModule</code>執行命令，會在NPM的全域套件目錄內，<br>生成一個符號連結文件，該文件的名稱就是 <code>package.json</code> 文件中指定的套件名。</td>
+</tr>
+<tr>
+<td><code>npm link myModule</code></td>
+<td>在項目目錄 <code>src/myProject</code>執行命令，並指定套件名，<br>就可以全域調用 <code>myModule</code> 套件了。</td>
+</tr>
+<tr>
+<td><code>npm unlink</code></td>
+<td>在項目目錄 <code>src/myProject</code>執行命令，刪除符號連結。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-bin"><a href="#npm-bin" class="headerlink" title="npm bin"></a>npm bin</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm bin</code></td>
+<td>顯示相對於當前目錄的，Node套件的可執行腳本所在目錄 (即 <code>.bin</code> 目錄)。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-adduser"><a href="#npm-adduser" class="headerlink" title="npm adduser"></a>npm adduser</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm adduser</code></td>
+<td>向 <a target="_blank" rel="noopener" href="https://www.npmjs.com/">npmjs.com</a> 申請用戶名。</td>
+</tr>
+<tr>
+<td><code>npm login</code></td>
+<td>已經註冊過，就可以此命令登錄。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-publish"><a href="#npm-publish" class="headerlink" title="npm publish"></a>npm publish</h2><p>用於將當前套件發佈到 <a target="_blank" rel="noopener" href="https://www.npmjs.com/">npmjs.com</a>。<br>執行 <code>npm publish</code> 之前，需先執行 <code>npm adduser</code> 向 <a target="_blank" rel="noopener" href="https://www.npmjs.com/">npmjs.com</a> 申請用戶名，<br>並執行 <code>npm login</code> 登錄。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm publish</code></td>
+<td>登錄後，就可以使用 <code>npm publish</code> 命令發佈。</td>
+</tr>
+<tr>
+<td><code>npm publish --tag beta</code></td>
+<td>如果當前套件是一個beta版，發佈的時候需要使用 <code>tag</code> 參數，<br>將其發佈到指定標籤，默認發佈標籤是 <code>latest</code>。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-deprecate"><a href="#npm-deprecate" class="headerlink" title="npm deprecate"></a>npm deprecate</h2><p>如果想廢棄某個版本的套件，可以使用 <code>npm deprecate</code> 命令。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm deprecate &lt;packageName&gt;@&quot;&lt;0.2.3&quot; &quot;critical bug fixed in v0.2.3&quot;</code></td>
+<td>小於 <code>0.2.3</code> 版本的套件的 <code>package.json</code> ，都會在命令行顯示警告。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="npm-owner"><a href="#npm-owner" class="headerlink" title="npm owner"></a>npm owner</h2><p>套件的維護者可以發佈新版本。 <code>npm owner</code> 用於管理套件的維護者。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm owner ls &lt;packageName&gt;</code></td>
+<td>列出指定套件的維護者。</td>
+</tr>
+<tr>
+<td><code>npm owner add &lt;user&gt; &lt;packageName&gt;</code></td>
+<td>新增維護者。</td>
+</tr>
+<tr>
+<td><code>npm owner rm &lt;user&gt; &lt;packageName&gt;</code></td>
+<td>刪除維護者。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><ul>
+<li><h3 id="npm-home-、-npm-repo"><a href="#npm-home-、-npm-repo" class="headerlink" title="npm home 、 npm repo"></a>npm home 、 npm repo</h3><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm home &lt;packageName&gt;</code></td>
+<td>打開一個套件的主頁。</td>
+</tr>
+<tr>
+<td><code>npm repo &lt;packageName&gt;</code></td>
+<td>打開一個套件的代碼倉庫。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h3 id="npm-outdated"><a href="#npm-outdated" class="headerlink" title="npm outdated"></a>npm outdated</h3><p>會列出：</p>
+<ul>
+<li>當前版本 (current version)</li>
+<li>應當安裝的版本 (wanted version)</li>
+<li>最新發佈的版本 (latest version)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm outdated</code></td>
+<td>檢查當前項目所依賴的套件，是否已經有新版本。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h3 id="npm-prune"><a href="#npm-prune" class="headerlink" title="npm prune"></a>npm prune</h3><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm prune</code></td>
+<td>檢查<code>node_modules</code>，是否有<code>package.json</code>裡面沒有提到的套件，輸出在命令行中。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h3 id="npm-shrinkwrap"><a href="#npm-shrinkwrap" class="headerlink" title="npm shrinkwrap"></a>npm shrinkwrap</h3><p>運行該命令後，會在當前項目的根目錄下生成一個 <code>npm-shrinkwrap.json</code> 文件，內容是 <code>node_modules</code> 目錄下所有已經安裝的套件，以及它們的精確版本。<br>下次運行 <code>npm install</code> 命令時，npm 發現當前目錄下有 <code>npm-shrinkwrap.json</code> 文件，就會只安裝裡面提到的模塊，且版本也會保持一致。</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm shrinkwrap</code></td>
+<td>鎖定當前項目的依賴套件的版本。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag"># 管理工具</a>
+              <a href="/tags/NPM/" rel="tag"># NPM</a>
+              <a href="/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/" rel="tag"># 速查表</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/" rel="prev" title="[筆記]_NVM_Mac">
+      <i class="fa fa-chevron-left"></i> [筆記]_NVM_Mac
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/07/%E7%AD%86%E8%A8%98-NPM/" rel="next" title="[筆記]_NPM">
+      [筆記]_NPM <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B0%A1%E5%AF%AB"><span class="nav-number">1.</span> <span class="nav-text">簡寫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-init"><span class="nav-number">2.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-set"><span class="nav-number">3.</span> <span class="nav-text">npm set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-config"><span class="nav-number">4.</span> <span class="nav-text">npm config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-info"><span class="nav-number">5.</span> <span class="nav-text">npm info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-search"><span class="nav-number">6.</span> <span class="nav-text">npm search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-list"><span class="nav-number">7.</span> <span class="nav-text">npm list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install"><span class="nav-number">8.</span> <span class="nav-text">npm install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">8.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC"><span class="nav-number">8.2.</span> <span class="nav-text">安裝不同版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E7%B3%BB%E7%B5%B1%E6%AC%8A%E9%99%90"><span class="nav-number">8.3.</span> <span class="nav-text">避免系統權限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-update"><span class="nav-number">9.</span> <span class="nav-text">npm update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-uninstall"><span class="nav-number">10.</span> <span class="nav-text">npm uninstall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-run"><span class="nav-number">11.</span> <span class="nav-text">npm run</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E6%95%B8"><span class="nav-number">11.1.</span> <span class="nav-text">參數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scripts%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%9C%80%E4%BD%B3%E5%AF%A6%E8%B8%90"><span class="nav-number">11.2.</span> <span class="nav-text">scripts腳本命令最佳實踐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#start-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.1.</span> <span class="nav-text">start 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dev-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.2.</span> <span class="nav-text">dev 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#serve-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.3.</span> <span class="nav-text">serve 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.4.</span> <span class="nav-text">test 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prod-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.5.</span> <span class="nav-text">prod 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#help-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.6.</span> <span class="nav-text">help 腳本命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docs-%E8%85%B3%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.7.</span> <span class="nav-text">docs 腳本命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-%E5%92%8C-post-%E8%85%B3%E6%9C%AC"><span class="nav-number">11.3.</span> <span class="nav-text">pre- 和 post- 腳本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A7%E9%83%A8%E8%AE%8A%E6%95%B8"><span class="nav-number">11.4.</span> <span class="nav-text">內部變數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-number">11.5.</span> <span class="nav-text">通配符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-link"><span class="nav-number">12.</span> <span class="nav-text">npm link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-bin"><span class="nav-number">13.</span> <span class="nav-text">npm bin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-adduser"><span class="nav-number">14.</span> <span class="nav-text">npm adduser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-publish"><span class="nav-number">15.</span> <span class="nav-text">npm publish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-deprecate"><span class="nav-number">16.</span> <span class="nav-text">npm deprecate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-owner"><span class="nav-number">17.</span> <span class="nav-text">npm owner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="nav-number">18.</span> <span class="nav-text">其他命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-home-%E3%80%81-npm-repo"><span class="nav-number">18.1.</span> <span class="nav-text">npm home 、 npm repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-outdated"><span class="nav-number">18.2.</span> <span class="nav-text">npm outdated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-prune"><span class="nav-number">18.3.</span> <span class="nav-text">npm prune</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-shrinkwrap"><span class="nav-number">18.4.</span> <span class="nav-text">npm shrinkwrap</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

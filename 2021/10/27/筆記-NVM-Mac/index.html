@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="NVM (Node Version Manager) for Mac是 Node.js 的版本管理工具，因為不同的專案可能使用不同 Node.js 版本，在同一台主機上安裝多個版本環境時，可利用 NVM 來管理 Node.js 的版本控制和快速切換。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[筆記]_NVM_Mac">
+<meta property="og:url" content="https://arx827.github.io/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="NVM (Node Version Manager) for Mac是 Node.js 的版本管理工具，因為不同的專案可能使用不同 Node.js 版本，在同一台主機上安裝多個版本環境時，可利用 NVM 來管理 Node.js 的版本控制和快速切換。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-10-26T17:59:58.000Z">
+<meta property="article:modified_time" content="2022-02-02T21:29:46.113Z">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="管理工具">
+<meta property="article:tag" content="筆記">
+<meta property="article:tag" content="NVM">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[筆記]_NVM_Mac | 前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [筆記]_NVM_Mac
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-10-27 01:59:58" itemprop="dateCreated datePublished" datetime="2021-10-27T01:59:58+08:00">2021-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-02-03 05:29:46" itemprop="dateModified" datetime="2022-02-03T05:29:46+08:00">2022-02-03</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li><h2 id="NVM-Node-Version-Manager-for-Mac"><a href="#NVM-Node-Version-Manager-for-Mac" class="headerlink" title="NVM (Node Version Manager) for Mac"></a>NVM (Node Version Manager) for Mac</h2><p>是 Node.js 的版本管理工具，<br>因為不同的專案可能使用不同 Node.js 版本，在同一台主機上安裝多個版本環境時，<br>可利用 NVM 來管理 Node.js 的版本控制和快速切換。</p>
+<a id="more"></a>
+
+<p>安裝流程：</p>
+<ol>
+<li>卸載(移除)原有的node相關目錄、檔案 (含npm、node)</li>
+<li>安裝NVM</li>
+<li>使用NVM 安裝Node指定版本</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><h3 id="卸載-移除-原有的node相關目錄、檔案-含npm、node"><a href="#卸載-移除-原有的node相關目錄、檔案-含npm、node" class="headerlink" title="卸載(移除)原有的node相關目錄、檔案 (含npm、node)"></a>卸載(移除)原有的node相關目錄、檔案 (含npm、node)</h3><p>NVM不支援透過 <code>Brew (Homebrew)</code> 安裝的nodejs版本，<br>若先前已單獨安裝Node，請先刪除乾淨，再重新安裝。</p>
+<ul>
+<li>每次打開終端機都會顯示：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node: command not found.</span><br><span class="line">npm: command not found.</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>依原先nodejs安裝方式，選擇不同卸載。</p>
+<ul>
+<li><h5 id="手動安裝-直接從官網下載"><a href="#手動安裝-直接從官網下載" class="headerlink" title="手動安裝 (直接從官網下載)"></a>手動安裝 (直接從官網下載)</h5><ul>
+<li><p>刪除 <code>/usr/local/lib/</code> 目錄中的 <code>node</code> 與 <code>node_modules</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/usr/local/include/</code> 目錄中的 <code>node</code> 與 <code>node_modules</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/usr/local/bin/</code> 目錄中的 <code>node</code>、<code>node_modules</code>、<code>node-gyp</code> 目錄。</p>
+</li>
+<li><p>刪除個人目錄下的 <code>.npmrc</code> 文件。 <small>(這是npm的設置文件，若計畫以後要重新安裝nodejs，可以不刪)</small></p>
+</li>
+<li><p>刪除個人目錄下的 <code>.npm</code> 文件目錄。</p>
+</li>
+<li><p>刪除個人目錄下的 <code>.node-gyp</code> 目錄。</p>
+</li>
+<li><p>刪除個人目錄下的 <code>.node_repl_history</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/usr/local/share/man/man1/</code> 中所有與 <code>node</code> 和 <code>npm</code> 有關的文件。 <small>(node*, npm*)</small></p>
+</li>
+<li><p>刪除 <code>/usr/local/lib/dtrace/</code> 中的 <code>node.d</code>。</p>
+</li>
+<li><p>刪除 <code>/opt/local/bin/</code> 中的 <code>node</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/opt/local/include/</code> 中的 <code>node</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/opt/local/lib/</code> 目錄中的 <code>node_modules</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/usr/local/share/doc/</code> 目錄中的 <code>node</code> 目錄。</p>
+</li>
+<li><p>刪除 <code>/usr/local/share/systemtap/tapset/</code> 目錄中的 <code>node.stp</code>。<br>以上目錄依次刪除就好，命令<code>rm -rf &lt;path&gt;</code>，刪除命令比較危險，請格外小心輸入。</p>
+</li>
+<li><p>其他方法 使用命令刪除</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> rm -rf ~/.nvm</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf ~/.npm</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf ~/.bower</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或使用以下命令 配合上方手動刪除 一個一個刪</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo rm -rf /usr/<span class="built_in">local</span>/lib/...</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h5 id="通過-Homebrew-安裝"><a href="#通過-Homebrew-安裝" class="headerlink" title="通過 Homebrew 安裝"></a>通過 Homebrew 安裝</h5><p>若原先使用 <code>Homebrew</code> 安裝的，可另用反向命令移除。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> brew uninstall node</span></span><br></pre></td></tr></table></figure></li>
+<li><h5 id="通過-NVM-Node-Version-Manager-安裝"><a href="#通過-NVM-Node-Version-Manager-安裝" class="headerlink" title="通過 NVM (Node Version Manager) 安裝"></a>通過 NVM (Node Version Manager) 安裝</h5><p>若想刪除某一版本的 <code>nodejs</code>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm uninstall v7.7.4</span></span><br></pre></td></tr></table></figure></li>
+<li><h5 id="未知的安裝方式"><a href="#未知的安裝方式" class="headerlink" title="未知的安裝方式"></a>未知的安裝方式</h5><p>另用which命令，由安裝路徑查找是哪一種安裝方式：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">which</span> node</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ex：<code>/Users/scott/.nvm/versions/node/v4.1.2/bin/node</code> <small>(由路徑可得知為nvm安裝)</small></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h3 id="安裝NVM"><a href="#安裝NVM" class="headerlink" title="安裝NVM"></a>安裝NVM</h3><ul>
+<li>請先 前往 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm/releases">https://github.com/nvm-sh/nvm/releases</a> 確認目前nvm最新版本</li>
+<li>根據最新版本資訊，使用 <code>cURL</code> 或 <code>wget</code> 指令安裝腳本 <small>(請依據最新版本號更改以下腳本路徑)</small><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash</span></span><br></pre></td></tr></table></figure>
+或<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash</span></span><br></pre></td></tr></table></figure></li>
+<li>NVM已自動加入環境變數<br>腳本已clone <code>~/.nvm</code> 到 配置文件<br>(<code>~/.bash_profile</code>、<code>~/.zshrc</code>、<code>~/.profile</code> 或 <code>~/.bashrc</code> )<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</span><br><span class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</span><br><span class="line">[ -s &quot;$NVM_DIR/bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR/bash_completion&quot;  # This loads nvm bash_completion</span><br></pre></td></tr></table></figure></li>
+<li>確認是否安裝完成<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm -v</span></span><br></pre></td></tr></table></figure>
+若還是無法使用 nvm ，可執行下面指令立即應用ZSH的設定<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> .zshrc</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h3 id="使用NVM-安裝Node及相關指令"><a href="#使用NVM-安裝Node及相關指令" class="headerlink" title="使用NVM 安裝Node及相關指令"></a>使用NVM 安裝Node及相關指令</h3><ul>
+<li><h4 id="查看所有指令"><a href="#查看所有指令" class="headerlink" title="查看所有指令"></a>查看所有指令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm --<span class="built_in">help</span></span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="查看-Nodejs"><a href="#查看-Nodejs" class="headerlink" title="查看 Nodejs"></a>查看 Nodejs</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm ls-remote                       <span class="comment"># 查看可用的版本</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm ls-remote 12                    <span class="comment"># 加上版號可縮小搜尋</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm ls-remote --lts                 <span class="comment"># 列出可用的LTS版</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm ls-remote --lts | grep Latest   <span class="comment"># 列出可用的最新LTS版</span></span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="安裝-Nodejs"><a href="#安裝-Nodejs" class="headerlink" title="安裝 Nodejs"></a>安裝 Nodejs</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm install latest          <span class="comment"># 安裝最新版本</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm install &lt;version&gt;       <span class="comment"># 安裝指定版本 e.g.: nvm install 12</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm install --lts           <span class="comment"># 安裝長期支援版本 (LTS： Long term support)</span></span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="查看可用已安裝版本"><a href="#查看可用已安裝版本" class="headerlink" title="查看可用已安裝版本"></a>查看可用已安裝版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm ls</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="切換-Nodejs-版本"><a href="#切換-Nodejs-版本" class="headerlink" title="切換 Nodejs 版本"></a>切換 Nodejs 版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm use &lt;version&gt;       <span class="comment"># 使用指定版本 e.g.: nvm use 12</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm use stable          <span class="comment"># 使用穩定版本</span></span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="查看目前使用的-Nodejs-版本"><a href="#查看目前使用的-Nodejs-版本" class="headerlink" title="查看目前使用的 Nodejs 版本"></a>查看目前使用的 Nodejs 版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm use node</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 或 $ nvm current</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="直接執行-Nodejs"><a href="#直接執行-Nodejs" class="headerlink" title="直接執行 Nodejs"></a>直接執行 Nodejs</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm run node              <span class="comment"># 執行目前版本</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> nvm run node &lt;version&gt;    <span class="comment"># 指定要直接執行的版本  或 $ nvm exec &lt;version&gt; node</span></span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="查看-Nodejs-安裝路徑"><a href="#查看-Nodejs-安裝路徑" class="headerlink" title="查看 Nodejs 安裝路徑"></a>查看 Nodejs 安裝路徑</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm <span class="built_in">which</span> &lt;version&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="設定預設啟用的-Nodejs-版本"><a href="#設定預設啟用的-Nodejs-版本" class="headerlink" title="設定預設啟用的 Nodejs 版本"></a>設定預設啟用的 Nodejs 版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm <span class="built_in">alias</span> default &lt;version&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="設定版本別名"><a href="#設定版本別名" class="headerlink" title="設定版本別名"></a>設定版本別名</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm <span class="built_in">alias</span> &lt;name&gt; &lt;version&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="查看所有別名配對"><a href="#查看所有別名配對" class="headerlink" title="查看所有別名配對"></a>查看所有別名配對</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm <span class="built_in">alias</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 可在以下指令中使用別名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> nvm install、 use、 run、 <span class="built_in">exec</span>、 <span class="built_in">which</span> ...等。</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="移除已安裝的-Nodejs-版本"><a href="#移除已安裝的-Nodejs-版本" class="headerlink" title="移除已安裝的 Nodejs 版本"></a>移除已安裝的 Nodejs 版本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvm uninstall &lt;version&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag"># 管理工具</a>
+              <a href="/tags/%E7%AD%86%E8%A8%98/" rel="tag"># 筆記</a>
+              <a href="/tags/NVM/" rel="tag"># NVM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Windows/" rel="prev" title="[筆記]_NVM_Windows">
+      <i class="fa fa-chevron-left"></i> [筆記]_NVM_Windows
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/07/%E9%80%9F%E6%9F%A5%E8%A1%A8-NPM/" rel="next" title="[速查表]_NPM">
+      [速查表]_NPM <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NVM-Node-Version-Manager-for-Mac"><span class="nav-number">1.</span> <span class="nav-text">NVM (Node Version Manager) for Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BC%89-%E7%A7%BB%E9%99%A4-%E5%8E%9F%E6%9C%89%E7%9A%84node%E7%9B%B8%E9%97%9C%E7%9B%AE%E9%8C%84%E3%80%81%E6%AA%94%E6%A1%88-%E5%90%ABnpm%E3%80%81node"><span class="nav-number">1.1.</span> <span class="nav-text">卸載(移除)原有的node相關目錄、檔案 (含npm、node)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%8B%E5%8B%95%E5%AE%89%E8%A3%9D-%E7%9B%B4%E6%8E%A5%E5%BE%9E%E5%AE%98%E7%B6%B2%E4%B8%8B%E8%BC%89"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">手動安裝 (直接從官網下載)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E9%81%8E-Homebrew-%E5%AE%89%E8%A3%9D"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">通過 Homebrew 安裝</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E9%81%8E-NVM-Node-Version-Manager-%E5%AE%89%E8%A3%9D"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">通過 NVM (Node Version Manager) 安裝</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AA%E7%9F%A5%E7%9A%84%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">未知的安裝方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DNVM"><span class="nav-number">1.2.</span> <span class="nav-text">安裝NVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8NVM-%E5%AE%89%E8%A3%9DNode%E5%8F%8A%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">使用NVM 安裝Node及相關指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.1.</span> <span class="nav-text">查看所有指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B-Nodejs"><span class="nav-number">1.3.2.</span> <span class="nav-text">查看 Nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Nodejs"><span class="nav-number">1.3.3.</span> <span class="nav-text">安裝 Nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8F%AF%E7%94%A8%E5%B7%B2%E5%AE%89%E8%A3%9D%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.4.</span> <span class="nav-text">查看可用已安裝版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8F%9B-Nodejs-%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.5.</span> <span class="nav-text">切換 Nodejs 版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84-Nodejs-%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.6.</span> <span class="nav-text">查看目前使用的 Nodejs 版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%9F%B7%E8%A1%8C-Nodejs"><span class="nav-number">1.3.7.</span> <span class="nav-text">直接執行 Nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B-Nodejs-%E5%AE%89%E8%A3%9D%E8%B7%AF%E5%BE%91"><span class="nav-number">1.3.8.</span> <span class="nav-text">查看 Nodejs 安裝路徑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E9%A0%90%E8%A8%AD%E5%95%9F%E7%94%A8%E7%9A%84-Nodejs-%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.9.</span> <span class="nav-text">設定預設啟用的 Nodejs 版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E7%89%88%E6%9C%AC%E5%88%A5%E5%90%8D"><span class="nav-number">1.3.10.</span> <span class="nav-text">設定版本別名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%88%A5%E5%90%8D%E9%85%8D%E5%B0%8D"><span class="nav-number">1.3.11.</span> <span class="nav-text">查看所有別名配對</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%B7%B2%E5%AE%89%E8%A3%9D%E7%9A%84-Nodejs-%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.12.</span> <span class="nav-text">移除已安裝的 Nodejs 版本</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
