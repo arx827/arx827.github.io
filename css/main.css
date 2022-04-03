@@ -276,24 +276,6 @@ kbd {
   padding: 0.1em 0.3em;
   white-space: nowrap;
 }
-.d-flex {
-  display: flex;
-}
-.d-flex .col {
-  flex: 1;
-}
-.d-flex .d-flex-item {
-  margin: 0 5px;
-}
-.flex-direction-column {
-  flex-direction: column;
-}
-.arrow {
-  color: #aaa;
-}
-.arrow.down {
-  transform: rotate(90deg);
-}
 .table-container {
   overflow: auto;
 }
@@ -1231,7 +1213,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #41ff45;
+  background: #60f221;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
