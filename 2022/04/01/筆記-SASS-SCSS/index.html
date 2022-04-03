@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Releases v3.6.3 (2019&#x2F;11&#x2F;4) Sass 是一款強化CSS 的輔助工具，它在CSS 語法的基礎上增加了變數(variables)、嵌套(nested rules)、混合(mixins)、導入(inline imports) 等高級功能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[筆記]_SASS&#x2F;SCSS">
+<meta property="og:url" content="https://arx827.github.io/2022/04/01/%E7%AD%86%E8%A8%98-SASS-SCSS/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="Releases v3.6.3 (2019&#x2F;11&#x2F;4) Sass 是一款強化CSS 的輔助工具，它在CSS 語法的基礎上增加了變數(variables)、嵌套(nested rules)、混合(mixins)、導入(inline imports) 等高級功能。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-04-01T03:37:42.000Z">
+<meta property="article:modified_time" content="2022-04-03T16:27:05.029Z">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="SASS&#x2F;SCSS">
+<meta property="article:tag" content="筆記">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/2022/04/01/%E7%AD%86%E8%A8%98-SASS-SCSS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[筆記]_SASS/SCSS | 前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2022/04/01/%E7%AD%86%E8%A8%98-SASS-SCSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [筆記]_SASS/SCSS
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-04-01 11:37:42" itemprop="dateCreated datePublished" datetime="2022-04-01T11:37:42+08:00">2022-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-04-04 00:27:05" itemprop="dateModified" datetime="2022-04-04T00:27:05+08:00">2022-04-04</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><small>Releases v3.6.3 (2019/11/4)</small></p>
+<p>Sass 是一款強化CSS 的輔助工具，<br>它在CSS 語法的基礎上增加了變數(variables)、嵌套(nested rules)、混合(mixins)、導入(inline imports) 等高級功能。</p>
+<a id="more"></a>
+
+<h2 id="CSS-功能拓展"><a href="#CSS-功能拓展" class="headerlink" title="CSS 功能拓展"></a>CSS 功能拓展</h2><ul>
+<li><h3 id="嵌套規則"><a href="#嵌套規則" class="headerlink" title="嵌套規則"></a>嵌套規則</h3>Sass 允許將一套CSS 樣式嵌套進另一套樣式中，<br>內層的樣式將它外層的選擇器作為父選擇器。<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#00ff00</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">97%</span>;</span><br><span class="line">  <span class="selector-class">.redbox</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#00ff00</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">97%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-tag">p</span> <span class="selector-class">.redbox</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-tag">ul</span> &gt; &#123;</span><br><span class="line">  <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">  + <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">1px</span> solid gray;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  ~ &#123;</span><br><span class="line">    <span class="selector-tag">span</span> &#123;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h2</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> solid gray;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div></li>
+<li><h3 id="父選擇器-amp"><a href="#父選擇器-amp" class="headerlink" title="父選擇器 &amp;"></a>父選擇器 <code>&amp;</code></h3>在嵌套CSS 規則時，有時也需要直接使用嵌套外層的父選擇器。<br>可以用 <code>&amp;</code> 代表嵌套規則外層的父選擇器。<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  &amp;<span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-decoration</span>: underline; &#125;</span><br><span class="line">  <span class="selector-tag">body</span><span class="selector-class">.firefox</span> &amp; &#123; <span class="attribute">font-weight</span>: normal; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span><span class="selector-class">.firefox</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div></li>
+<li><h3 id="屬性嵌套"><a href="#屬性嵌套" class="headerlink" title="屬性嵌套"></a>屬性嵌套</h3>有些CSS 屬性遵循相同的命名空間(namespace)，<br>比如 font-family, font-size, font-weight 都以 font 作為屬性的命名空間。<br>為了便於管理這樣的屬性，同時也為了避免了重複輸入，Sass 允許將屬性嵌套在命名空間中。<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-class">.funky</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: &#123;</span><br><span class="line">    family: fantasy;</span><br><span class="line">    size: <span class="number">30em</span>;</span><br><span class="line">    weight: bold;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.funky</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: fantasy;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30em</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+</li>
+</ul>
+<h2 id="註釋"><a href="#註釋" class="headerlink" title="註釋"></a>註釋</h2><ul>
+<li>Sass 支持標準的CSS 多行註釋/* */，以及單行註釋//，<br>前者會被完整輸出到編譯後的CSS文件中，而後者則不會。<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="comment">/* This comment is</span></span><br><span class="line"><span class="comment">* several lines long.</span></span><br><span class="line"><span class="comment">* since it uses the CSS comment syntax,</span></span><br><span class="line"><span class="comment">* it will appear in the CSS output. */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">color</span>: black; &#125;</span><br><span class="line"><span class="comment">// These comments are only one line long each.</span></span><br><span class="line"><span class="comment">// They won&#x27;t appear in the CSS output,</span></span><br><span class="line"><span class="comment">// since they use the single-line comment syntax.</span></span><br><span class="line"><span class="selector-tag">a</span> &#123; <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure>
+<div class="d-flex">
+  <small class="arrow down">➤</small>
+  <small class="arrow down">➤</small>
+</div>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="comment">/* This comment is</span></span><br><span class="line"><span class="comment">* several lines long.</span></span><br><span class="line"><span class="comment">* since it uses the CSS comment syntax,</span></span><br><span class="line"><span class="comment">* it will appear in the CSS output. */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: black; &#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>將 <code>!</code> 作為多行註釋的第一個字符表示在壓縮輸出模式下保留這條註釋並輸出到CSS 文件中，通常用於添加版權信息。<br>也可在註釋中輸出變數值(插值語句)。<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="variable">$version</span>: <span class="string">&quot;1.2.3&quot;</span>;</span><br><span class="line"><span class="comment">/* This CSS is generated by My Snazzy Framework version #&#123;$version&#125;. */</span></span><br></pre></td></tr></table></figure>
+<div class="d-flex">
+  <small class="arrow down">➤</small>
+  <small class="arrow down">➤</small>
+</div>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="comment">/* This CSS is generated by My Snazzy Framework version 1.2.3. */</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<div style="text-align: center; color:#aaa;"><small>/... 未完待續 .../</small></div>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SASS-SCSS/" rel="tag"># SASS/SCSS</a>
+              <a href="/tags/%E7%AD%86%E8%A8%98/" rel="tag"># 筆記</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/05/%E7%AD%86%E8%A8%98-React/" rel="prev" title="[筆記]_React">
+      <i class="fa fa-chevron-left"></i> [筆記]_React
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="nav-number">1.</span> <span class="nav-text">CSS 功能拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E8%A6%8F%E5%89%87"><span class="nav-number">1.1.</span> <span class="nav-text">嵌套規則</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E9%81%B8%E6%93%87%E5%99%A8-amp"><span class="nav-number">1.2.</span> <span class="nav-text">父選擇器 &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7%E5%B5%8C%E5%A5%97"><span class="nav-number">1.3.</span> <span class="nav-text">屬性嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%BB%E9%87%8B"><span class="nav-number">2.</span> <span class="nav-text">註釋</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
