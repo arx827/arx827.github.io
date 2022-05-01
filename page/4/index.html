@@ -178,6 +178,164 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/23/%E9%97%9C%E6%96%BC%E9%82%A3%E4%BA%9B%E8%A2%ABIE%E6%8E%92%E6%93%A0%E7%9A%84%E5%B1%AC%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/23/%E9%97%9C%E6%96%BC%E9%82%A3%E4%BA%9B%E8%A2%ABIE%E6%8E%92%E6%93%A0%E7%9A%84%E5%B1%AC%E6%80%A7/" class="post-title-link" itemprop="url">[議題]_關於那些被IE排擠的屬性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-23 10:18:31" itemprop="dateCreated datePublished" datetime="2021-02-23T10:18:31+08:00">2021-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-04 17:44:40" itemprop="dateModified" datetime="2021-04-04T17:44:40+08:00">2021-04-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><ul>
+<li><h5 id="多行文本溢出顯示…"><a href="#多行文本溢出顯示…" class="headerlink" title="多行文本溢出顯示…"></a>多行文本溢出顯示…</h5><ul>
+<li><code>-webkit-line-clamp</code></li>
+<li>需搭配 -webkit-box-orient 使用</li>
+<li>目前支援line-clamp的，只有Chrome與Safari</li>
+<li>Firefox與IE，需用高度來將超出的文字給隱藏起來</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">72px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/?search=line-clamp">[Can I use] -webkit-line-clamp</a><br><a target="_blank" rel="noopener" href="https://caniuse.com/?search=-webkit-box-orient">[Can I use] -webkit-box-orient</a><br><a target="_blank" rel="noopener" href="https://www.minwt.com/webdesign-dev/css/18447.html">[參考] 免寫程式！透過CSS3將多行文字自動省略，並出現… - 梅問題教學網</a> - 2017<br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1502438188.html">[參考] 多行文本溢出顯示…的方法 - ITREAD</a> - 2017<br><a target="_blank" rel="noopener" href="https://css-tricks.com/almanac/properties/l/line-clamp/">[參考] line-clamp - CSS-TRICKS</a> - 2018<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10245872">[參考] [iT邦] line-clamp - futian_shen</a> - 2020<br><a target="_blank" rel="noopener" href="https://wsw0615.medium.com/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-text-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90-e86ad8bf827c">[參考] 想知道嗎：Text-overflow把行尾變成… - Medium</a> - 2020</p>
+</blockquote>
+</li>
+<li><h5 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h5><ul>
+<li><code>flex: 1;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/23/%E9%97%9C%E6%96%BC%E9%82%A3%E4%BA%9B%E8%A2%ABIE%E6%8E%92%E6%93%A0%E7%9A%84%E5%B1%AC%E6%80%A7/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/22/link-%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/22/link-%E8%B3%87%E6%96%99%E8%A6%96%E8%A6%BA%E5%8C%96/" class="post-title-link" itemprop="url">[link]-資料視覺化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-22 00:41:28" itemprop="dateCreated datePublished" datetime="2021-02-22T00:41:28+08:00">2021-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-03-15 01:12:07" itemprop="dateModified" datetime="2021-03-15T01:12:07+08:00">2021-03-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.luoow.com/dc_tw/103222144">拿好！52個實用的資料視覺化工具！ - 微文庫</a> - 2017</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/21/link-HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -561,7 +719,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-04 14:01:55" itemprop="dateModified" datetime="2021-04-04T14:01:55+08:00">2021-04-04</time>
+                <time title="修改時間：2022-04-06 15:19:42" itemprop="dateModified" datetime="2022-04-06T15:19:42+08:00">2022-04-06</time>
               </span>
 
           
@@ -578,6 +736,7 @@
           <h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul>
 <li><a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/">[官網] - ReactJS</a></li>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20129269/ironman/3050">[iT邦] React 30 天學習歷程 - gigd123</a> - 2020</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=zqV7NIFGDrQ">[Youtube]【前端速成】React 快速入門｜Tiktok工程師帶你入門前端｜布魯斯前端</a> - 2021</li>
 </ul>
 
       
@@ -729,148 +888,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-Bootstrap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="Eason">
-      <meta itemprop="description" content="前端技術分享平台">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端寶庫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/14/link-Bootstrap/" class="post-title-link" itemprop="url">[link]_Bootstrap</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-14 03:55:59" itemprop="dateCreated datePublished" datetime="2021-02-14T03:55:59+08:00">2021-02-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 01:11:54" itemprop="dateModified" datetime="2021-03-15T01:11:54+08:00">2021-03-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="BS4"><a href="#BS4" class="headerlink" title="BS4"></a>BS4</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/chihchengwang3/bootstrap-keynote">Bootstrap 4與3的差異 - 卡斯伯</a> - 2017</li>
-</ul>
-<h4 id="BS5"><a href="#BS5" class="headerlink" title="BS5"></a>BS5</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20112550/ironman/3796">[iT邦] 金魚都能懂的Bootstrap5網頁框架開發 - CSScoke</a> - 2020</li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLqivELodHt3jq3oWBZfdhMu0GE7774HBW">[Youtube] 金魚都能懂的Bootstrap5網頁框架開發 - CSScoke</a> - 2020</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-Bit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="Eason">
-      <meta itemprop="description" content="前端技術分享平台">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端寶庫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/14/link-Bit/" class="post-title-link" itemprop="url">[link]_Bit</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-14 03:50:01" itemprop="dateCreated datePublished" datetime="2021-02-14T03:50:01+08:00">2021-02-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 01:11:59" itemprop="dateModified" datetime="2021-03-15T01:11:59+08:00">2021-03-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5d7110fbbd9eee541c3401f1">Bit系列 - 組件管理工具Bit</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -937,7 +958,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/apple-touch-icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="各種常用 CSS語法 速查表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[速查表]_CSS大全">
+<meta property="og:url" content="https://arx827.github.io/2022/04/24/%E9%80%9F%E6%9F%A5%E8%A1%A8-css%E5%A4%A7%E5%85%A8/index.html">
+<meta property="og:site_name" content="前端寶庫">
+<meta property="og:description" content="各種常用 CSS語法 速查表">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-04-24T07:30:28.000Z">
+<meta property="article:modified_time" content="2022-04-28T16:22:51.860Z">
+<meta property="article:author" content="Eason">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="速查表">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://arx827.github.io/2022/04/24/%E9%80%9F%E6%9F%A5%E8%A1%A8-css%E5%A4%A7%E5%85%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>[速查表]_CSS大全 | 前端寶庫</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">前端寶庫</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">前端技術分享平台</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章標籤</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2022/04/24/%E9%80%9F%E6%9F%A5%E8%A1%A8-css%E5%A4%A7%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [速查表]_CSS大全
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-04-24 15:30:28" itemprop="dateCreated datePublished" datetime="2022-04-24T15:30:28+08:00">2022-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-04-29 00:22:51" itemprop="dateModified" datetime="2022-04-29T00:22:51+08:00">2022-04-29</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>各種常用 CSS語法 速查表</p>
+<a id="more"></a>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/meyerweb/csstdg4figs">範例程式碼</a></li>
+</ul>
+<ul>
+<li><h2 id="章節目錄"><a href="#章節目錄" class="headerlink" title="章節目錄"></a>章節目錄</h2><table>
+<thead>
+<tr>
+<th>目錄</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="#CSS%E8%88%87%E6%96%87%E4%BB%B6">CSS與文件</a></td>
+<td><a href="#%E5%85%83%E7%B4%A0">元素</a>、<a href="#%E9%80%A3%E7%B5%90CSS%E8%88%87HTML">連結CSS與HTML</a>、<a href="#%E6%A8%A3%E5%BC%8F%E8%A1%A8%E5%85%A7%E5%AE%B9">樣式表內容</a>、<a href="#%E5%AA%92%E9%AB%94%E6%9F%A5%E8%A9%A2">媒體查詢</a>、<a href="#%E7%89%B9%E6%80%A7%E6%9F%A5%E8%A9%A2">特性查詢</a>、<a href="#%E5%B0%8F%E7%B5%90">小結</a></td>
+</tr>
+<tr>
+<td><a href="#%E9%81%B8%E6%93%87%E5%99%A8">選擇器</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E6%AC%8A%E9%87%8D%E8%88%87%E8%81%AF%E7%B4%9A">權重與聯級</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E6%95%B8%E5%80%BC%E8%88%87%E5%96%AE%E4%BD%8D">數值與單位</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%AD%97%E5%9E%8B">字型</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E6%96%87%E5%AD%97%E5%B1%AC%E6%80%A7">文字屬性</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%9F%BA%E6%9C%AC%E8%A6%96%E8%A6%BA%E6%A0%BC%E5%BC%8F">基本視覺格式</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%85%A7%E8%B7%9D%E3%80%81%E9%82%8A%E6%A1%86%E3%80%81%E8%BC%AA%E5%BB%93%E8%88%87%E9%82%8A%E7%95%8C%E7%AF%84%E5%9C%8D">內距、邊框、輪廓與邊界範圍</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E8%89%B2%E5%BD%A9%E3%80%81%E8%83%8C%E6%99%AF%E8%88%87%E6%BC%B8%E5%B1%A4">色彩、背景與漸層</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E6%B5%AE%E5%8B%95%E8%88%87%E5%BD%A2%E7%8B%80">浮動與形狀</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%AE%9A%E4%BD%8D">定位</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Flexbox%E6%8E%92%E7%89%88">Flexbox排版</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E7%B6%B2%E6%A0%BC%E6%8E%92%E7%89%88">網格排版</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#CSS%E8%A1%A8%E6%A0%BC%E6%8E%92%E7%89%88">CSS表格排版</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%88%97%E8%A1%A8%E8%88%87%E7%94%9F%E6%88%90%E5%85%A7%E5%AE%B9">列表與生成內容</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E8%BD%89%E6%8F%9B">轉換</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E8%BD%89%E5%A0%B4">轉場</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%8B%95%E7%95%AB">動畫</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E6%BF%BE%E9%8F%A1%E3%80%81%E6%B7%B7%E5%90%88%E3%80%81%E8%A3%81%E5%88%87%E8%88%87%E9%81%AE%E7%BD%A9">濾鏡、混合、裁切與遮罩</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E5%AA%92%E9%AB%94%E7%9B%B8%E4%BE%9D%E6%A8%A3%E5%BC%8F">媒體相依樣式</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E9%99%84%E9%8C%84A">附錄A - 可動畫屬性</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E9%99%84%E9%8C%84B">附錄B - 基本屬性參考手冊</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#%E9%99%84%E9%8C%84C">附錄C - 色彩值對照表</a></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="語法慣例"><a href="#語法慣例" class="headerlink" title="語法慣例"></a>語法慣例</h2><table>
+<thead>
+<tr>
+<th>語法</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>X | Y</code></td>
+<td>只允許 X、Y 其中一個值。</td>
+</tr>
+<tr>
+<td><code>X || Y</code></td>
+<td>表示能夠使用 X、Y 或 同時使用兩個值，不限順序。(X、Y、XY、YX)。</td>
+</tr>
+<tr>
+<td><code>X &amp;&amp; Y</code></td>
+<td>X、Y都必須出現，不限順序。(XY、YX)。</td>
+</tr>
+<tr>
+<td><code>[...]</code></td>
+<td>數組。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>修飾子</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星號 <code>(*)</code></td>
+<td>可以重複出現 0次以上。</td>
+</tr>
+<tr>
+<td>加號 <code>(+)</code></td>
+<td>可以重複出現 1次以上。</td>
+</tr>
+<tr>
+<td>井字號 <code>(#)</code></td>
+<td>可以重複出現 1次以上，並用逗號分隔。</td>
+</tr>
+<tr>
+<td>問號 <code>(?)</code></td>
+<td>選填數值。</td>
+</tr>
+<tr>
+<td>驚嘆號 <code>(!)</code></td>
+<td>必要值，至少出現 1次。</td>
+</tr>
+<tr>
+<td>花括號 <code>(&#123;M, N&#125;)</code></td>
+<td>必須重複出現 M ~ N 次。</td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="CSS與文件"><a href="#CSS與文件" class="headerlink" title="CSS與文件"></a>CSS與文件</h2><p>階層式樣式表 (Cascading Style Sheet，CSS)。</p>
+<ul>
+<li><h3 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h3><p>「元素」(Element) 是文件結構的基礎。</p>
+<ul>
+<li><h4 id="置換與非置換元素"><a href="#置換與非置換元素" class="headerlink" title="置換與非置換元素"></a>置換與非置換元素</h4><ul>
+<li><h5 id="置換元素"><a href="#置換元素" class="headerlink" title="置換元素"></a>置換元素</h5>元素的內容(Content) 會被置換成某些文章內容外的東西的元素，<ul>
+<li>e.g. <code>&lt;img&gt;</code>元素的內容會被文件外部的影像檔案取代。<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;howdy.gif&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>e.g. <code>&lt;input&gt;</code>也是置換元素，置換後的內容依據型別的不同可以是選擇鈕(radio button)、複選框(checkbox)或文件輸入框(text input box)。</li>
+</ul>
+</li>
+<li><h5 id="非置換元素"><a href="#非置換元素" class="headerlink" title="非置換元素"></a>非置換元素</h5>表示使用者代理(user agent，通常是指瀏覽器)會直接以元素本身產生元素的內容，呈現在某個方框(box)當中。</li>
+</ul>
+</li>
+<li><h4 id="元素顯示角色"><a href="#元素顯示角色" class="headerlink" title="元素顯示角色"></a>元素顯示角色</h4><ul>
+<li><h5 id="區塊級元素"><a href="#區塊級元素" class="headerlink" title="區塊級元素"></a>區塊級元素</h5>會產生一個(預設會)填滿父元素內容區塊且無法與其他元素並排的元素方框(element box)，<br>會在元素方框的前後產生「斷行」(break)，置換元素通常都不是區塊級元素。<ul>
+<li>e.g. <code>&lt;p&gt;</code> 、<code>&lt;div&gt;</code></li>
+</ul>
+</li>
+<li><h5 id="行內級元素"><a href="#行內級元素" class="headerlink" title="行內級元素"></a>行內級元素</h5>會在文字所在文字行產生元素方框，不會破壞該行的流向(flow)，<br>在HTML中，區塊級元素不能放置在行內級元素之內，CSS則沒有限制不同顯示角色間的關係。<ul>
+<li>e.g.<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;display: inline;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">em</span> <span class="attr">style</span>=<span class="string">&quot;display: block;&quot;</span>&gt;</span>an inline element<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="連結CSS與HTML"><a href="#連結CSS與HTML" class="headerlink" title="連結CSS與HTML"></a>連結CSS與HTML</h3><ul>
+<li><h4 id="link-標記"><a href="#link-標記" class="headerlink" title="link 標記"></a>link 標記</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;sheet1.css&quot;</span> <span class="attr">media</span>=<span class="string">&quot;all&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CSS透過link標記將樣式表(stylesheet)連結到文件，稱為「外部樣式表」。<br>link標記必須直接放在head元素內，瀏覽器會找尋並載入樣式表，使用其中定義的樣式呈現HTML文件。</p>
+<ul>
+<li><h5 id="屬性-attribute"><a href="#屬性-attribute" class="headerlink" title="屬性 (attribute)"></a>屬性 (attribute)</h5><ul>
+<li><code>rel</code>，表示「關係」(relation)，e.g. stylesheet。</li>
+<li><code>type</code>屬性，表示使用link標記載入的資料類型，e.g. text/css。能夠讓瀏覽器知道樣式表是CSS樣式表，也決定了瀏覽器對載入的資料的處理方式。</li>
+<li><code>href</code>屬性，是樣式表的URL。</li>
+<li><code>media</code>屬性，是一個以上的媒體描述子 (media descriptor)，代表了特定的媒體類型以及該媒體的特性，媒體描述子之間以逗號區隔。e.g. 可以指定針對螢幕(screen)與投影機(projection)媒體使用的樣式表。<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;visual-sheet.css&quot;</span> <span class="attr">media</span>=<span class="string">&quot;screen, projection&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h5 id="替代樣式表-alternate-stylesheet"><a href="#替代樣式表-alternate-stylesheet" class="headerlink" title="替代樣式表 (alternate stylesheet)"></a>替代樣式表 (alternate stylesheet)</h5></li>
+</ul>
+</li>
+<li><h4 id="style-元素"><a href="#style-元素" class="headerlink" title="style 元素"></a>style 元素</h4></li>
+<li><h4 id="import-指令"><a href="#import-指令" class="headerlink" title="@import 指令"></a>@import 指令</h4></li>
+<li><h4 id="HTTP-連結"><a href="#HTTP-連結" class="headerlink" title="HTTP 連結"></a>HTTP 連結</h4></li>
+<li><h4 id="行內樣式"><a href="#行內樣式" class="headerlink" title="行內樣式"></a>行內樣式</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  <div style="text-align: center; color:#aaa;"><small>/... 未完待續 .../</small></div>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/%E9%80%9F%E6%9F%A5%E8%A1%A8/" rel="tag"># 速查表</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/01/%E7%AD%86%E8%A8%98-SASS-SCSS/" rel="prev" title="[筆記]_SASS/SCSS">
+      <i class="fa fa-chevron-left"></i> [筆記]_SASS/SCSS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/27/%E7%AD%86%E8%A8%98-React-Router/" rel="next" title="[筆記]_React-Router">
+      [筆記]_React-Router <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%A0%E7%AF%80%E7%9B%AE%E9%8C%84"><span class="nav-number">1.</span> <span class="nav-text">章節目錄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%9E%E6%B3%95%E6%85%A3%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">語法慣例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E8%88%87%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">CSS與文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.</span> <span class="nav-text">元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%AE%E6%8F%9B%E8%88%87%E9%9D%9E%E7%BD%AE%E6%8F%9B%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.1.</span> <span class="nav-text">置換與非置換元素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%AE%E6%8F%9B%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">置換元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%9E%E7%BD%AE%E6%8F%9B%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">非置換元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E9%A1%AF%E7%A4%BA%E8%A7%92%E8%89%B2"><span class="nav-number">3.1.2.</span> <span class="nav-text">元素顯示角色</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E7%B4%9A%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">區塊級元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E7%B4%9A%E5%85%83%E7%B4%A0"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">行內級元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%A3%E7%B5%90CSS%E8%88%87HTML"><span class="nav-number">3.2.</span> <span class="nav-text">連結CSS與HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#link-%E6%A8%99%E8%A8%98"><span class="nav-number">3.2.1.</span> <span class="nav-text">link 標記</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7-attribute"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">屬性 (attribute)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%BF%E4%BB%A3%E6%A8%A3%E5%BC%8F%E8%A1%A8-alternate-stylesheet"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">替代樣式表 (alternate stylesheet)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#style-%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.2.</span> <span class="nav-text">style 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import-%E6%8C%87%E4%BB%A4"><span class="nav-number">3.2.3.</span> <span class="nav-text">@import 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-%E9%80%A3%E7%B5%90"><span class="nav-number">3.2.4.</span> <span class="nav-text">HTTP 連結</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E6%A8%A3%E5%BC%8F"><span class="nav-number">3.2.5.</span> <span class="nav-text">行內樣式</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eason"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Eason</p>
+  <div class="site-description" itemprop="description">前端技術分享平台</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/arx827/arx827.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;arx827&#x2F;arx827.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
