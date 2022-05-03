@@ -29,7 +29,7 @@
 <meta property="og:description" content=".d-flex {     display: flex;   }   .d-flex .col {     flex: 1;   }   .d-flex .d-flex-item {     margin: 0 5px;   }   .flex-direction-column {     flex-direction: column;   }   .arrow {     color:#a">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-04-01T03:37:42.000Z">
-<meta property="article:modified_time" content="2022-04-03T18:08:58.596Z">
+<meta property="article:modified_time" content="2022-05-03T17:49:12.076Z">
 <meta property="article:author" content="Eason">
 <meta property="article:tag" content="SASS&#x2F;SCSS">
 <meta property="article:tag" content="筆記">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-04-04 02:08:58" itemprop="dateModified" datetime="2022-04-04T02:08:58+08:00">2022-04-04</time>
+                <time title="修改時間：2022-05-04 01:49:12" itemprop="dateModified" datetime="2022-05-04T01:49:12+08:00">2022-05-04</time>
               </span>
 
           
@@ -255,7 +255,7 @@
 </style>
 
 <p><small>Releases v3.6.3 (2019/11/4)</small></p>
-<p>Sass 是一款強化CSS 的輔助工具，<br>它在CSS 語法的基礎上增加了變數(variables)、嵌套(nested rules)、混合(mixins)、導入(inline imports) 等高級功能。</p>
+<p>CSS預處理器。<br>需要另外編譯成CSS，瀏覽器才看得懂。<br>Sass 是一款強化CSS 的輔助工具，<br>它在CSS 語法的基礎上增加了變數(variables)、嵌套(nesting)、混合(mixins)、導入(inline imports) 等高級功能。</p>
 <a id="more"></a>
 
 <h2 id="CSS-功能拓展"><a href="#CSS-功能拓展" class="headerlink" title="CSS 功能拓展"></a>CSS 功能拓展</h2><ul>
@@ -464,7 +464,7 @@
     <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.icon-mail</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;/icons/mail.svg&quot;</span>);</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </div></li>
-<li>注入未引用的字符串中。在動態生成名稱(例如：動畫)時，特別有用。<div class="d-flex">
+<li>注入未引用的字符串中。再動態生成名稱(例如：動畫)時，特別有用。<div class="d-flex">
   <div class="d-flex-item col">
     <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> inline-animation(<span class="variable">$duration</span>) &#123;</span><br><span class="line">  <span class="variable">$name</span>: inline-#&#123;unique-id()&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">@keyframes</span> #&#123;<span class="variable">$name</span>&#125; &#123;</span><br><span class="line">    <span class="keyword">@content</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">animation-name</span>: <span class="variable">$name</span>;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="variable">$duration</span>;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pulse</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> inline-animation(<span class="number">2s</span>) &#123;</span><br><span class="line">    from &#123; <span class="attribute">background-color</span>: yellow &#125;</span><br><span class="line">    to &#123; background-color: red &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
@@ -477,10 +477,376 @@
   </div>
 </div>
 
-
-
-
 </li>
+</ul>
+<h2 id="規則"><a href="#規則" class="headerlink" title="@規則"></a>@規則</h2><ul>
+<li><h3 id="use"><a href="#use" class="headerlink" title="@use"></a><code>@use</code></h3><p>以模塊方式，從其他Sass樣式表中加載 mixins、函數或變數，並將來自多個樣式表的CSS組合在一起。<br>以這種方式加載的任何樣式都將在編譯CSS中，僅包含一次，無論被加載多少次。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// foundation/_code.scss</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: .<span class="number">25em</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// foundation/_lists.scss</span></span><br><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">  &amp; &amp; &#123;</span><br><span class="line">    <span class="attribute">padding</span>: &#123;</span><br><span class="line">      bottom: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;foundation/code&#x27;</span>;</span><br><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;foundation/lists&#x27;</span>;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: .<span class="number">25em</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> <span class="selector-tag">ol</span> &#123;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><h4 id="加載成員"><a href="#加載成員" class="headerlink" title="加載成員"></a>加載成員</h4><p>使用命名空間方式呼叫模塊中的 變數、函數和mixins。<br>默認情況下，命名空間為URL最後的檔名。</p>
+<ul>
+<li><code>&lt;namespace&gt;.&lt;variable&gt;</code></li>
+<li><code>&lt;namespace&gt;.&lt;function&gt;</code></li>
+<li><code>@include &lt;namespace&gt;.&lt;mixin&gt;()</code></li>
+</ul>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// src/_corners.scss</span></span><br><span class="line"><span class="variable">$radius</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="keyword">@mixin</span> rounded &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@use</span> <span class="string">&quot;src/corners&quot;</span>;</span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> corners.rounded;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> + corners.<span class="variable">$radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><h5 id="自訂命名空間"><a href="#自訂命名空間" class="headerlink" title="自訂命名空間"></a>自訂命名空間</h5><p><code>@use &quot;&lt;url&gt;&quot; as &lt;namespace&gt;</code></p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// src/_corners.scss</span></span><br><span class="line"><span class="variable">$radius</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="keyword">@mixin</span> rounded &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@use</span> <span class="string">&quot;src/corners&quot;</span> as c;</span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> c.rounded;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> + c.<span class="variable">$radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h5 id="私有屬性"><a href="#私有屬性" class="headerlink" title="私有屬性"></a>私有屬性</h5><p>若不希望定義的所有屬性都在樣式表之外可用。<br><code>-</code> 可以通過開頭的名稱來輕鬆定義私有屬性。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// src/_corners.scss</span></span><br><span class="line"><span class="variable">$-radius</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="keyword">@mixin</span> rounded &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="variable">$-radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@use</span> <span class="string">&quot;src/corners&quot;</span>;</span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> corners.rounded;</span><br><span class="line">  <span class="comment">// This is an error! $-radius isn&#x27;t visible outside of `_corners.scss`.</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> + corners.<span class="variable">$-radius</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="配置模塊"><a href="#配置模塊" class="headerlink" title="配置模塊"></a>配置模塊</h4><p><code>!default</code> 樣式表可以使用標誌 定義變數以使其可配置。<br>要加載帶有配置的模塊，請編寫 <code>@use &lt;url&gt; with (&lt;variable&gt;:&lt;value&gt;, &lt;variable&gt;:&lt;value&gt;)</code>。<br>配置的值將覆蓋變數的默認值。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _library.scss</span></span><br><span class="line"><span class="variable">$black</span>: <span class="number">#000</span> !default;</span><br><span class="line"><span class="variable">$border-radius</span>: <span class="number">0.25rem</span> !default;</span><br><span class="line"><span class="variable">$box-shadow</span>: <span class="number">0</span> <span class="number">0.5rem</span> <span class="number">1rem</span> rgba(<span class="variable">$black</span>, <span class="number">0.15</span>) !default;</span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="variable">$border-radius</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="variable">$box-shadow</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@use</span> <span class="string">&#x27;library&#x27;</span> with (</span><br><span class="line">  <span class="variable">$black</span>: <span class="number">#222</span>,</span><br><span class="line">  <span class="variable">$border-radius</span>: <span class="number">0.1rem</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0.1rem</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0.5rem</span> <span class="number">1rem</span> <span class="built_in">rgba</span>(<span class="number">34</span>, <span class="number">34</span>, <span class="number">34</span>, <span class="number">0.15</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+</ul>
+</li>
+<li><h3 id="import"><a href="#import" class="headerlink" title="@import"></a><code>@import</code></h3><p>能夠導入 Sass 和 CSS 樣式表。<br>Sass 團隊不鼓勵繼續使用該 <code>@import</code> 規則。<br>將在接下來的幾年中逐步淘汰。<br>請以 <code>@use</code> 取代。</p>
+<blockquote>
+<p><code>@import</code> 有以下問題：<br>@import 是全局的，必須為其添加前綴以避免命名衝突。<br>每個樣式表都會執行，造成編譯時間太久。<br>若同時載入同一份樣式表，都會被編譯，早成資源浪費。<br>沒有私有屬性。</p>
+</blockquote>
+<ul>
+<li>可使用逗點載入多個樣式。<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;foundation/code&#x27;</span>, <span class="string">&#x27;foundation/lists&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>檔名開頭為<code>_</code>，僅用於導入而不會自行編譯。<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _lists.scss</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;lists&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>可嵌套於樣式中 (使用 <code>mixin</code> 會是更好的選擇)<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">// style.scss</span></span><br><span class="line"><span class="selector-class">.theme-sample</span> &#123;</span><br><span class="line">  <span class="keyword">@import</span> <span class="string">&quot;theme&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h3 id="mixin、-include"><a href="#mixin、-include" class="headerlink" title="@mixin、@include"></a><code>@mixin</code>、<code>@include</code></h3><p>定義可以在整個樣式表中重複使用的樣式。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> reset-list &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@mixin</span> horizontal-list &#123;</span><br><span class="line">  <span class="keyword">@include</span> reset-list;</span><br><span class="line">  <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin</span>: &#123;</span><br><span class="line">      left: -<span class="number">2px</span>;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">2em</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> horizontal-list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><h4 id="參數"><a href="#參數" class="headerlink" title="參數"></a>參數</h4><p>但是必須傳入相同數量參數。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> rtl(<span class="variable">$property</span>, <span class="variable">$ltr-value</span>, <span class="variable">$rtl-value</span>) &#123;</span><br><span class="line">  #&#123;<span class="variable">$property</span>&#125;: <span class="variable">$ltr-value</span>;</span><br><span class="line">  <span class="selector-attr">[dir=rtl]</span> &amp; &#123;</span><br><span class="line">    #&#123;<span class="variable">$property</span>&#125;: <span class="variable">$rtl-value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> rtl(float, left, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-attr">[dir=rtl]</span> <span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="可選參數"><a href="#可選參數" class="headerlink" title="可選參數"></a>可選參數</h4><p>可以通過定義一個默認值來使參數成為可選參數。<br>如果該參數未傳遞，則將使用該默認值。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> replace-text(<span class="variable">$image</span>, <span class="variable">$x</span>: <span class="number">50%</span>, <span class="variable">$y</span>: <span class="number">50%</span>) &#123;</span><br><span class="line">  <span class="attribute">text-indent</span>: -<span class="number">99999em</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">background</span>: &#123;</span><br><span class="line">    image: <span class="variable">$image</span>;</span><br><span class="line">    repeat: no-repeat;</span><br><span class="line">    <span class="attribute">position</span>: <span class="variable">$x</span> <span class="variable">$y</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mail-icon</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> replace-text(url(<span class="string">&quot;/images/mail.svg&quot;</span>), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.mail-icon</span> &#123;</span><br><span class="line">  <span class="attribute">text-indent</span>: -<span class="number">99999em</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;/images/mail.svg&quot;</span>);</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="關鍵字參數"><a href="#關鍵字參數" class="headerlink" title="關鍵字參數"></a>關鍵字參數</h4><p>可以明確指定傳遞的參數名稱，避免參數順序問題。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> square(<span class="variable">$size</span>, <span class="variable">$radius</span>: <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$size</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">$size</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">@if</span> <span class="variable">$radius</span> != <span class="number">0</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="variable">$radius</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> square(<span class="number">100px</span>, <span class="variable">$radius</span>: <span class="number">4px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="任意參數"><a href="#任意參數" class="headerlink" title="任意參數"></a>任意參數</h4><p>能夠接受任意數量的參數，最後一個參數以<code>...</code>結尾。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> order(<span class="variable">$height</span>, <span class="variable">$selectors</span>...) &#123;</span><br><span class="line">  <span class="keyword">@for</span> <span class="variable">$i</span> from <span class="number">0</span> to length(<span class="variable">$selectors</span>) &#123;</span><br><span class="line">    #&#123;nth(<span class="variable">$selectors</span>, <span class="variable">$i</span> + 1)&#125; &#123;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">height</span>: <span class="variable">$height</span>;</span><br><span class="line">      <span class="attribute">margin-top</span>: <span class="variable">$i</span> * <span class="variable">$height</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@include</span> order(<span class="number">150px</span>, <span class="string">&quot;input.name&quot;</span>, <span class="string">&quot;input.address&quot;</span>, <span class="string">&quot;input.zip&quot;</span>);</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-class">.name</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-class">.address</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-class">.zip</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="內容塊"><a href="#內容塊" class="headerlink" title="內容塊"></a>內容塊</h4><p>除了參數之外，mixin 還可以接受整個樣式塊，或內容塊。<br>注入並取代 <code>@content</code> 的位置。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> hover &#123;</span><br><span class="line">  &amp;<span class="selector-pseudo">:not</span>(<span class="selector-attr">[disabled]</span>)<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="keyword">@content</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="keyword">@include</span> hover &#123;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.button</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[disabled]</span>)<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><p>一個 mixin 可以包含多個 <code>@content</code>，內容塊將分別包含在每個 <code>@content</code>。</p>
+</li>
+<li><p>mixin 可以將參數傳遞給它的內容塊。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> media(<span class="variable">$types</span>...) &#123;</span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$type</span> in <span class="variable">$types</span> &#123;</span><br><span class="line">    <span class="keyword">@media</span> #&#123;<span class="variable">$type</span>&#125; &#123;</span><br><span class="line">      <span class="keyword">@content</span>(<span class="variable">$type</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@include</span> media(screen, print) using (<span class="variable">$type</span>) &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="keyword">@if</span> <span class="variable">$type</span> == print &#123;</span><br><span class="line">      <span class="attribute">font-family</span>: Calluna;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="keyword">@media</span> screen &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> print &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Calluna;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+</ul>
+</li>
+<li><h4 id="縮寫"><a href="#縮寫" class="headerlink" title="縮寫"></a>縮寫</h4><p><code>@mixin</code> 可縮寫為 <code>=</code><br><code>@include</code> 可縮寫為 <code>+</code><br>雖然語法簡潔，但語意讓人難懂。</p>
+  <div class="d-flex">
+    <div class="d-flex-item col">
+      <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line">=reset-list &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line">=horizontal-list &#123;</span><br><span class="line">  +reset-list;</span><br><span class="line">  <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">margin</span>: &#123;</span><br><span class="line">      left: -<span class="number">2px</span></span><br><span class="line">      right: <span class="number">2em</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">nav ul &#123;</span><br><span class="line">  +horizontal-list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+    <div class="d-flex flex-direction-column">
+      <small class="arrow">➤</small>
+      <small class="arrow">➤</small>
+    </div>
+    <div class="d-flex-item col">
+      <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+  </div>
+</li>
+</ul>
+</li>
+<li><h3 id="function"><a href="#function" class="headerlink" title="@function"></a><code>@function</code></h3><p>定義自定義函數，以處理複雜運算。<br>回調使用 <code>@retrun</code>。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@function</span> pow(<span class="variable">$base</span>, <span class="variable">$exponent</span>) &#123;</span><br><span class="line">  <span class="variable">$result</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">@for</span> $_ from <span class="number">1</span> through <span class="variable">$exponent</span> &#123;</span><br><span class="line">    <span class="variable">$result</span>: <span class="variable">$result</span> * <span class="variable">$base</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">@return</span> <span class="variable">$result</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">margin-left</span>: pow(<span class="number">4</span>, <span class="number">3</span>) * <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">64px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><h4 id="可選參數-1"><a href="#可選參數-1" class="headerlink" title="可選參數"></a>可選參數</h4><p>可以通過定義一個默認值來使參數成為可選參數。<br>如果該參數未傳遞，則將使用該默認值。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@function</span> invert(<span class="variable">$color</span>, <span class="variable">$amount</span>: <span class="number">100%</span>) &#123;</span><br><span class="line">  <span class="variable">$inverse</span>: change-color(<span class="variable">$color</span>, <span class="variable">$hue</span>: hue(<span class="variable">$color</span>) + <span class="number">180</span>);</span><br><span class="line">  <span class="keyword">@return</span> mix(<span class="variable">$inverse</span>, <span class="variable">$color</span>, <span class="variable">$amount</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#036</span>;</span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: invert(<span class="variable">$primary-color</span>, <span class="number">80%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.header</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#523314</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="關鍵字參數-1"><a href="#關鍵字參數-1" class="headerlink" title="關鍵字參數"></a>關鍵字參數</h4><p>可以明確指定傳遞的參數名稱，避免參數順序問題。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#036</span>;</span><br><span class="line"><span class="selector-class">.banner</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">  <span class="attribute">color</span>: scale-color(<span class="variable">$primary-color</span>, <span class="variable">$lightness</span>: +<span class="number">40%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.banner</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#036</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#0a85ff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="任意參數-1"><a href="#任意參數-1" class="headerlink" title="任意參數"></a>任意參數</h4><p>能夠接受任意數量的參數，最後一個參數以<code>...</code>結尾。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@function</span> sum(<span class="variable">$numbers</span>...) &#123;</span><br><span class="line">  <span class="variable">$sum</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$number</span> in <span class="variable">$numbers</span> &#123;</span><br><span class="line">    <span class="variable">$sum</span>: <span class="variable">$sum</span> + <span class="variable">$number</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">@return</span> <span class="variable">$sum</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.micro</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: sum(<span class="number">50px</span>, <span class="number">30px</span>, <span class="number">100px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.micro</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">180px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="return"><a href="#return" class="headerlink" title="@return"></a><code>@return</code></h4><p>只允許在<code>@function</code>中出現。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@use</span> <span class="string">&quot;sass:string&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@function</span> str-insert(<span class="variable">$string</span>, <span class="variable">$insert</span>, <span class="variable">$index</span>) &#123;</span><br><span class="line">  <span class="comment">// Avoid making new strings if we don&#x27;t need to.</span></span><br><span class="line">  <span class="keyword">@if</span> string.length(<span class="variable">$string</span>) == <span class="number">0</span> &#123;</span><br><span class="line">    <span class="keyword">@return</span> <span class="variable">$insert</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable">$before</span>: string.slice(<span class="variable">$string</span>, <span class="number">0</span>, <span class="variable">$index</span>);</span><br><span class="line">  <span class="variable">$after</span>: string.slice(<span class="variable">$string</span>, <span class="variable">$index</span>);</span><br><span class="line">  <span class="keyword">@return</span> <span class="variable">$before</span> + <span class="variable">$insert</span> + <span class="variable">$after</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h3 id="extend"><a href="#extend" class="headerlink" title="@extend"></a><code>@extend</code></h3><p>允許選擇器上，相互繼承樣式。<br>設計頁面時，經常會出現一個類應該具有另一個類的所有樣式以及自己的特定樣式。<br>例如：<code>BEM方法</code> 中的修飾符類。(在預設樣式上，增加了特殊樣式。)<br>但這會造成HTML混亂，容易因忘記包含這兩個類而出錯，並且可能會將非語意樣式問題帶入標籤中。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;error error--serious&quot;</span>&gt;</span></span><br><span class="line">  Oh no! You&#x27;ve been hacked!</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>@extend</code>規則解決了此類問題。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-class">.error</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line"></span><br><span class="line">  &amp;--serious &#123;</span><br><span class="line">    <span class="keyword">@extend</span> .error;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.error</span>, <span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<p>當一個類<code>@extend</code>另一個類時，所有類都會進行相同配置。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-class">.error</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fee</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> .error;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.error</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.error--serious</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fee</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+
+<ul>
+<li><h4 id="optional-聲明"><a href="#optional-聲明" class="headerlink" title="!optional 聲明"></a><code>!optional</code> 聲明</h4><p>如果<code>@extend</code>找不到對應的擴展樣式，將會報錯。<br><code>!optional</code> 可讓<code>@extend</code>報錯時，不生成選擇器。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-class">.important</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> .notice !optional;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h4 id="佔位符選擇器"><a href="#佔位符選擇器" class="headerlink" title="佔位符選擇器"></a>佔位符選擇器</h4><p>有時想編寫僅用於extend的樣式規則，不包含在 CSS 輸出中。在此情況下，可以使用佔位符選擇器 <code>%</code>。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line">%<span class="selector-tag">strong</span>-alert &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %strong-alert;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line"><span class="selector-class">.error--serious</span> &#123;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h4 id="Mixins-or-Extends"><a href="#Mixins-or-Extends" class="headerlink" title="Mixins or Extends"></a>Mixins or Extends</h4><p><code>@mixins</code> 與 <code>@extends</code> 兩者的概念蠻相近的，由於兩者都可以拿來做相同樣式的包裝，所以兩者的使用時機很容易讓人搞混。<br>由於 <code>@extends</code> 會智能統一擴展的樣式，生成混合後的樣式表，並修剪重複性的樣式。<br>處理重用性高的樣式時，建議採用 <code>@extends</code>。<br>處理需要帶參數而動態生成的樣式時，建議採用 <code>@mixins</code>。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="error"><a href="#error" class="headerlink" title="@error"></a><code>@error</code></h3><p>導致編譯失敗並顯示錯誤消息。<br>在編寫帶有參數的<code>@mixins</code>或<code>@function</code>時，<br>通常為確保參數的類型和格式是預期的，若不是，<br>則需要通知用戶並將 <code>@mixins</code>或<code>@function</code> 停止運行。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="keyword">@mixin</span> reflexive-position(<span class="variable">$property</span>, <span class="variable">$value</span>) &#123;</span><br><span class="line">  <span class="keyword">@if</span> <span class="variable">$property</span> != left <span class="keyword">and</span> <span class="variable">$property</span> != right &#123;</span><br><span class="line">    <span class="keyword">@error</span> <span class="string">&quot;Property #&#123;$property&#125; must be either left or right.&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable">$left-value</span>: if(<span class="variable">$property</span> == right, initial, <span class="variable">$value</span>);</span><br><span class="line">  <span class="variable">$right-value</span>: if(<span class="variable">$property</span> == right, <span class="variable">$value</span>, initial);</span><br><span class="line"></span><br><span class="line">  <span class="attribute">left</span>: <span class="variable">$left-value</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="variable">$right-value</span>;</span><br><span class="line">  <span class="selector-attr">[dir=rtl]</span> &amp; &#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="variable">$right-value</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="variable">$left-value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> reflexive-position(top, <span class="number">12px</span>);</span><br><span class="line">  <span class="comment">//       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></span><br><span class="line">  <span class="comment">// Error: Property top must be either left or right.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="warn"><a href="#warn" class="headerlink" title="@warn"></a><code>@warn</code></h3><p>與 <code>@error</code> 用法相同，<br>差異在於，不停止編譯的情況下打印警告。</p>
+</li>
+<li><h3 id="debug"><a href="#debug" class="headerlink" title="@debug"></a><code>@debug</code></h3><p>有時在開發樣式表時查看 變數 或 表達式 的值很有用。<br>與 <code>console</code> 雷同，能打印出運算後的值。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> inset-divider-offset(<span class="variable">$offset</span>, <span class="variable">$padding</span>) &#123;</span><br><span class="line">  <span class="variable">$divider-offset</span>: (<span class="number">2</span> * <span class="variable">$padding</span>) + <span class="variable">$offset</span>;</span><br><span class="line">  <span class="keyword">@debug</span> <span class="string">&quot;divider offset: #&#123;$divider-offset&#125;&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="variable">$divider-offset</span>;</span><br><span class="line">  <span class="attribute">width</span>: calc(<span class="number">100%</span> - #&#123;<span class="variable">$divider-offset</span>&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="at-root"><a href="#at-root" class="headerlink" title="@at-root"></a><code>@at-root</code></h3><p>將其中的樣式放在CSS 文檔的根目錄中，而不是使用正常的嵌套。</p>
+<div class="d-flex">
+  <div class="d-flex-item col">
+    <figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* scss */</span></span><br><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">@at-root</span> &#123;</span><br><span class="line">    <span class="selector-class">.child1</span> &#123; ... &#125;</span><br><span class="line">    <span class="selector-class">.child2</span> &#123; ... &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.step-child</span> &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <div class="d-flex flex-direction-column">
+    <small class="arrow">➤</small>
+    <small class="arrow">➤</small>
+  </div>
+  <div class="d-flex-item col">
+    <figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* css */</span></span><br><span class="line">.parent &#123; ... &#125;</span><br><span class="line">.child1 &#123; ... &#125;</span><br><span class="line">.child2 &#123; ... &#125;</span><br><span class="line">.parent .step-child &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</div>
+</li>
+<li><h3 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h3><ul>
+<li><h4 id="if、-else"><a href="#if、-else" class="headerlink" title="@if、@else"></a><code>@if</code>、<code>@else</code></h4></li>
+<li><h4 id="each"><a href="#each" class="headerlink" title="@each"></a><code>@each</code></h4></li>
+<li><h4 id="for"><a href="#for" class="headerlink" title="@for"></a><code>@for</code></h4></li>
+<li><h4 id="while"><a href="#while" class="headerlink" title="@while"></a><code>@while</code></h4></li>
+</ul>
+</li>
+</ul>
+<h2 id="值"><a href="#值" class="headerlink" title="值"></a>值</h2><ul>
+<li><code>Numbers</code>：</li>
+<li><code>Strings</code>：</li>
+<li><code>Colors</code>：</li>
+<li><code>Lists</code>：</li>
+<li><code>Maps</code>：</li>
+<li><code>Boolean</code>：</li>
+<li><code>null</code>：</li>
+<li><code>Function</code>：</li>
+</ul>
+<hr>
+<h2 id="高階用法-內置模塊"><a href="#高階用法-內置模塊" class="headerlink" title="高階用法 - 內置模塊"></a>高階用法 - 內置模塊</h2><ul>
+<li><code>sass:color</code></li>
+<li><code>sass:list</code></li>
+<li><code>sass:map</code></li>
+<li><code>sass:math</code></li>
+<li><code>sass:meta</code></li>
+<li><code>sass:selector</code></li>
+<li><code>sass:string</code></li>
 </ul>
 <div style="text-align: center; color:#aaa;"><small>/... 未完待續 .../</small></div>
     </div>
@@ -566,7 +932,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="nav-number">1.</span> <span class="nav-text">CSS 功能拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E8%A6%8F%E5%89%87"><span class="nav-number">1.1.</span> <span class="nav-text">嵌套規則</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E9%81%B8%E6%93%87%E5%99%A8-amp"><span class="nav-number">1.2.</span> <span class="nav-text">父選擇器 &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7%E5%B5%8C%E5%A5%97"><span class="nav-number">1.3.</span> <span class="nav-text">屬性嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%BB%E9%87%8B"><span class="nav-number">2.</span> <span class="nav-text">註釋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">3.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AA%8D%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">默認值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F-%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8%E3%80%81%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8"><span class="nav-number">3.2.</span> <span class="nav-text">作用域(區域變數、全域變數)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">插值</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E5%8A%9F%E8%83%BD%E6%8B%93%E5%B1%95"><span class="nav-number">1.</span> <span class="nav-text">CSS 功能拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E8%A6%8F%E5%89%87"><span class="nav-number">1.1.</span> <span class="nav-text">嵌套規則</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E9%81%B8%E6%93%87%E5%99%A8-amp"><span class="nav-number">1.2.</span> <span class="nav-text">父選擇器 &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%AC%E6%80%A7%E5%B5%8C%E5%A5%97"><span class="nav-number">1.3.</span> <span class="nav-text">屬性嵌套</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%BB%E9%87%8B"><span class="nav-number">2.</span> <span class="nav-text">註釋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">3.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AA%8D%E5%80%BC"><span class="nav-number">3.1.</span> <span class="nav-text">默認值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F-%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8%E3%80%81%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8"><span class="nav-number">3.2.</span> <span class="nav-text">作用域(區域變數、全域變數)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%8F%E5%89%87"><span class="nav-number">5.</span> <span class="nav-text">@規則</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use"><span class="nav-number">5.1.</span> <span class="nav-text">@use</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BC%89%E6%88%90%E5%93%A1"><span class="nav-number">5.1.1.</span> <span class="nav-text">加載成員</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E8%A8%82%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">自訂命名空間</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E5%B1%AC%E6%80%A7"><span class="nav-number">5.1.1.2.</span> <span class="nav-text">私有屬性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%A8%A1%E5%A1%8A"><span class="nav-number">5.1.2.</span> <span class="nav-text">配置模塊</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import"><span class="nav-number">5.2.</span> <span class="nav-text">@import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mixin%E3%80%81-include"><span class="nav-number">5.3.</span> <span class="nav-text">@mixin、@include</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E6%95%B8"><span class="nav-number">5.3.1.</span> <span class="nav-text">參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E9%81%B8%E5%8F%83%E6%95%B8"><span class="nav-number">5.3.2.</span> <span class="nav-text">可選參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E5%AD%97%E5%8F%83%E6%95%B8"><span class="nav-number">5.3.3.</span> <span class="nav-text">關鍵字參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%8F%83%E6%95%B8"><span class="nav-number">5.3.4.</span> <span class="nav-text">任意參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A7%E5%AE%B9%E5%A1%8A"><span class="nav-number">5.3.5.</span> <span class="nav-text">內容塊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B8%AE%E5%AF%AB"><span class="nav-number">5.3.6.</span> <span class="nav-text">縮寫</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function"><span class="nav-number">5.4.</span> <span class="nav-text">@function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E9%81%B8%E5%8F%83%E6%95%B8-1"><span class="nav-number">5.4.1.</span> <span class="nav-text">可選參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E5%AD%97%E5%8F%83%E6%95%B8-1"><span class="nav-number">5.4.2.</span> <span class="nav-text">關鍵字參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%8F%83%E6%95%B8-1"><span class="nav-number">5.4.3.</span> <span class="nav-text">任意參數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#return"><span class="nav-number">5.4.4.</span> <span class="nav-text">@return</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extend"><span class="nav-number">5.5.</span> <span class="nav-text">@extend</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#optional-%E8%81%B2%E6%98%8E"><span class="nav-number">5.5.1.</span> <span class="nav-text">!optional 聲明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%94%E4%BD%8D%E7%AC%A6%E9%81%B8%E6%93%87%E5%99%A8"><span class="nav-number">5.5.2.</span> <span class="nav-text">佔位符選擇器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mixins-or-Extends"><span class="nav-number">5.5.3.</span> <span class="nav-text">Mixins or Extends</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error"><span class="nav-number">5.6.</span> <span class="nav-text">@error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#warn"><span class="nav-number">5.7.</span> <span class="nav-text">@warn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-number">5.8.</span> <span class="nav-text">@debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#at-root"><span class="nav-number">5.9.</span> <span class="nav-text">@at-root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4"><span class="nav-number">5.10.</span> <span class="nav-text">控制指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if%E3%80%81-else"><span class="nav-number">5.10.1.</span> <span class="nav-text">@if、@else</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#each"><span class="nav-number">5.10.2.</span> <span class="nav-text">@each</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for"><span class="nav-number">5.10.3.</span> <span class="nav-text">@for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-number">5.10.4.</span> <span class="nav-text">@while</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%9A%8E%E7%94%A8%E6%B3%95-%E5%85%A7%E7%BD%AE%E6%A8%A1%E5%A1%8A"><span class="nav-number">7.</span> <span class="nav-text">高階用法 - 內置模塊</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
