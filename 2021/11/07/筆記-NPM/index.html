@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="npm 是用 Node.js 編寫的，所以需要安裝 Node.js 才能使用。本篇程式碼皆使用iOS版本語法示範">
+  <meta name="description" content="npm 是用 Node.js 編寫的，所以需要安裝 Node.js 才能使用。 本篇程式碼皆使用iOS版本語法示範">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[筆記]_NPM">
 <meta property="og:url" content="https://arx827.github.io/2021/11/07/%E7%AD%86%E8%A8%98-NPM/index.html">
 <meta property="og:site_name" content="前端寶庫">
-<meta property="og:description" content="npm 是用 Node.js 編寫的，所以需要安裝 Node.js 才能使用。本篇程式碼皆使用iOS版本語法示範">
+<meta property="og:description" content="npm 是用 Node.js 編寫的，所以需要安裝 Node.js 才能使用。 本篇程式碼皆使用iOS版本語法示範">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-11-06T18:21:41.000Z">
 <meta property="article:modified_time" content="2021-11-28T20:54:58.647Z">
@@ -233,20 +233,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><code>npm</code> 是用 <code>Node.js</code> 編寫的，所以需要安裝 <code>Node.js</code> 才能使用。<br><small>本篇程式碼皆使用iOS版本語法示範</small></p>
+        <p><code>npm</code> 是用 <code>Node.js</code> 編寫的，所以需要安裝 <code>Node.js</code> 才能使用。<br>
+<small>本篇程式碼皆使用iOS版本語法示範</small></p>
 <a id="more"></a>
-
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>  使用NVM安裝Nodejs，可參考：<a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Windows/">Window篇</a>、<a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/">Mac篇</a>。</p>
-<h2 id="檢查npm是否安裝完成"><a href="#檢查npm是否安裝完成" class="headerlink" title="檢查npm是否安裝完成"></a>檢查npm是否安裝完成</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm -v      <span class="comment"># npm --version</span></span></span><br><span class="line">2.3.0</span><br></pre></td></tr></table></figure>
-<h2 id="若要安裝最新版本"><a href="#若要安裝最新版本" class="headerlink" title="若要安裝最新版本"></a>若要安裝最新版本</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i npm@latest -g</span></span><br></pre></td></tr></table></figure>
-<p>  <small>『 npm i 』為 npm install 的縮寫，『@latest』表示最新版本，『-g』表示全局安裝。</small></p>
-<h2 id="新建package-json，npm-初始化"><a href="#新建package-json，npm-初始化" class="headerlink" title="新建package.json，npm 初始化"></a>新建package.json，npm 初始化</h2><ul>
-<li><p>請先建立新專案並切換至專案根目錄。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir demo-project</span><br><span class="line">cd demo-project</span><br></pre></td></tr></table></figure></li>
-<li><p>npm 初始化</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<h2 id="安裝">安裝</h2>
+<p>使用NVM安裝Nodejs，可參考：<a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Windows/">Window篇</a>、<a href="/2021/10/27/%E7%AD%86%E8%A8%98-NVM-Mac/">Mac篇</a>。</p>
+<h2 id="檢查npm是否安裝完成">檢查npm是否安裝完成</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm -v      <span class="comment"># npm --version</span></span></span><br><span class="line">2.3.0</span><br></pre></td></tr></table></figure>
+<h2 id="若要安裝最新版本">若要安裝最新版本</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i npm@latest -g</span></span><br></pre></td></tr></table></figure>
+<p><small>『 npm i 』為 npm install 的縮寫，『@latest』表示最新版本，『-g』表示全局安裝。</small></p>
+<h2 id="新建package-json，npm-初始化">新建package.json，npm 初始化</h2>
 <ul>
-<li><p>初始化後，進行相關設定</p>
+<li>請先建立新專案並切換至專案根目錄。<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir demo-project</span><br><span class="line">cd demo-project</span><br></pre></td></tr></table></figure>
+</li>
+<li>npm 初始化<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>初始化後，進行相關設定</p>
 <table>
 <thead>
 <tr>
@@ -254,7 +258,8 @@
 <th>說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>name</code></td>
 <td>專案名稱 (預設為目錄名)</td>
 </tr>
@@ -290,38 +295,47 @@
 <td><code>license</code></td>
 <td>專案版權</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p>可略過設定，生成 package.json 後，再進行修改</p>
+<li>
+<p>可略過設定，生成 package.json 後，再進行修改</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init --yes  或  npm init -y</span><br></pre></td></tr></table></figure>
-<p><code>npm init</code> 用來初始化生成一個新的 <code>package.json</code> 文件。<br><code>-f</code> (代表force)、<code>-y</code> (代表yes)，則跳過提問階段，直接生成一個新的<code>package.json</code>。</p>
+<p><code>npm init</code> 用來初始化生成一個新的 <code>package.json</code> 文件。<br>
+<code>-f</code> (代表force)、<code>-y</code> (代表yes)，則跳過提問階段，直接生成一個新的<code>package.json</code>。</p>
 </li>
-<li><p>設定 init 預設值<br>為 <code>npm init</code> 設置默認值，這些訊息會存放在用戶主目錄的 <code>~/.npmrc</code> 文件</p>
+<li>
+<p>設定 init 預設值<br>
+為 <code>npm init</code> 設置默認值，這些訊息會存放在用戶主目錄的 <code>~/.npmrc</code> 文件</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm set init-author-name &#x27;Your name&#x27;</span><br><span class="line">npm set init-author-email &#x27;Your email&#x27;</span><br><span class="line">npm set init-author-url &#x27;https://arx827.github.io/&#x27;</span><br><span class="line">npm set init-license &#x27;MIT&#x27;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>加入模塊時，紀錄確切版本，而不是一個可選的版本範圍</p>
+<li>
+<p>加入模塊時，紀錄確切版本，而不是一個可選的版本範圍</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm set save-exact true</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="查看安裝資訊"><a href="#查看安裝資訊" class="headerlink" title="查看安裝資訊"></a>查看安裝資訊</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list -g</span><br></pre></td></tr></table></figure>
+<h2 id="安裝套件">安裝套件</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="查看安裝資訊">查看安裝資訊</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list -g</span><br></pre></td></tr></table></figure>
 <ul>
-<li>如果要查看某個套件的版本號，可使用命令如下：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list grunt</span><br></pre></td></tr></table></figure></li>
+<li>如果要查看某個套件的版本號，可使用命令如下：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list grunt</span><br></pre></td></tr></table></figure>
+</li>
 <li>結果如下：<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">projectName@projectVersion /path/to/project/folder</span><br><span class="line">└── grunt@0.4.1</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
-<h2 id="Package-json-屬性說明"><a href="#Package-json-屬性說明" class="headerlink" title="Package.json 屬性說明"></a>Package.json 屬性說明</h2><table>
+<h2 id="Package-json-屬性說明">Package.json 屬性說明</h2>
+<table>
 <thead>
 <tr>
 <th>屬性</th>
 <th>說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>name</code></td>
 <td>套件名稱</td>
 </tr>
@@ -361,10 +375,14 @@
 <td><code>keywords</code></td>
 <td>關鍵字</td>
 </tr>
-</tbody></table>
-<h2 id="卸載套件"><a href="#卸載套件" class="headerlink" title="卸載套件"></a>卸載套件</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="更新套件"><a href="#更新套件" class="headerlink" title="更新套件"></a>更新套件</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm update &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="搜索套件"><a href="#搜索套件" class="headerlink" title="搜索套件"></a>搜索套件</h2>  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm search &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
+</tbody>
+</table>
+<h2 id="卸載套件">卸載套件</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="更新套件">更新套件</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm update &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="搜索套件">搜索套件</h2>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm search &lt;packageName&gt;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -464,14 +482,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

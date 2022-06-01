@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="正規表達式 (Regulay Expression) Regular Expression 是一套規則模式(pattern)，可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，簡稱 Regex, Regexp 或 RE。">
+  <meta name="description" content="正規表達式 (Regulay Expression)  Regular Expression 是一套規則模式(pattern)， 可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援， 簡稱 Regex, Regexp 或 RE。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[筆記]_正規表達式">
 <meta property="og:url" content="https://arx827.github.io/2022/01/16/%E7%AD%86%E8%A8%98-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F/index.html">
 <meta property="og:site_name" content="前端寶庫">
-<meta property="og:description" content="正規表達式 (Regulay Expression) Regular Expression 是一套規則模式(pattern)，可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，簡稱 Regex, Regexp 或 RE。">
+<meta property="og:description" content="正規表達式 (Regulay Expression)  Regular Expression 是一套規則模式(pattern)， 可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援， 簡稱 Regex, Regexp 或 RE。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-01-15T19:04:19.000Z">
 <meta property="article:modified_time" content="2022-02-02T21:42:55.000Z">
@@ -234,15 +234,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="正規表達式-Regulay-Expression"><a href="#正規表達式-Regulay-Expression" class="headerlink" title="正規表達式 (Regulay Expression)"></a>正規表達式 (Regulay Expression)</h2><ul>
-<li><code>Regular Expression</code> 是一套規則模式(pattern)，<br>可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，<br>簡稱 <code>Regex</code>, <code>Regexp</code> 或 <code>RE</code>。</li>
+        <h2 id="正規表達式-Regulay-Expression">正規表達式 (Regulay Expression)</h2>
+<ul>
+<li><code>Regular Expression</code> 是一套規則模式(pattern)，<br>
+可以用來做文字的搜尋、比對、萃取、替代、轉換等等，在許多的程式語言中都支援，<br>
+簡稱 <code>Regex</code>, <code>Regexp</code> 或 <code>RE</code>。</li>
 </ul>
 <a id="more"></a>
-
 <ul>
-<li><p><code>Regular Expression</code> 是在 UNIX 世界中發展出來的字串比對技巧，<br>基本概念是用一套簡單 (但功能強大) 的符號來比對字串，<br>並可對符合比對條件的字串進行修改或其他運算。</p>
+<li>
+<p><code>Regular Expression</code> 是在 UNIX 世界中發展出來的字串比對技巧，<br>
+基本概念是用一套簡單 (但功能強大) 的符號來比對字串，<br>
+並可對符合比對條件的字串進行修改或其他運算。</p>
 </li>
-<li><p><code>Regex</code> 可以實用的情境大致有幾種：</p>
+<li>
+<p><code>Regex</code> 可以實用的情境大致有幾種：</p>
 <ol>
 <li>尋找匹配的字串</li>
 <li>取代匹配的字串</li>
@@ -251,25 +257,33 @@
 </ol>
 </li>
 </ul>
-<h2 id="撰寫正規表達式"><a href="#撰寫正規表達式" class="headerlink" title="撰寫正規表達式"></a>撰寫正規表達式</h2><ul>
+<h2 id="撰寫正規表達式">撰寫正規表達式</h2>
+<ul>
 <li><code>pattern</code> 代表正規表達式的字串，區分大小寫。</li>
 <li><code>flag</code> 則是比對的方式。</li>
-<li>可透過下列兩種方式創建正規表達式：<ul>
-<li>使用 <code>RegExp 物件的建構子函式</code>，<br>新增一個 <code>RegExp</code> 物件：<br>當模式會異動、事先未知匹配模式、或者從其他地方取得時，使用 <code>建構子函數</code> 較為合適。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rules = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;pattern&#x27;</span>, <span class="string">&#x27;flag&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
-<li>使用 <code>正規表達式實字</code>，<br>用兩個 <code>//</code> 包住條件：<br>當正規表達式為定值時，使用此方法可獲得較佳效能。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> rules = <span class="regexp">/pattern/</span>flag;</span><br></pre></td></tr></table></figure>
-
+<li>可透過下列兩種方式創建正規表達式：
+<ul>
+<li>使用 <code>RegExp 物件的建構子函式</code>，<br>
+新增一個 <code>RegExp</code> 物件：<br>
+當模式會異動、事先未知匹配模式、或者從其他地方取得時，使用 <code>建構子函數</code> 較為合適。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> rules = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;pattern&#x27;</span>, <span class="string">&#x27;flag&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li>使用 <code>正規表達式實字</code>，<br>
+用兩個 <code>//</code> 包住條件：<br>
+當正規表達式為定值時，使用此方法可獲得較佳效能。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> rules = <span class="regexp">/pattern/</span>flag;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="修飾符-flag"><a href="#修飾符-flag" class="headerlink" title="修飾符 (flag)"></a>修飾符 (flag)</h2><table>
+<h2 id="修飾符-flag">修飾符 (flag)</h2>
+<table>
 <thead>
 <tr>
 <th></th>
 <th>說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>i</code></td>
 <td>不區分大小寫。</td>
 </tr>
@@ -301,8 +315,10 @@
 <td><code>gi</code></td>
 <td>全域比對並忽略大小寫。</td>
 </tr>
-</tbody></table>
-<h2 id="RegExp-物件方法"><a href="#RegExp-物件方法" class="headerlink" title="RegExp 物件方法"></a>RegExp 物件方法</h2><table>
+</tbody>
+</table>
+<h2 id="RegExp-物件方法">RegExp 物件方法</h2>
+<table>
 <thead>
 <tr>
 <th>方法</th>
@@ -310,7 +326,8 @@
 <th>語法格式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>exec</code></td>
 <td>搜尋比對，符合傳回Array；不符合傳回 null。</td>
 <td><code>regexObj.exec(str)</code></td>
@@ -320,8 +337,10 @@
 <td>搜尋比對，符合傳回true；不符合傳回false。</td>
 <td><code>regexObj.test(str)</code></td>
 </tr>
-</tbody></table>
-<h2 id="字串物件方法"><a href="#字串物件方法" class="headerlink" title="字串物件方法"></a>字串物件方法</h2><table>
+</tbody>
+</table>
+<h2 id="字串物件方法">字串物件方法</h2>
+<table>
 <thead>
 <tr>
 <th>方法</th>
@@ -329,7 +348,8 @@
 <th>語法格式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>match</code></td>
 <td>搜尋比對，如果符合的狀況正規表達式<br>包含g符號，則傳回所有相符的字串；<br>不包含g則傳回Array，<br>無符合傳回null。</td>
 <td><code>str.match(regexp)</code></td>
@@ -349,15 +369,18 @@
 <td>分割字串，<br>如果符合傳回分割後的Array，不影響原字串。</td>
 <td><code>str.split(regexp)</code></td>
 </tr>
-</tbody></table>
-<h2 id="特殊字元"><a href="#特殊字元" class="headerlink" title="特殊字元"></a>特殊字元</h2><table>
+</tbody>
+</table>
+<h2 id="特殊字元">特殊字元</h2>
+<table>
 <thead>
 <tr>
 <th>符號</th>
 <th>匹配說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>\</code></td>
 <td>反斜線，跳脫特殊字元。</td>
 </tr>
@@ -377,8 +400,10 @@
 <td><code>|</code></td>
 <td>同程式常見的 OR 邏輯</td>
 </tr>
-</tbody></table>
-<h2 id="常用字元"><a href="#常用字元" class="headerlink" title="常用字元"></a>常用字元</h2><table>
+</tbody>
+</table>
+<h2 id="常用字元">常用字元</h2>
+<table>
 <thead>
 <tr>
 <th>字元</th>
@@ -386,7 +411,8 @@
 <th>等效正規表達式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>\d</code></td>
 <td>數字。</td>
 <td><code>[0-9]</code></td>
@@ -406,7 +432,8 @@
 <td>英文單詞邊界。</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -415,7 +442,8 @@
 <th>等效正規表達式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>\D</code></td>
 <td>非 數字。</td>
 <td><code>[^0-9]</code>、<code>[^\d]</code></td>
@@ -435,7 +463,8 @@
 <td>非 英文單詞邊界。</td>
 <td><code>[^\b]</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -443,7 +472,8 @@
 <th>匹配說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>\0</code></td>
 <td>查找 NULL 字符。</td>
 </tr>
@@ -479,8 +509,10 @@
 <td><code>\uxxxx</code></td>
 <td>查找以十六進制數 xxxx 規定的Unicode字符。</td>
 </tr>
-</tbody></table>
-<h2 id="量詞"><a href="#量詞" class="headerlink" title="量詞"></a>量詞</h2><table>
+</tbody>
+</table>
+<h2 id="量詞">量詞</h2>
+<table>
 <thead>
 <tr>
 <th>符號</th>
@@ -488,7 +520,8 @@
 <th>等效正規表達式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>n<code>*</code></td>
 <td>0次以上。</td>
 <td>n<code>&#123;0,&#125;</code></td>
@@ -523,9 +556,13 @@
 <td>至少x次以上，最多y次 的 n。</td>
 <td></td>
 </tr>
-</tbody></table>
-<p>  對於量詞，Regex的匹配預設採取貪婪模式(盡可能多匹配)。<br>  <code>?</code>接在量詞後方，表示盡可能匹配短結果。<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> match = <span class="regexp">/&lt;.+?&gt;/</span>.exec(<span class="string">&#x27;&lt;em&gt;Hello World&lt;/em&gt;&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(match[<span class="number">0</span>]);        <span class="comment">// &lt;em&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="方括號"><a href="#方括號" class="headerlink" title="方括號 []"></a>方括號 []</h2><p>  比對方括號裡面的任一字元，可以用範圍匹配</p>
+</tbody>
+</table>
+<p>對於量詞，Regex的匹配預設採取貪婪模式(盡可能多匹配)。<br>
+<code>?</code>接在量詞後方，表示盡可能匹配短結果。</p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> match = <span class="regexp">/&lt;.+?&gt;/</span>.exec(<span class="string">&#x27;&lt;em&gt;Hello World&lt;/em&gt;&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(match[<span class="number">0</span>]);        <span class="comment">// &lt;em&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="方括號">方括號 []</h2>
+<p>比對方括號裡面的任一字元，可以用範圍匹配</p>
 <table>
 <thead>
 <tr>
@@ -533,7 +570,8 @@
 <th>匹配說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>[]</code></td>
 <td>方括號，比對方括號裡面的任一字元，可以用範圍匹配： [A-Z]、[a-z]、[0-9]</td>
 </tr>
@@ -541,15 +579,18 @@
 <td><code>[^]</code>、<code>[!]</code></td>
 <td>^代表「反」，比對方括號裡面<code>以外</code>的任一字元</td>
 </tr>
-</tbody></table>
-<h2 id="群組"><a href="#群組" class="headerlink" title="群組 ()"></a>群組 ()</h2><table>
+</tbody>
+</table>
+<h2 id="群組">群組 ()</h2>
+<table>
 <thead>
 <tr>
 <th>符號</th>
 <th>匹配說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>(x)</code></td>
 <td>比對x，並將符合的部分存入一個變數(自動命名的變數)</td>
 </tr>
@@ -577,9 +618,14 @@
 <td><code>(?&lt;!y)x</code></td>
 <td>x前面不能接y</td>
 </tr>
-</tbody></table>
-<h2 id="回溯-Backreference"><a href="#回溯-Backreference" class="headerlink" title="回溯 (Backreference)"></a>回溯 (Backreference)</h2><p>  用來引用群組的內容。<br>  使用反斜線加上數字。e.g.: <code>\1</code> (代表第一個群組)<br>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/(\d+)a\1b/</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a1b&#x27;</span>) <span class="comment">// true</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a2b&#x27;</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="替換"><a href="#替換" class="headerlink" title="替換"></a>替換</h2><p>  與群組<code>()</code>一起使用。</p>
+</tbody>
+</table>
+<h2 id="回溯-Backreference">回溯 (Backreference)</h2>
+<p>用來引用群組的內容。<br>
+使用反斜線加上數字。e.g.: <code>\1</code> (代表第一個群組)</p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> regex = <span class="regexp">/(\d+)a\1b/</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a1b&#x27;</span>) <span class="comment">// true</span></span><br><span class="line">regex.test(<span class="string">&#x27;1a2b&#x27;</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h2 id="替換-v2">替換</h2>
+<p>與群組<code>()</code>一起使用。</p>
 <table>
 <thead>
 <tr>
@@ -587,7 +633,8 @@
 <th>匹配說明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>$number</code>、<code>$&#123;number&#125;</code></td>
 <td>number 表示匹配的群組 (capturing group)，群組編號從 1 開始 $1。<br>$ 後面接著的所有數字都會被解讀為屬於 number 群組，<br>可以用 <code>$&#123;number&#125;</code> 語法，例如用 <code>$&#123;1&#125;</code>1 就不會被解讀為第 11 個群組，而是第 1 個。</td>
 </tr>
@@ -619,15 +666,18 @@
 <td>$_</td>
 <td>用來引用整個輸入的字串。</td>
 </tr>
-</tbody></table>
-<h2 id="常用實例"><a href="#常用實例" class="headerlink" title="常用實例"></a>常用實例</h2><table>
+</tbody>
+</table>
+<h2 id="常用實例">常用實例</h2>
+<table>
 <thead>
 <tr>
 <th></th>
 <th>表達式</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Email</td>
 <td><code>^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]&#123;2,6&#125;)$</code></td>
 </tr>
@@ -655,7 +705,8 @@
 <td>副檔名</td>
 <td><code>(\w+)\.(jpg|gif)$</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -741,7 +792,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-Regulay-Expression"><span class="nav-number">1.</span> <span class="nav-text">正規表達式 (Regulay Expression)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">撰寫正規表達式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A3%BE%E7%AC%A6-flag"><span class="nav-number">3.</span> <span class="nav-text">修飾符 (flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp-%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">RegExp 物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%B8%B2%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">字串物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E5%85%83"><span class="nav-number">6.</span> <span class="nav-text">特殊字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AD%97%E5%85%83"><span class="nav-number">7.</span> <span class="nav-text">常用字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E8%A9%9E"><span class="nav-number">8.</span> <span class="nav-text">量詞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%8B%AC%E8%99%9F"><span class="nav-number">9.</span> <span class="nav-text">方括號 []</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%B5%84"><span class="nav-number">10.</span> <span class="nav-text">群組 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF-Backreference"><span class="nav-number">11.</span> <span class="nav-text">回溯 (Backreference)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8F%9B"><span class="nav-number">12.</span> <span class="nav-text">替換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AF%A6%E4%BE%8B"><span class="nav-number">13.</span> <span class="nav-text">常用實例</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-Regulay-Expression"><span class="nav-number">1.</span> <span class="nav-text">正規表達式 (Regulay Expression)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">撰寫正規表達式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E9%A3%BE%E7%AC%A6-flag"><span class="nav-number">3.</span> <span class="nav-text">修飾符 (flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp-%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">RegExp 物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%B8%B2%E7%89%A9%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">字串物件方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E5%85%83"><span class="nav-number">6.</span> <span class="nav-text">特殊字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AD%97%E5%85%83"><span class="nav-number">7.</span> <span class="nav-text">常用字元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E8%A9%9E"><span class="nav-number">8.</span> <span class="nav-text">量詞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%8B%AC%E8%99%9F"><span class="nav-number">9.</span> <span class="nav-text">方括號 []</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%B5%84"><span class="nav-number">10.</span> <span class="nav-text">群組 ()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF-Backreference"><span class="nav-number">11.</span> <span class="nav-text">回溯 (Backreference)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8F%9B-v2"><span class="nav-number">12.</span> <span class="nav-text">替換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AF%A6%E4%BE%8B"><span class="nav-number">13.</span> <span class="nav-text">常用實例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -756,14 +807,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"arx827.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":0},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="紮穩 SQL 基礎, 循序養成大數據分析新技能MySQL &#x2F; MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！">
+  <meta name="description" content="紮穩 SQL 基礎, 循序養成大數據分析新技能 MySQL &#x2F; MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[筆記]_從零開始 邁向數據分析 SQL資料庫語法入門">
 <meta property="og:url" content="https://arx827.github.io/2022/01/28/%E7%AD%86%E8%A8%98-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E9%82%81%E5%90%91%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90SQL%E8%B3%87%E6%96%99%E5%BA%AB%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80/index.html">
 <meta property="og:site_name" content="前端寶庫">
-<meta property="og:description" content="紮穩 SQL 基礎, 循序養成大數據分析新技能MySQL &#x2F; MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！">
+<meta property="og:description" content="紮穩 SQL 基礎, 循序養成大數據分析新技能 MySQL &#x2F; MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://arx827.github.io/2022/01/28/%E7%AD%86%E8%A8%98-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E9%82%81%E5%90%91%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90SQL%E8%B3%87%E6%96%99%E5%BA%AB%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80/1.png">
 <meta property="article:published_time" content="2022-01-28T11:48:13.000Z">
@@ -235,131 +235,207 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>紮穩 SQL 基礎, 循序養成大數據分析新技能<br>MySQL / MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！</p>
+        <p>紮穩 SQL 基礎, 循序養成大數據分析新技能<br>
+MySQL / MariaDB、MS SQL Server、Oracle、PostgreSQL、DB2 全適用！</p>
 <a id="more"></a>
-
-<h2 id="建構SQL執行環境"><a href="#建構SQL執行環境" class="headerlink" title="建構SQL執行環境"></a>建構SQL執行環境</h2><ul>
-<li><h3 id="安裝-XAMPP-來建構-MySQL-MariaDB-資料庫"><a href="#安裝-XAMPP-來建構-MySQL-MariaDB-資料庫" class="headerlink" title="安裝 XAMPP 來建構 MySQL / MariaDB 資料庫"></a>安裝 XAMPP 來建構 MySQL / MariaDB 資料庫</h3><ul>
-<li><h4 id="安裝-XAMPP"><a href="#安裝-XAMPP" class="headerlink" title="安裝 XAMPP"></a>安裝 XAMPP</h4><a target="_blank" rel="noopener" href="https://www.apachefriends.org/zh_tw/index.html">下載 XAMPP (https://www.apachefriends.org/zh_tw/index.html)</a><img data-src="/2022/01/28/%E7%AD%86%E8%A8%98-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E9%82%81%E5%90%91%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90SQL%E8%B3%87%E6%96%99%E5%BA%AB%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80/1.png" class=""></li>
-<li><h4 id="設定-MySQL-MariaDB-管理員密碼"><a href="#設定-MySQL-MariaDB-管理員密碼" class="headerlink" title="設定 MySQL / MariaDB 管理員密碼"></a>設定 MySQL / MariaDB 管理員密碼</h4></li>
+<h2 id="建構SQL執行環境">建構SQL執行環境</h2>
+<ul>
+<li>
+<h3 id="安裝-XAMPP-來建構-MySQL-MariaDB-資料庫">安裝 XAMPP 來建構 MySQL / MariaDB 資料庫</h3>
+<ul>
+<li>
+<h4 id="安裝-XAMPP">安裝 XAMPP</h4>
+<a target="_blank" rel="noopener" href="https://www.apachefriends.org/zh_tw/index.html">下載 XAMPP (https://www.apachefriends.org/zh_tw/index.html)</a><img data-src="/2022/01/28/%E7%AD%86%E8%A8%98-%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B%E9%82%81%E5%90%91%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90SQL%E8%B3%87%E6%96%99%E5%BA%AB%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80/1.png" class="">
+</li>
+<li>
+<h4 id="設定-MySQL-MariaDB-管理員密碼">設定 MySQL / MariaDB 管理員密碼</h4>
+</li>
 </ul>
 </li>
-<li><h3 id="建立學習用資料庫"><a href="#建立學習用資料庫" class="headerlink" title="建立學習用資料庫"></a>建立學習用資料庫</h3><ul>
-<li><h4 id="透過-SQL-語法來操作資料庫"><a href="#透過-SQL-語法來操作資料庫" class="headerlink" title="透過 SQL 語法來操作資料庫"></a>透過 SQL 語法來操作資料庫</h4></li>
+<li>
+<h3 id="建立學習用資料庫">建立學習用資料庫</h3>
+<ul>
+<li>
+<h4 id="透過-SQL-語法來操作資料庫">透過 SQL 語法來操作資料庫</h4>
+</li>
 </ul>
 </li>
 </ul>
-<h2 id="資料庫與SQL"><a href="#資料庫與SQL" class="headerlink" title="資料庫與SQL"></a>資料庫與SQL</h2><h3 id="資料庫是什麼"><a href="#資料庫是什麼" class="headerlink" title="資料庫是什麼"></a>資料庫是什麼</h3><pre><code>#### 身邊隨處可見的資料庫
+<h2 id="資料庫與SQL">資料庫與SQL</h2>
+<h3 id="資料庫是什麼">資料庫是什麼</h3>
+<pre><code>#### 身邊隨處可見的資料庫
 #### 為什麼需要 DBMS
-#### DBMS 具有許多類型</code></pre>
-<h3 id="資料庫的架構"><a href="#資料庫的架構" class="headerlink" title="資料庫的架構"></a>資料庫的架構</h3><pre><code>#### 一般 RDBMS 的系統架構
-#### 資料表的結構</code></pre>
-<h3 id="SQL-基本概要"><a href="#SQL-基本概要" class="headerlink" title="SQL 基本概要"></a>SQL 基本概要</h3><pre><code>#### 標準 SQL
+#### DBMS 具有許多類型
+</code></pre>
+<h3 id="資料庫的架構">資料庫的架構</h3>
+<pre><code>#### 一般 RDBMS 的系統架構
+#### 資料表的結構
+</code></pre>
+<h3 id="SQL-基本概要">SQL 基本概要</h3>
+<pre><code>#### 標準 SQL
 #### SQL 敘述與其分類
-#### SQL 的基本撰寫規則</code></pre>
-<h3 id="建立資料表"><a href="#建立資料表" class="headerlink" title="建立資料表"></a>建立資料表</h3><pre><code>#### 資料表的內容
+#### SQL 的基本撰寫規則
+</code></pre>
+<h3 id="建立資料表">建立資料表</h3>
+<pre><code>#### 資料表的內容
 #### 建立資料庫 (Create Database 敘述)
 #### 建立資料表 (Create Table 敘述)
 #### 命名規則
 #### 指定資料型別
-#### 設定條件約束</code></pre>
-<h3 id="刪除與修改資料表"><a href="#刪除與修改資料表" class="headerlink" title="刪除與修改資料表"></a>刪除與修改資料表</h3><pre><code>#### 刪除資料表 (Drop Table 敘述)
+#### 設定條件約束
+</code></pre>
+<h3 id="刪除與修改資料表">刪除與修改資料表</h3>
+<pre><code>#### 刪除資料表 (Drop Table 敘述)
 #### 修改資料表結構 (Alter Table 敘述)
-#### 新增資料至資料表</code></pre>
-<h3 id="自我練習"><a href="#自我練習" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="查詢的基本語法"><a href="#查詢的基本語法" class="headerlink" title="查詢的基本語法"></a>查詢的基本語法</h2><h3 id="SELECT-敘述的基本語法"><a href="#SELECT-敘述的基本語法" class="headerlink" title="SELECT 敘述的基本語法"></a>SELECT 敘述的基本語法</h3><pre><code>#### 輸出特定欄位資料
+#### 新增資料至資料表
+</code></pre>
+<h3 id="自我練習">自我練習</h3>
+<h2 id="查詢的基本語法">查詢的基本語法</h2>
+<h3 id="SELECT-敘述的基本語法">SELECT 敘述的基本語法</h3>
+<pre><code>#### 輸出特定欄位資料
 #### 輸出所有欄位資料
 #### 替欄位取個別名
 #### 輸出常數
 #### 省略結果中重複的紀錄
 #### 以 WHERE 子句篩選特定紀錄
-#### 註解的寫法</code></pre>
-<h3 id="算術運算子與比較運算子"><a href="#算術運算子與比較運算子" class="headerlink" title="算術運算子與比較運算子"></a>算術運算子與比較運算子</h3><pre><code>#### 算術運算子
+#### 註解的寫法
+</code></pre>
+<h3 id="算術運算子與比較運算子">算術運算子與比較運算子</h3>
+<pre><code>#### 算術運算子
 #### 請留意 NULL 的運算
 #### 比較運算子
 #### 對字串使用不等號的需注意事項
-#### 不能對 NULL 使用比較運算子</code></pre>
-<h3 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h3><pre><code>#### NOT 運算子
+#### 不能對 NULL 使用比較運算子
+</code></pre>
+<h3 id="邏輯運算子">邏輯運算子</h3>
+<pre><code>#### NOT 運算子
 #### AND 運算子與 OR 運算子
 #### 加上括號的部分優先處理
 #### 邏輯運算子與真偽值
-#### 含有 NULL 時的真偽值</code></pre>
-<h3 id="自我練習-1"><a href="#自我練習-1" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="彙總與排序"><a href="#彙總與排序" class="headerlink" title="彙總與排序"></a>彙總與排序</h2><h3 id="查詢時彙總資料"><a href="#查詢時彙總資料" class="headerlink" title="查詢時彙總資料"></a>查詢時彙總資料</h3><pre><code>#### 彙總函數
+#### 含有 NULL 時的真偽值
+</code></pre>
+<h3 id="自我練習-v2">自我練習</h3>
+<h2 id="彙總與排序">彙總與排序</h2>
+<h3 id="查詢時彙總資料">查詢時彙總資料</h3>
+<pre><code>#### 彙總函數
 #### 計算資料表的紀錄筆數
 #### 計算 NULL 以外的紀錄筆數
 #### 求得總計
 #### 求得平均值
 #### 求得最大、最小值
-#### 排除重複值再使用彙總函數 (DISTINCT 關鍵字)</code></pre>
-<h3 id="資料分群"><a href="#資料分群" class="headerlink" title="資料分群"></a>資料分群</h3><pre><code>#### GROUP BY 子句
+#### 排除重複值再使用彙總函數 (DISTINCT 關鍵字)
+</code></pre>
+<h3 id="資料分群">資料分群</h3>
+<pre><code>#### GROUP BY 子句
 #### 彙總鍵包含 NULL 的狀況
 #### 使用 WHRER 子句時 GROUP BY 的作用
-#### 彙總函數與 GROUP BY 子句的常見錯誤</code></pre>
-<h3 id="對彙總結果指定條件"><a href="#對彙總結果指定條件" class="headerlink" title="對彙總結果指定條件"></a>對彙總結果指定條件</h3><pre><code>#### HAVING 子句
+#### 彙總函數與 GROUP BY 子句的常見錯誤
+</code></pre>
+<h3 id="對彙總結果指定條件">對彙總結果指定條件</h3>
+<pre><code>#### HAVING 子句
 #### 可寫在 HAVING 子句的元素
-#### 適合以 WHERE 子句取代 HAVING 子句的條件</code></pre>
-<h3 id="查詢結果排序"><a href="#查詢結果排序" class="headerlink" title="查詢結果排序"></a>查詢結果排序</h3><pre><code>#### ORDER BY 子句
+#### 適合以 WHERE 子句取代 HAVING 子句的條件
+</code></pre>
+<h3 id="查詢結果排序">查詢結果排序</h3>
+<pre><code>#### ORDER BY 子句
 #### 指定升幂或降幂
 #### 指定多個排序鍵
 #### NULL 的順序
 #### 使用欄位別名指定排序鍵
 #### ORDER BY 子句可使用的欄位
-#### 請勿使用欄位編號</code></pre>
-<h3 id="自我練習-2"><a href="#自我練習-2" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="更新資料"><a href="#更新資料" class="headerlink" title="更新資料"></a>更新資料</h2><h3 id="新增資料-INSERT"><a href="#新增資料-INSERT" class="headerlink" title="新增資料 (INSERT)"></a>新增資料 (INSERT)</h3><pre><code>#### 什麼是 INSERT
+#### 請勿使用欄位編號
+</code></pre>
+<h3 id="自我練習-v3">自我練習</h3>
+<h2 id="更新資料">更新資料</h2>
+<h3 id="新增資料-INSERT">新增資料 (INSERT)</h3>
+<pre><code>#### 什麼是 INSERT
 #### INSERT 敘述的基本語法
 #### 省略欄位串列
 #### 存入 NULL
 #### 存入預設值
-#### 從其他資料表複製資料</code></pre>
-<h3 id="刪除資料-DELETE"><a href="#刪除資料-DELETE" class="headerlink" title="刪除資料 (DELETE)"></a>刪除資料 (DELETE)</h3><pre><code>#### DROP TABLE 敘述與 DELETE 敘述
+#### 從其他資料表複製資料
+</code></pre>
+<h3 id="刪除資料-DELETE">刪除資料 (DELETE)</h3>
+<pre><code>#### DROP TABLE 敘述與 DELETE 敘述
 #### DELETE 敘述的基本語法
-#### 刪除特定紀錄的 DELETE 敘述 (搜尋式 DELETE)</code></pre>
-<h3 id="修改資料-UPDATE"><a href="#修改資料-UPDATE" class="headerlink" title="修改資料 (UPDATE)"></a>修改資料 (UPDATE)</h3><pre><code>#### UPDATE 的基本語法
+#### 刪除特定紀錄的 DELETE 敘述 (搜尋式 DELETE)
+</code></pre>
+<h3 id="修改資料-UPDATE">修改資料 (UPDATE)</h3>
+<pre><code>#### UPDATE 的基本語法
 #### 指定條件的 UPDATE 敘述 (搜尋式 UPDATE)
 #### 將資料改為 NULL
-#### 修改多個欄位的資料</code></pre>
-<h3 id="交易功能"><a href="#交易功能" class="headerlink" title="交易功能"></a>交易功能</h3><pre><code>#### 什麼是交易功能
+#### 修改多個欄位的資料
+</code></pre>
+<h3 id="交易功能">交易功能</h3>
+<pre><code>#### 什麼是交易功能
 #### 如何設定交易功能
-#### ACID 特性</code></pre>
-<h3 id="自我練習-3"><a href="#自我練習-3" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="進階查詢功能"><a href="#進階查詢功能" class="headerlink" title="進階查詢功能"></a>進階查詢功能</h2><h3 id="檢視表"><a href="#檢視表" class="headerlink" title="檢視表"></a>檢視表</h3><pre><code>#### 檢視表與資料表
+#### ACID 特性
+</code></pre>
+<h3 id="自我練習-v4">自我練習</h3>
+<h2 id="進階查詢功能">進階查詢功能</h2>
+<h3 id="檢視表">檢視表</h3>
+<pre><code>#### 檢視表與資料表
 #### 檢視表的建立方式
 #### 檢視表的限制(1) 建立時不可使用 ORDER BY 子句
 #### 檢視表的限制(2) 透過檢視表更新資料
-#### 刪除檢視表</code></pre>
-<h3 id="子查詢"><a href="#子查詢" class="headerlink" title="子查詢"></a>子查詢</h3><pre><code>#### 子查詢與檢視表
+#### 刪除檢視表
+</code></pre>
+<h3 id="子查詢">子查詢</h3>
+<pre><code>#### 子查詢與檢視表
 #### 子查詢的名稱
 #### 純量子查詢
 #### 可寫入純量子查詢的位置
-#### 使用純量子查詢的需注意事項</code></pre>
-<h3 id="關聯子查詢"><a href="#關聯子查詢" class="headerlink" title="關聯子查詢"></a>關聯子查詢</h3><pre><code>#### 一般子查詢與關聯子查詢的差異
+#### 使用純量子查詢的需注意事項
+</code></pre>
+<h3 id="關聯子查詢">關聯子查詢</h3>
+<pre><code>#### 一般子查詢與關聯子查詢的差異
 #### 關聯子查詢也能進行資料分群
-#### 連結條件必須寫在子查詢內</code></pre>
-<h3 id="自我練習-4"><a href="#自我練習-4" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="函數、述詞、Case-運算式"><a href="#函數、述詞、Case-運算式" class="headerlink" title="函數、述詞、Case 運算式"></a>函數、述詞、Case 運算式</h2><h3 id="各式各樣的函數"><a href="#各式各樣的函數" class="headerlink" title="各式各樣的函數"></a>各式各樣的函數</h3><pre><code>#### 函數的類型
+#### 連結條件必須寫在子查詢內
+</code></pre>
+<h3 id="自我練習-v5">自我練習</h3>
+<h2 id="函數、述詞、Case-運算式">函數、述詞、Case 運算式</h2>
+<h3 id="各式各樣的函數">各式各樣的函數</h3>
+<pre><code>#### 函數的類型
 #### 數學函數
 #### 字串函數
 #### 日期函數
-#### 轉換函數</code></pre>
-<h3 id="述詞"><a href="#述詞" class="headerlink" title="述詞"></a>述詞</h3><pre><code>#### 什麼是述詞
+#### 轉換函數
+</code></pre>
+<h3 id="述詞">述詞</h3>
+<pre><code>#### 什麼是述詞
 #### LIKE 述詞 - 搜尋相同的字串
 #### BETWEEN - 範圍搜尋
 #### IS NULL、IS NOT NULL - 判斷是否為 NULL
 #### IN 述詞 - OR 的簡便形式
 #### 指定子查詢做為 IN 述詞的參數
-#### EXISTS 述詞</code></pre>
-<h3 id="CASE-運算式"><a href="#CASE-運算式" class="headerlink" title="CASE 運算式"></a>CASE 運算式</h3><pre><code>#### 什麼是 CASE 運算式
+#### EXISTS 述詞
+</code></pre>
+<h3 id="CASE-運算式">CASE 運算式</h3>
+<pre><code>#### 什麼是 CASE 運算式
 #### CASE 運算式的語法
-#### CASE 運算式的使用方式</code></pre>
-<h3 id="自我練習-5"><a href="#自我練習-5" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="集合運算-合併查詢"><a href="#集合運算-合併查詢" class="headerlink" title="集合運算 (合併查詢)"></a>集合運算 (合併查詢)</h2><h3 id="資料表的加法與減法運算"><a href="#資料表的加法與減法運算" class="headerlink" title="資料表的加法與減法運算"></a>資料表的加法與減法運算</h3><pre><code>#### 什麼是集合運算
+#### CASE 運算式的使用方式
+</code></pre>
+<h3 id="自我練習-v6">自我練習</h3>
+<h2 id="集合運算-合併查詢">集合運算 (合併查詢)</h2>
+<h3 id="資料表的加法與減法運算">資料表的加法與減法運算</h3>
+<pre><code>#### 什麼是集合運算
 #### 資料表的加法運算 - UNION
 #### 集合運算的注意事項
 #### 列出重複紀錄的集合運算 - ALL選項
 #### 篩選出資料表的共通部分 - INTERSECT
-#### 紀錄的減法運算 - EXCEPT</code></pre>
-<h3 id="結合-聯結多個資料表欄位"><a href="#結合-聯結多個資料表欄位" class="headerlink" title="結合 (聯結多個資料表欄位)"></a>結合 (聯結多個資料表欄位)</h3><pre><code>#### 什麼是結合
+#### 紀錄的減法運算 - EXCEPT
+</code></pre>
+<h3 id="結合-聯結多個資料表欄位">結合 (聯結多個資料表欄位)</h3>
+<pre><code>#### 什麼是結合
 #### 內部結合 - INNER JOIN
 #### 外部結合 - OUTER JOIN
 #### 使用3個以上資料表的結合
-#### 交叉結合 - CROSS JOIN</code></pre>
-<h3 id="自我練習-6"><a href="#自我練習-6" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="SQL-進階處理功能"><a href="#SQL-進階處理功能" class="headerlink" title="SQL 進階處理功能"></a>SQL 進階處理功能</h2><h3 id="各式各樣的函數-1"><a href="#各式各樣的函數-1" class="headerlink" title="各式各樣的函數"></a>各式各樣的函數</h3><pre><code>#### 什麼是視窗函數
+#### 交叉結合 - CROSS JOIN
+</code></pre>
+<h3 id="自我練習-v7">自我練習</h3>
+<h2 id="SQL-進階處理功能">SQL 進階處理功能</h2>
+<h3 id="各式各樣的函數-v2">各式各樣的函數</h3>
+<pre><code>#### 什麼是視窗函數
 #### 視窗函數的語法
 #### 基本使用方式 - 以 RANK 函數為例
 #### 也可以不指定 PARTITION BY
@@ -367,25 +443,37 @@
 #### 視窗函數應當寫在何處
 #### 將彙總函數當作視窗函數使用
 #### 計算移動平均
-#### 2個 ORDER BY</code></pre>
-<h3 id="GROUPING-運算子"><a href="#GROUPING-運算子" class="headerlink" title="GROUPING 運算子"></a>GROUPING 運算子</h3><pre><code>#### 一併列出總計行
+#### 2個 ORDER BY
+</code></pre>
+<h3 id="GROUPING-運算子">GROUPING 運算子</h3>
+<pre><code>#### 一併列出總計行
 #### ROLLUP - 1次取得總計與小計
 #### GROUPING 函數 - 分辨 NULL 的真偽
 #### CUBE - 將資料堆疊成積木
-#### GROUPING SETS - 只取出部分積木</code></pre>
-<h3 id="自我練習-7"><a href="#自我練習-7" class="headerlink" title="自我練習"></a>自我練習</h3><h2 id="從應用程式連接資料庫"><a href="#從應用程式連接資料庫" class="headerlink" title="從應用程式連接資料庫"></a>從應用程式連接資料庫</h2><h3 id="串聯資料庫和應用程式"><a href="#串聯資料庫和應用程式" class="headerlink" title="串聯資料庫和應用程式"></a>串聯資料庫和應用程式</h3><pre><code>#### 資料庫與應用程式的關係
+#### GROUPING SETS - 只取出部分積木
+</code></pre>
+<h3 id="自我練習-v8">自我練習</h3>
+<h2 id="從應用程式連接資料庫">從應用程式連接資料庫</h2>
+<h3 id="串聯資料庫和應用程式">串聯資料庫和應用程式</h3>
+<pre><code>#### 資料庫與應用程式的關係
 #### 驅動程式 - 2個世界的橋樑
-#### 驅動程式的種類</code></pre>
-<h3 id="程式的基礎知識"><a href="#程式的基礎知識" class="headerlink" title="程式的基礎知識"></a>程式的基礎知識</h3><pre><code>#### 一如往例的 「Hello, World」
+#### 驅動程式的種類
+</code></pre>
+<h3 id="程式的基礎知識">程式的基礎知識</h3>
+<pre><code>#### 一如往例的 「Hello, World」
 #### 編譯與執行程式
-#### 常見的錯誤</code></pre>
-<h3 id="利用程式連到-MariaDB"><a href="#利用程式連到-MariaDB" class="headerlink" title="利用程式連到 MariaDB"></a>利用程式連到 MariaDB</h3><pre><code>#### 執行 SQL 敘述的 Java 程式
+#### 常見的錯誤
+</code></pre>
+<h3 id="利用程式連到-MariaDB">利用程式連到 MariaDB</h3>
+<pre><code>#### 執行 SQL 敘述的 Java 程式
 #### Java 如何從資料庫取得資料
 #### 執行連接至資料庫的程式
 #### 嘗試篩選出資料表的資料
 #### 嘗試修改資料表的資料
-#### 小結</code></pre>
-<h3 id="自我練習-8"><a href="#自我練習-8" class="headerlink" title="自我練習"></a>自我練習</h3><div style="text-align: center; color:#aaa;"><small>/... 未完待續 .../</small></div>
+#### 小結
+</code></pre>
+<h3 id="自我練習-v9">自我練習</h3>
+<div style="text-align: center; color:#aaa;"><small>/... 未完待續 .../</small></div>
     </div>
 
     
@@ -469,7 +557,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E6%A7%8BSQL%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">建構SQL執行環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-XAMPP-%E4%BE%86%E5%BB%BA%E6%A7%8B-MySQL-MariaDB-%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.1.</span> <span class="nav-text">安裝 XAMPP 來建構 MySQL &#x2F; MariaDB 資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-XAMPP"><span class="nav-number">1.1.1.</span> <span class="nav-text">安裝 XAMPP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A-MySQL-MariaDB-%E7%AE%A1%E7%90%86%E5%93%A1%E5%AF%86%E7%A2%BC"><span class="nav-number">1.1.2.</span> <span class="nav-text">設定 MySQL &#x2F; MariaDB 管理員密碼</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%AD%B8%E7%BF%92%E7%94%A8%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.2.</span> <span class="nav-text">建立學習用資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-SQL-%E8%AA%9E%E6%B3%95%E4%BE%86%E6%93%8D%E4%BD%9C%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">透過 SQL 語法來操作資料庫</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E8%88%87SQL"><span class="nav-number">2.</span> <span class="nav-text">資料庫與SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E6%98%AF%E4%BB%80%E9%BA%BC"><span class="nav-number">2.1.</span> <span class="nav-text">資料庫是什麼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E6%9E%B6%E6%A7%8B"><span class="nav-number">2.2.</span> <span class="nav-text">資料庫的架構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%A6%81"><span class="nav-number">2.3.</span> <span class="nav-text">SQL 基本概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">2.4.</span> <span class="nav-text">建立資料表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%88%87%E4%BF%AE%E6%94%B9%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text">刪除與修改資料表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92"><span class="nav-number">2.6.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">查詢的基本語法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-%E6%95%98%E8%BF%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">SELECT 敘述的基本語法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90%E8%88%87%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text">算術運算子與比較運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">3.3.</span> <span class="nav-text">邏輯運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-1"><span class="nav-number">3.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%99%E7%B8%BD%E8%88%87%E6%8E%92%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">彙總與排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E6%99%82%E5%BD%99%E7%B8%BD%E8%B3%87%E6%96%99"><span class="nav-number">4.1.</span> <span class="nav-text">查詢時彙總資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%88%86%E7%BE%A4"><span class="nav-number">4.2.</span> <span class="nav-text">資料分群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8D%E5%BD%99%E7%B8%BD%E7%B5%90%E6%9E%9C%E6%8C%87%E5%AE%9A%E6%A2%9D%E4%BB%B6"><span class="nav-number">4.3.</span> <span class="nav-text">對彙總結果指定條件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E7%B5%90%E6%9E%9C%E6%8E%92%E5%BA%8F"><span class="nav-number">4.4.</span> <span class="nav-text">查詢結果排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-2"><span class="nav-number">4.5.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">更新資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99-INSERT"><span class="nav-number">5.1.</span> <span class="nav-text">新增資料 (INSERT)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%B3%87%E6%96%99-DELETE"><span class="nav-number">5.2.</span> <span class="nav-text">刪除資料 (DELETE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E8%B3%87%E6%96%99-UPDATE"><span class="nav-number">5.3.</span> <span class="nav-text">修改資料 (UPDATE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%98%93%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.</span> <span class="nav-text">交易功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-3"><span class="nav-number">5.5.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%B2%E9%9A%8E%E6%9F%A5%E8%A9%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">進階查詢功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%A2%E8%A6%96%E8%A1%A8"><span class="nav-number">6.1.</span> <span class="nav-text">檢視表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%A9%A2"><span class="nav-number">6.2.</span> <span class="nav-text">子查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E8%81%AF%E5%AD%90%E6%9F%A5%E8%A9%A2"><span class="nav-number">6.3.</span> <span class="nav-text">關聯子查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-4"><span class="nav-number">6.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B8%E3%80%81%E8%BF%B0%E8%A9%9E%E3%80%81Case-%E9%81%8B%E7%AE%97%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">函數、述詞、Case 運算式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E5%BC%8F%E5%90%84%E6%A8%A3%E7%9A%84%E5%87%BD%E6%95%B8"><span class="nav-number">7.1.</span> <span class="nav-text">各式各樣的函數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%B0%E8%A9%9E"><span class="nav-number">7.2.</span> <span class="nav-text">述詞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CASE-%E9%81%8B%E7%AE%97%E5%BC%8F"><span class="nav-number">7.3.</span> <span class="nav-text">CASE 運算式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-5"><span class="nav-number">7.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E9%81%8B%E7%AE%97-%E5%90%88%E4%BD%B5%E6%9F%A5%E8%A9%A2"><span class="nav-number">8.</span> <span class="nav-text">集合運算 (合併查詢)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E8%A1%A8%E7%9A%84%E5%8A%A0%E6%B3%95%E8%88%87%E6%B8%9B%E6%B3%95%E9%81%8B%E7%AE%97"><span class="nav-number">8.1.</span> <span class="nav-text">資料表的加法與減法運算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E5%90%88-%E8%81%AF%E7%B5%90%E5%A4%9A%E5%80%8B%E8%B3%87%E6%96%99%E8%A1%A8%E6%AC%84%E4%BD%8D"><span class="nav-number">8.2.</span> <span class="nav-text">結合 (聯結多個資料表欄位)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-6"><span class="nav-number">8.3.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E9%80%B2%E9%9A%8E%E8%99%95%E7%90%86%E5%8A%9F%E8%83%BD"><span class="nav-number">9.</span> <span class="nav-text">SQL 進階處理功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E5%BC%8F%E5%90%84%E6%A8%A3%E7%9A%84%E5%87%BD%E6%95%B8-1"><span class="nav-number">9.1.</span> <span class="nav-text">各式各樣的函數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUPING-%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">9.2.</span> <span class="nav-text">GROUPING 運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-7"><span class="nav-number">9.3.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%9E%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E9%80%A3%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">10.</span> <span class="nav-text">從應用程式連接資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B2%E8%81%AF%E8%B3%87%E6%96%99%E5%BA%AB%E5%92%8C%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F"><span class="nav-number">10.1.</span> <span class="nav-text">串聯資料庫和應用程式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%9A%84%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98"><span class="nav-number">10.2.</span> <span class="nav-text">程式的基礎知識</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%A8%8B%E5%BC%8F%E9%80%A3%E5%88%B0-MariaDB"><span class="nav-number">10.3.</span> <span class="nav-text">利用程式連到 MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-8"><span class="nav-number">10.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E6%A7%8BSQL%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">建構SQL執行環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-XAMPP-%E4%BE%86%E5%BB%BA%E6%A7%8B-MySQL-MariaDB-%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.1.</span> <span class="nav-text">安裝 XAMPP 來建構 MySQL &#x2F; MariaDB 資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-XAMPP"><span class="nav-number">1.1.1.</span> <span class="nav-text">安裝 XAMPP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A-MySQL-MariaDB-%E7%AE%A1%E7%90%86%E5%93%A1%E5%AF%86%E7%A2%BC"><span class="nav-number">1.1.2.</span> <span class="nav-text">設定 MySQL &#x2F; MariaDB 管理員密碼</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%AD%B8%E7%BF%92%E7%94%A8%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.2.</span> <span class="nav-text">建立學習用資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-SQL-%E8%AA%9E%E6%B3%95%E4%BE%86%E6%93%8D%E4%BD%9C%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">透過 SQL 語法來操作資料庫</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E8%88%87SQL"><span class="nav-number">2.</span> <span class="nav-text">資料庫與SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E6%98%AF%E4%BB%80%E9%BA%BC"><span class="nav-number">2.1.</span> <span class="nav-text">資料庫是什麼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E6%9E%B6%E6%A7%8B"><span class="nav-number">2.2.</span> <span class="nav-text">資料庫的架構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%A6%81"><span class="nav-number">2.3.</span> <span class="nav-text">SQL 基本概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">2.4.</span> <span class="nav-text">建立資料表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%88%87%E4%BF%AE%E6%94%B9%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">2.5.</span> <span class="nav-text">刪除與修改資料表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92"><span class="nav-number">2.6.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">查詢的基本語法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-%E6%95%98%E8%BF%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">SELECT 敘述的基本語法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90%E8%88%87%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text">算術運算子與比較運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">3.3.</span> <span class="nav-text">邏輯運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v2"><span class="nav-number">3.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%99%E7%B8%BD%E8%88%87%E6%8E%92%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">彙總與排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E6%99%82%E5%BD%99%E7%B8%BD%E8%B3%87%E6%96%99"><span class="nav-number">4.1.</span> <span class="nav-text">查詢時彙總資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%88%86%E7%BE%A4"><span class="nav-number">4.2.</span> <span class="nav-text">資料分群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8D%E5%BD%99%E7%B8%BD%E7%B5%90%E6%9E%9C%E6%8C%87%E5%AE%9A%E6%A2%9D%E4%BB%B6"><span class="nav-number">4.3.</span> <span class="nav-text">對彙總結果指定條件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E7%B5%90%E6%9E%9C%E6%8E%92%E5%BA%8F"><span class="nav-number">4.4.</span> <span class="nav-text">查詢結果排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v3"><span class="nav-number">4.5.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">更新資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99-INSERT"><span class="nav-number">5.1.</span> <span class="nav-text">新增資料 (INSERT)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%B3%87%E6%96%99-DELETE"><span class="nav-number">5.2.</span> <span class="nav-text">刪除資料 (DELETE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E8%B3%87%E6%96%99-UPDATE"><span class="nav-number">5.3.</span> <span class="nav-text">修改資料 (UPDATE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%98%93%E5%8A%9F%E8%83%BD"><span class="nav-number">5.4.</span> <span class="nav-text">交易功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v4"><span class="nav-number">5.5.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%B2%E9%9A%8E%E6%9F%A5%E8%A9%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">進階查詢功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%A2%E8%A6%96%E8%A1%A8"><span class="nav-number">6.1.</span> <span class="nav-text">檢視表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%A9%A2"><span class="nav-number">6.2.</span> <span class="nav-text">子查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E8%81%AF%E5%AD%90%E6%9F%A5%E8%A9%A2"><span class="nav-number">6.3.</span> <span class="nav-text">關聯子查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v5"><span class="nav-number">6.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B8%E3%80%81%E8%BF%B0%E8%A9%9E%E3%80%81Case-%E9%81%8B%E7%AE%97%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">函數、述詞、Case 運算式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E5%BC%8F%E5%90%84%E6%A8%A3%E7%9A%84%E5%87%BD%E6%95%B8"><span class="nav-number">7.1.</span> <span class="nav-text">各式各樣的函數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%B0%E8%A9%9E"><span class="nav-number">7.2.</span> <span class="nav-text">述詞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CASE-%E9%81%8B%E7%AE%97%E5%BC%8F"><span class="nav-number">7.3.</span> <span class="nav-text">CASE 運算式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v6"><span class="nav-number">7.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E9%81%8B%E7%AE%97-%E5%90%88%E4%BD%B5%E6%9F%A5%E8%A9%A2"><span class="nav-number">8.</span> <span class="nav-text">集合運算 (合併查詢)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E8%A1%A8%E7%9A%84%E5%8A%A0%E6%B3%95%E8%88%87%E6%B8%9B%E6%B3%95%E9%81%8B%E7%AE%97"><span class="nav-number">8.1.</span> <span class="nav-text">資料表的加法與減法運算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E5%90%88-%E8%81%AF%E7%B5%90%E5%A4%9A%E5%80%8B%E8%B3%87%E6%96%99%E8%A1%A8%E6%AC%84%E4%BD%8D"><span class="nav-number">8.2.</span> <span class="nav-text">結合 (聯結多個資料表欄位)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v7"><span class="nav-number">8.3.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E9%80%B2%E9%9A%8E%E8%99%95%E7%90%86%E5%8A%9F%E8%83%BD"><span class="nav-number">9.</span> <span class="nav-text">SQL 進階處理功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E5%BC%8F%E5%90%84%E6%A8%A3%E7%9A%84%E5%87%BD%E6%95%B8-v2"><span class="nav-number">9.1.</span> <span class="nav-text">各式各樣的函數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUPING-%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">9.2.</span> <span class="nav-text">GROUPING 運算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v8"><span class="nav-number">9.3.</span> <span class="nav-text">自我練習</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%9E%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E9%80%A3%E6%8E%A5%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">10.</span> <span class="nav-text">從應用程式連接資料庫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B2%E8%81%AF%E8%B3%87%E6%96%99%E5%BA%AB%E5%92%8C%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F"><span class="nav-number">10.1.</span> <span class="nav-text">串聯資料庫和應用程式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%9A%84%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98"><span class="nav-number">10.2.</span> <span class="nav-text">程式的基礎知識</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%A8%8B%E5%BC%8F%E9%80%A3%E5%88%B0-MariaDB"><span class="nav-number">10.3.</span> <span class="nav-text">利用程式連到 MariaDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E6%88%91%E7%B7%B4%E7%BF%92-v9"><span class="nav-number">10.4.</span> <span class="nav-text">自我練習</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -484,14 +572,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>

@@ -178,6 +178,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/23/link-VScode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="Eason">
+      <meta itemprop="description" content="前端技術分享平台">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端寶庫">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/23/link-VScode/" class="post-title-link" itemprop="url">[link]_VScode</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-02-23 15:06:31" itemprop="dateCreated datePublished" datetime="2021-02-23T15:06:31+08:00">2021-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-04-18 02:46:10" itemprop="dateModified" datetime="2021-04-18T02:46:10+08:00">2021-04-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="外掛">外掛</h4>
+<ul>
+<li>
+<h5 id="MJML">MJML</h5>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/mjmlio/mjml">MJML - Github</a></li>
+<li><a target="_blank" rel="noopener" href="https://uu9924079.medium.com/%E8%AE%93-email-%E5%88%87%E7%89%88%E4%B8%8D%E5%86%8D%E5%8F%AF%E6%80%95-mjml-%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97-2b9748a47f87">讓 Email 切版不再可怕－MJML 初次使用心得 - Medium</a> - 2021</li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/schaoss-blog/build-rwd-email-template-via-mjml-9665421c4c46">透過 MJML 快速完成 RWD Email 排版 - Medium</a> - 2020</li>
+</ul>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/23/link-VScode/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/23/%E9%97%9C%E6%96%BC%E9%82%A3%E4%BA%9B%E8%A2%ABIE%E6%8E%92%E6%93%A0%E7%9A%84%E5%B1%AC%E6%80%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -224,19 +306,31 @@
 
       
           <ul>
-<li><h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><ul>
-<li><h5 id="多行文本溢出顯示…"><a href="#多行文本溢出顯示…" class="headerlink" title="多行文本溢出顯示…"></a>多行文本溢出顯示…</h5><ul>
+<li>
+<h4 id="CSS-v2">CSS</h4>
+<ul>
+<li>
+<h5 id="多行文本溢出顯示…">多行文本溢出顯示…</h5>
+<ul>
 <li><code>-webkit-line-clamp</code></li>
 <li>需搭配 -webkit-box-orient 使用</li>
 <li>目前支援line-clamp的，只有Chrome與Safari</li>
 <li>Firefox與IE，需用高度來將超出的文字給隱藏起來</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">72px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  -webkit-box-orient: vertical;</span><br><span class="line">  -webkit-line-clamp: <span class="number">3</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">72px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://caniuse.com/?search=line-clamp">[Can I use] -webkit-line-clamp</a><br><a target="_blank" rel="noopener" href="https://caniuse.com/?search=-webkit-box-orient">[Can I use] -webkit-box-orient</a><br><a target="_blank" rel="noopener" href="https://www.minwt.com/webdesign-dev/css/18447.html">[參考] 免寫程式！透過CSS3將多行文字自動省略，並出現… - 梅問題教學網</a> - 2017<br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1502438188.html">[參考] 多行文本溢出顯示…的方法 - ITREAD</a> - 2017<br><a target="_blank" rel="noopener" href="https://css-tricks.com/almanac/properties/l/line-clamp/">[參考] line-clamp - CSS-TRICKS</a> - 2018<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10245872">[參考] [iT邦] line-clamp - futian_shen</a> - 2020<br><a target="_blank" rel="noopener" href="https://wsw0615.medium.com/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-text-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90-e86ad8bf827c">[參考] 想知道嗎：Text-overflow把行尾變成… - Medium</a> - 2020</p>
+<p><a target="_blank" rel="noopener" href="https://caniuse.com/?search=line-clamp">[Can I use] -webkit-line-clamp</a><br>
+<a target="_blank" rel="noopener" href="https://caniuse.com/?search=-webkit-box-orient">[Can I use] -webkit-box-orient</a><br>
+<a target="_blank" rel="noopener" href="https://www.minwt.com/webdesign-dev/css/18447.html">[參考] 免寫程式！透過CSS3將多行文字自動省略，並出現… - 梅問題教學網</a> - 2017<br>
+<a target="_blank" rel="noopener" href="https://www.itread01.com/content/1502438188.html">[參考] 多行文本溢出顯示…的方法 - ITREAD</a> - 2017<br>
+<a target="_blank" rel="noopener" href="https://css-tricks.com/almanac/properties/l/line-clamp/">[參考] line-clamp - CSS-TRICKS</a> - 2018<br>
+<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10245872">[參考] [iT邦] line-clamp - futian_shen</a> - 2020<br>
+<a target="_blank" rel="noopener" href="https://wsw0615.medium.com/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-text-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90-e86ad8bf827c">[參考] 想知道嗎：Text-overflow把行尾變成… - Medium</a> - 2020</p>
 </blockquote>
 </li>
-<li><h5 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h5><ul>
+<li>
+<h5 id="Flex-v2">Flex</h5>
+<ul>
 <li><code>flex: 1;</code></li>
 </ul>
 </li>
@@ -314,7 +408,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+          <h4 id="其他-v6">其他</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.luoow.com/dc_tw/103222144">拿好！52個實用的資料視覺化工具！ - 微文庫</a> - 2017</li>
 </ul>
 
@@ -381,7 +476,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a>系列文章</h4><ul>
+          <h4 id="系列文章-v3">系列文章</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP">HTTP系列 - MDN Web Docs</a></li>
 </ul>
           <!--noindex-->
@@ -455,7 +551,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+          <h4 id="其他">其他</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://medium.com/@alex_cheng_9527/git-%E8%87%AA%E7%B0%BD%E6%86%91%E8%AD%89%E5%95%8F%E9%A1%8C-self-signed-certificate-1ebba5eaf61c">[Git SSL自簽憑證問題] - Medium</a> - 2019</li>
 </ul>
 
@@ -522,7 +619,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+          <h4 id="其他-v2">其他</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5c0612dcbd9eee0cf7a20d63">原來組織架構圖可以醬紫畫 - 台部落</a> - 2018</li>
 </ul>
 
@@ -589,7 +687,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="瀏覽器渲染"><a href="#瀏覽器渲染" class="headerlink" title="瀏覽器渲染"></a>瀏覽器渲染</h4><ul>
+          <h4 id="瀏覽器渲染">瀏覽器渲染</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://shubo.io/browser-rendering/">瀏覽器轉譯/渲染(Browser Rendering)原理 - Shubo</a> - 2016</li>
 <li><a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2016/04/02/Browser-Rendering-Optimization/">Browser Rendering Optimization - TechBridge 技術共筆部落格</a> - 2016</li>
 </ul>
@@ -657,7 +756,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul>
+          <h4 id="入門-v4">入門</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://sass-lang.com/guide">Sass官網</a></li>
 <li><a target="_blank" rel="noopener" href="https://hackmd.io/@FortesHuang/SyKirdx78">學習Sass，你需要更有效率的切版方式(上) - hackmd</a> - 2020</li>
 <li><a target="_blank" rel="noopener" href="https://hackmd.io/@FortesHuang/HJPE3sCXU">學習Sass，你需要更有效率的切版方式(下) - hackmd</a> - 2020</li>
@@ -733,7 +833,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul>
+          <h4 id="入門-v5">入門</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/">[官網] - ReactJS</a></li>
 <li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20129269/ironman/3050">[iT邦] React 30 天學習歷程 - gigd123</a> - 2020</li>
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=zqV7NIFGDrQ">[Youtube]【前端速成】React 快速入門｜Tiktok工程師帶你入門前端｜布魯斯前端</a> - 2021</li>
@@ -802,76 +903,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="3D產品展示"><a href="#3D產品展示" class="headerlink" title="3D產品展示"></a>3D產品展示</h4><ul>
+          <h4 id="3D產品展示">3D產品展示</h4>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://www.trplus.com.tw/p/016051276">Demo</a></li>
 <li><a target="_blank" rel="noopener" href="https://luxion.atlassian.net/wiki/spaces/K6M/pages/5767183/KeyShotVR+Variables">運用技術 - VR產品圖片產生器</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://arx827.github.io/2021/02/14/link-TypeScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="Eason">
-      <meta itemprop="description" content="前端技術分享平台">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端寶庫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/14/link-TypeScript/" class="post-title-link" itemprop="url">[link]_TypeScript</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-02-14 04:00:26" itemprop="dateCreated datePublished" datetime="2021-02-14T04:00:26+08:00">2021-02-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-03-15 01:06:43" itemprop="dateModified" datetime="2021-03-15T01:06:43+08:00">2021-03-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="入門"><a href="#入門" class="headerlink" title="入門"></a>入門</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20120614/ironman/2685">[iT邦] - 讓 TypeScript 成為你全端開發的 ACE！ - Maxwell Alexius</a></li>
 </ul>
 
       
@@ -958,14 +993,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
